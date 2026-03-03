@@ -1,0 +1,5 @@
+C:\Users\vm_42_000\SkyDrive\Documents\Elephorm\Exercices\Tirage\bin\Debug\Tirage.exe.config
+C:\Users\vm_42_000\SkyDrive\Documents\Elephorm\Exercices\Tirage\bin\Debug\Tirage.exe
+C:\Users\vm_42_000\SkyDrive\Documents\Elephorm\Exercices\Tirage\bin\Debug\Tirage.pdb
+C:\Users\vm_42_000\SkyDrive\Documents\Elephorm\Exercices\Tirage\obj\Debug\Tirage.exe
+C:\Users\vm_42_000\SkyDrive\Documents\Elephorm\Exercices\Tirage\obj\Debug\Tirage.pdb
