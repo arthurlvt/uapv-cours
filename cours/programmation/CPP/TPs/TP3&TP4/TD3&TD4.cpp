@@ -6,6 +6,7 @@ class Maillon {
 public:
     int Info;
     Maillon* suivant;
+
 };
 
 class Liste {
@@ -142,4 +143,98 @@ void Liste::deleteOccurences(int val) {
     cout << "Nombre d'occurences supprimées: " << occurences << endl;
 }
 
+void Liste::inSeter(int x) {
+    if(this->state == NULL) { 
+        this->state = new Maillon(x); 
+        return ;
+    }
 
+    Maillon *pc = tete;
+    Maillon *pr = NULL;
+
+    while(pc != NULL & pc->info < x) {
+        pr = pc;
+        pc = pc->suiv;
+    } // pc pointe vers soit NULL soit le premier maillon de la valeur >= x
+    if(pr == NULL) {
+        this->state = new Maillon(x, pc);
+        return;
+    }
+    pr->suiv = new Maillon(x, pc);
+}
+
+void Liste::SupprimerTout(int v) {
+    Maillon *pc = tete;
+    Maillon *pr = NULL;
+
+    while(pc != NULL && pc->info < x) {
+        if(pc->info == v) {
+            if(pr == NULL) {
+                tete = tete->suiv;
+                pc->suiv = NULL;
+                delete pc;
+            
+            }
+            else {
+                pr->suiv = pc->suiv;
+                pc->suiv = NULL;
+                
+            }
+        }
+    }
+}
+
+void Liste::concat(Liste &L1, Liste &L2) {
+    Maillon *pc1 = L1.tete;
+    Maillon *pc2 = L2.tete;
+    Maillon *pr = NULL;
+
+    while(pc1 != NULL && pc2 != NULL) {
+        if(pc1->info < pc2->info) {
+            if(pr == NULL) {
+                this->tete = new Maillon(pc1->info);
+                pr = this->tete;
+            }
+            else {
+                pr->suiv = new Maillon(pc1->info);
+                pr = pr->suiv;
+            }
+            pc1 = pc1->suiv;
+        }
+        else {
+            if(pr == NULL) {
+                this->tete = new Maillon(pc2->info);
+                pr = this->tete;
+            }
+            else {
+                pr->suiv = new Maillon(pc2->info);
+                pr = pr->suiv;
+            }
+            pc2 = pc2->suiv;
+        }
+    }
+
+    while(pc1 != NULL) {
+        if(pr == NULL) {
+            this->tete = new Maillon(pc1->info);
+            pr = this->tete;
+        }
+        else {
+            pr->suiv = new Maillon(pc1->info);
+            pr = pr->suiv;
+        }
+        pc1 = pc1->suiv;
+    }
+
+    while(pc2 != NULL) {
+        if(pr == NULL) {
+            this->tete = new Maillon(pc2->info);
+            pr = this->tete;
+        }
+        else {
+            pr->suiv = new Maillon(pc2->info);
+            pr = pr->suiv;
+        }
+        pc2 = pc2->suiv;
+    }
+}
