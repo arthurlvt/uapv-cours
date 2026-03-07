@@ -1,0 +1,527 @@
+[ OUTIL DE COPIE-COLLE DES SYMBOLES LOGIQUES : ∀ ¬ ∧ ∨ ∃ => <=> ]
+[ OUTIL DE COPIE-COLLE DES SYMBOLES LOGIQUES : ∅, ℕ, ℤ, ℚ, ℝ, ℂ, ∈, ∉, ⊆, ⊈, ⊇, ⊉, ∪, ∩, \, |->, infini ]
+
+TD3: Logique de premier Ordre - Correction
+EXO 1: De la logique de premier ordre au français
+1. ∀x(P(x) ∧ C(x))  : "Tous le monde a visité Paris et ont un chat ;
+2. ∃x(C(x) ∧ ¬F(x)) : "Il existe quelqu'un qui a un chat et qui n'a pas de furet" ;
+3. ∀x(E(x) ∧ P(x) => C(x)) : "Tout le monde qui a visité Paris et qui est étudiant a un chat" ;
+4. ∀x(P(x) => F(x)) : "Tout le monde qui a visité Paris a un furet" ;
+5. ¬∃x(E(x) ∧ C(x) ∧ F(x)) : "Il n'existe personne qui à la fois, est étudiant, a un chat et a un furet" ; 
+
+
+EXO 2: Du français à la logique de premier ordre -> Soit D(x, y) : "La personne x peut duper la personne y" 
+1. "Tout le monde peut duper Alban" : ∀x D(x, Alban) ; 
+2. "Brigitte peut duper tout le monde": ∀y D(Brigitte, y) ;
+3. "Tout le monde peut duper quelqu'un": ∀x, ∃y D(x, y) ;
+4. "Il n'y a personne qui puisse duper tout le monde": ¬∃x, ∀y D(x, y) ; 
+5. "Tout le monde peut être dupé par quelqu'un": ∀y, ∃x D(x, y) ; ¬∃y, ∀x D(x, y) ;
+6. "Personne ne peut duper à la fois Alban et Brigitte": ¬∃x D(x, Alban) ∧ D(x, Brigitte) ; 
+7. "Personne ne peut se duper lui même": ¬∃x D(x, x) ;
+8. "Il y a des gens qui peuvent duper aucune personne appart eux même": ∃x, y ¬D(x, y) ∧ D(x, x) ou on peut écrire : ∃x, ∀y (D(x, y) <=> (x = y));
+
+
+EXO 2 (version négation) 
+1. "Personne ne peut duper Alban": ¬∃x D(x, Alban) ; 
+2. "Il existe au moins une personne que Brigitte ne peut pas duper": ∃x ¬D(Brigitte, x) ; 
+3. "Il existe au moins une personne qui ne peut duper personne": ∃x, ∀y ¬D(x, y) ; 
+4. "Tout le monde peut duper tout le monde": ∃x, ∀y D(x, y) ;
+5. "Il existe au moins une personne qui peut être dupé par tout le monde": ∃y, ∀x D(x, y) ; 
+6. "Il y a des gens qui peuvent duper à la fois Alban et Brigitte": ∃x D(x, Alban) ∧ D(x, Brigitte) ; 
+7. "Il y a des gens qui peuvent se duper eux même": ∃x D(x, x) ; 
+8. "Tout le monde peut duper au moins une personne autre que lui même": ∀x, ∃y (D(x, y) ∧ ¬(x = y)) ;
+
+
+EXO 3: Identifier les inférences
+1. "Tous les hommes sont mortels. Or Socrate est un homme. Donc Socrate est mortel"
+Prédicats: H(x) : "x est un homme" ; M(x) : "x est mortel"
+- Prémisse 1: ∀x (H(x) => M(x)) (Hypothèse 1)
+- Prémisse 2: H(Socrate) (Hypothèse 2)
+- Conclusion: M(Socrate) et Type inférence: Modus Ponens Universel
+
+
+EXO 4: Modéliser et déduire
+1. "Tous les colibris ont des couleurs vives. Aucun gros oiseau ne se nourrit de miel et ont des couleurs ternes."
+-> En déduire "Les colibris sont petits"
+Domaine : les oiseaux
+Prédicats: C(x) : "x est un colibri" ; V(x) : "x a des couleurs vives" ; G(x) : "x est un gros oiseau" ; M(x) : "x se nourrit de miel" ;
+- Prémisse 1: ∀x (C(x) => V(x)) (Hypothèse 1) ;
+- Prémisse 2: ¬∃x (G(x) ∧ M(x)) ;
+              <=> ∀x ¬(G(x) ∧ M(x)) ;
+              <=> ∀x (¬G(x) ∨ ¬M(x)) ;
+              <=> ∀x (G(x) => ¬M(x)) (Hypothèse 2) ;
+- Prémisse 3: ∀x (¬M(x) => ¬V(x)) (Hypothèse 3) ;
+- Conclusion: ∀x (C(x) => ¬G(x))
+Application des règles inference:
+1. ∀x (G(x) => ¬M(x)) (Hypothèse 2) ;
+2. ∀x (¬M(x) => ¬V(x)) (Hypothèse 3) ;
+3. ∀x (G(x) => ¬V(x)) (Règle de syllogisme hypothétique / Transitivité universelle 1, 2) ;
+4. ∀x (C(x) => V(x)) (Hypothèse 3) ;
+5. ∀x (¬V(x) => ¬C(x)) (Contraposée de 4) ;
+6. ∀x (G(x) => ¬C(x)) (Règle de syllogisme hypothétique / Transitivité universelle 3, 5) ;
+7. ∀x (C(x) => ¬G(x)) (Contraposée de 6) ;
+
+2. "Tous les gens qui font du sport mangent sainement et boivent beaucoup d’eau. Tous les étudiants de l’université font du sport et dorment bien la nuit et boivent beaucoup d’eau."
+-> En déduire "Tous les étudiants de l’université dorment bien la nuit et boivent beaucoup d’eau."
+Domaine : les gens
+Prédicats: S(x) : "x fait du sport" ; M(x) : "x mange sainement" ; B(x) : "x boit beaucoup d’eau" ; E(x) : "x est étudiant de l’université" ; D(x) : "x dort bien la nuit" ;
+- Prémisse 1: ∀x (S(x) => (M(x) ∧ B(x))) (Hypothèse 1) ;
+- Prémisse 2: ∀x (E(x) => (S(x) ∧ D(x) ∧ B(x))) (Hypothèse 2) ;
+- Conclusion: ∀x (E(x) => (D(x) ∧ B(x)))
+Application des règles inference:
+1. ∀x (S(x) => (M(x) ∧ B(x))) (Hypothèse 1) ;
+2. ∀x (E(x) => (S(x) ∧ D(x) ∧ B(x))) (Hypothèse 2) ;
+3. ∀x (E(x) => S(x)) (Règle de simplification 2) ;
+4. ∀x (E(x) => D(x)) (Règle de simplification 2) ;
+5. ∀x (E(x) => B(x)) (Règle de simplification 2) ;
+6. ∀x (E(x) => (M(x) ∧ B(x))) (Règle de syllogisme hypothétique / Transitivité universelle 3, 1) ;
+7. ∀x (E(x) => (D(x) ∧ B(x))) (Règle de conjonction 4, 5) ;
+
+2. bis (version autre) : "Tous les gens (étudiants) qui font du sport mangent sainement et boivent beaucoup d’eau. Tous les étudiants de l’université font du sport et dorment bien la nuit"
+-> En déduire "Tous les étudiants de l’université dorment bien la nuit et boivent beaucoup d’eau."
+Domaine : les gens
+Prédicats: S(x) : "x fait du sport" ; M(x) : "x mange sainement" ; B(x) : "x boit beaucoup d’eau" ; D(x) : "x dort bien la nuit"
+- Prémisse 1: ∀x (S(x) => (M(x) ∧ B(x))) (Hypothèse 1) ;
+- Prémisse 2: ∀x (S(x) ∧ D(x)) (Hypothèse 2) ;
+- Conclusion: ∀x (S(x) => (D(x) ∧ B(x)))
+Application des règles inference:
+1. ∀x (S(x) ∧ D(x)) (Hypothèse 2) ;
+2. S(a) ∧ D(a) (avec a arbitraire dans le domaine -> Règle instanciation universelle 1) ;
+3. S(a) (Règle de simplification 2) ;
+4. ∀x (S(x) => (M(x) ∧ B(x))) (Hypothèse 1) ;
+5. S(a) => (M(a) ∧ B(a)) (Règle d’instanciation universelle 5) ;
+6. M(a) ∧ B(a) (Règle de modus ponens universel 3, 6) ;
+7. B(a) (Règle de simplification 7) ;
+8. D(a) (Règle de simplification 2) ;
+9. D(a) ∧ B(a) (Règle de conjonction 4, 9) ;
+10. ∀x (S(x) => (D(x) ∧ B(x))) (Règle de généralisation universelle 2, 9) ;
+
+...(faire 3 et 4 dans la correction)
+
+EXO 5: Analyser des raisonnements
+1. "Tous les étudiants de première année suivent un cours de programmation. Alice est étudiante de première année."
+Peut-on en déduire qu’Alice suit des cours de programmation ?
+Domaine : les gens
+Prédicats: E(x) : "x est étudiant de première année" ; P(x) : "x suit un cours de programmation"
+- Prémisse 1: ∀x (E(x) => P(x)) (Hypothèse 1) ;
+- Prémisse 2: E(Alice) (Hypothèse 2) ;
+- Conclusion: P(Alice) ?
+Application des règles inference:
+1. ∀x (E(x) => P(x)) (Hypothèse 1) ;
+2. E(Alice) => P(Alice) (Règle d’instanciation universelle 1) ;
+3. E(Alice) (Hypothèse 2) ;
+4. P(Alice) (Règle de modus ponens universel 2, 3) ;
+5. Conclusion: Oui, on peut en déduire qu’Alice suit des cours de programmation, car tous les étudiants de première année suivent un cours de programmation et Alice est étudiante de première année ;
+
+2. "Tous les étudiants d’informatique suivent un cours de programmation. Bob suit des cours de programmation."
+Peut-on en déduire que Bob est étudiant d’informatique ?
+Domaine : les gens
+Prédicats: I(x) : "x est étudiant d’informatique" ; P(x) : "x suit un cours de programmation"
+- Prémisse 1: ∀x (I(x) => P(x)) (Hypothèse 1) ;
+- Prémisse 2: P(Bob) (Hypothèse 2) ;
+- Conclusion: I(Bob) ?
+Application des règles inference:
+1. ∀x (I(x) => P(x)) (Hypothèse 1) ;
+2. I(Bob) => P(Bob) (Règle d’instanciation universelle 1) ;
+3. P(Bob) (Hypothèse 2) ;
+4. I(Bob) (Règle de modus ponens universel 2, 3) -> Faux ;
+5. Conclusion: Non, on ne peut pas en déduire que Bob est étudiant d’informatique, car il peut suivre des cours de programmation sans être étudiant d’informatique ;
+
+3. "Tous les perroquets aiment les fruits. Tui n’est pas un perroquet."
+Peut-on en déduire que Tu n’aime pas les fruits ?
+Domaine : les animaux
+Prédicats: P(x) : "x est un perroquet" ; F(x) : "x aime les fruits"
+- Prémisse 1: ∀x (P(x) => F(x)) (Hypothèse 1) ;
+- Prémisse 2: ¬P(Tu) (Hypothèse 2) ;
+- Conclusion: ¬F(Tu) ?
+Application des règles inference:
+1. ∀x (P(x) => F(x)) (Hypothèse 1) ;
+2. P(Tu) => F(Tu) (Règle d’instanciation universelle 1) ;
+3. ¬P(Tu) (Hypothèse 2) ;
+4. ¬F(Tu) (Règle de modus tollens universel 2, 3) -> Faux ;
+5. Conclusion: Non, on ne peut pas en déduire que Tu n’aime pas les fruits, car Tu peut aimer les fruits sans être un perroquet ;
+
+...(faire 4 et 5 dans la correction)
+
+EXO 6: Montrer que les règles d’inférence sont valides
+1. Règle de modus ponens universel : ∀x (P(x) => Q(x)) , P(a) => Q(a) (avec a arbitraire dans le domaine) ;
+2. Règle de modus tollens universel : ∀x (P(x) => Q(x)) , ¬Q(a) => ¬P(a) (avec a arbitraire dans le domaine) ;
+3. Règle de syllogisme hypothétique / Transitivité universelle : ∀x (P(x) => Q(x)) , ∀x (Q(x) => R(x)) , ∀x (P(x) => R(x)) ;
+
+EXO 7: Algorithme et Quantificateurs
+A: domaine de x ;
+B: domaine de y ;
+-> ∀(x, y), P(x, y)
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+TD4: Procédures et Preuves de correction - Correction
+EXO 1: Procédure simple
+x <- 2
+z <- x + y
+x <- y * z
+
+1. soit assertion initiale (p): x = 5 et assertion finale (q) : x = 14 ; On a alors la correction partielle suivante:
+- z <- 5 + 2 = 7
+- x <- y * z = 2 * 7 = 14
+-> conclusion : q est vérifiée
+2. soit assertion initiale (p): x = -5 et assertion finale (q) : x = -6 ;
+- z <- -5 + 2 = -3
+- x <- y * z = 2 * -3 = -6
+-> conclusion : q est vérifiée
+3. soit assertion initiale (p): x = -2 et assertion finale (q) : x = 0 ;
+- z <- -2 + 2 = 0
+- x <- y * z = 2 * 0 = 0
+-> conclusion : q est vérifiée
+
+
+EXO 2: Procédure avec blocs conditionnels
+1. soit assertion initiale (p): T et assertion finale (q) : x => 0; On a alors la correction partielle suivante:
+Si x < 0 alors
+x <- 0
+Fin Si
+
+(T ∧ (x < 0)){x <- 0}(x >= 0) <=> P{S}q 
+- (x < 0){x <- 0}(x >= 0) Vrai <=> 
+- (T ∧ ¬(x < 0)) => (x >= 0) Vrai <=>
+- T{Si x < 0 alors x <- 0 Fin Si}(x >= 0) est partiellement correcte
+
+
+2. soit assertion initiale (p): T et assertion finale (q) : (x =< ∧ min = x)∨(x > y ∧ min = y); On a alors la correction partielle suivante:
+Si x < y alors
+min <- x
+Sinon
+min <- y
+Fin Si
+
+
+EXO 3: Procédure avec des boucles
+1. soit assertion initiale (p): x appartient à R, n appartient à N^* et assertion finale (q) : puissance(x, n) = x^n; 
+On a alors la correction partielle suivante:
+ib : (puissance = x^i) ∧ (i =< n)
+Ainsi, puissance = I, i = 0, x^0 = 1
+puissance = puissance * x = x^i * x = x^(i + 1) = x^i2
+Donc puissance = x^i reste vraie à lissue de la boucle et comme i < n alors i2 < n + 1 
+alors i2 < n donc linvariant de boucle est vérifiée à litération suivante (fin de la boucles)
+
+2. Avant dentrer dans la boucle, puissance = 1 et i = 0, alors puissance = 1 = x^0 = x^i ..i = 1 =< n
+à lissue de la procédure i < n est FAUX
+(puissance = x^i) ∧ (i =< n) est vrai donc i = n et puissance = x^n
+
+3. Il faut montrer q2, la procédure termine:
+Au début c = 0 et il est incrémenté de 1 à chaque itération, alors c = n après n 
+itérations, et la condition de la boucle devient fausse, alors la procédure termine.
+
+
+EXO 4: Procédures Récursives
+Soit la procédure somme(n) donnée par Σn k = 0 k
+Procedure somme(n : entier positif)
+    Si n = 0 alors
+        Retourner 0
+    Sinon
+        Retourner n + somme(n - 1)
+    Fin Si
+
+1. Montrer que la procédure est correcte pour le cas de base
+Ici, on montre que somme(n) = Σn k = 0 k est vérifiée pour n = 0 :
+Si n = 0, somme(n) renvoie 0, et Σ0 k = 0 k = 0
+Donc la procédure est correcte pour le cas de base.
+
+Montrer que la procédure est correcte pour le cas récursif
+Supposons que la procédure est correcte pour n - 1 cest à dire que somme(n - 1) = Σn-1 k = 0 k
+Alors, pour n > 0, somme(n) renvoie n + somme(n - 1) = n + Σn-1 k = 0 k = Σn k = 0 k
+Donc la procédure est correcte pour le cas récursif.
+
+2. Montrer que la procédure est correcte pour le cas de base
+Ici, on montre que factorielle(n : entier positif) = n! est vérifiée pour n = 0 :
+Si n = 0, factorielle(n) renvoie 1, et 0! = 1
+Donc la procédure est correcte pour le cas de base.
+
+Montrer que la procédure est correcte pour le cas récursif
+Supposons que la procédure est correcte pour n - 1 cest à dire que factorielle(n - 1) = (n - 1)!
+Alors, pour n > 0, factorielle(n) renvoie n * factorielle(n - 1) = n * (n - 1)! = n!
+Donc la procédure est correcte pour le cas récursif.
+
+-> La procédure est donc correcte ∀ n >= 0.
+
+
+EXO 5: Analyser des Procédures
+Procédure p5.1 (n : entiers strictement positif, m : entier)
+    Si n = 1 alors
+        Retourner m
+    Sinon
+        Retourner m + p5.1(n - 1, m)
+    Fin Si
+
+1. Quel est le résultat renvoyé par p5.1 si n = 2 et m = 2?
+Si n = 2 et m = 2, alors :
+- p5.1(2, 2) renvoie 2 + p5.1(1, 2)
+- p5.1(1, 2) renvoie 2
+Donc, p5.1(2, 2) renvoie 2 + 2 = 4.
+
+2. Quel est le résultat renvoyé par p5.1 si n = 3 et m = 0?
+Si n = 3 et m = 0, alors :
+- p5.1(3, 0) renvoie 0 + p5.1(2, 0)
+- p5.1(2, 0) renvoie 0 + p5.1(1, 0)
+- p5.1(1, 0) renvoie 0
+Donc, p5.1(3, 0) renvoie 0 + 0 + 0 = 0.
+
+3. quel est le résultat renvoyé par p5.1 si n = 3 et m = 4?
+Si n = 3 et m = 4, alors :
+- p5.1(3, 4) renvoie 4 + p5.1(2, 4)
+- p5.1(2, 4) renvoie 4 + p5.1(1, 4)
+- p5.1(1, 4) renvoie 4
+Donc, p5.1(3, 4) renvoie 4 + 4 + 4 = 12.
+
+4. Déduire d'après les questions précédentes le rôle de la procédure p5.1
+La procédure p5.1 calcule la somme de m répété n fois, ce qui équivaut à n * m. 
+En d'autres termes, p5.1(n, m) = n * m.
+
+5. Montrer que p5.1 est correcte
+Pour montrer que p5.1 est correcte, nous allons utiliser l'induction sur n.
+- Cas de base : n = 1
+Si n = 1, alors p5.1(1, m) renvoie m, et 1 * m = m, donc p5.1(1, m) = 1 * m est vérifié.
+- Cas récursif : Supposons que p5.1(k, m) = k * m pour un certain k >= 1. 
+Nous devons montrer que p5.1(k + 1, m) = (k + 1) * m.
+p5.1(k + 1, m) renvoie m + p5.1(k, m). 
+Par hypothèse de récurrence, p5.1(k, m) = k * m, donc p5.1(k + 1, m) = m + k * m = (k + 1) * m.
+Ainsi, p5.1 est correcte pour tous les n >= 1.
+
+5.2
+Procédure p5.2 (x : réel)
+    y <- 2
+    z <- x + y
+    Si z > 0 alors
+        x <- z * 3
+    Sinon
+        x <- 0
+    Fin Si
+    Retourner z
+Fin procédure
+
+1. Quel est le résultat renvoyé par p5.2 si x = 3?
+Si x = 3, alors :
+- y <- 2
+- z <- 3 + 2 = 5
+- Comme x > 0, x <- 5 * 3 = 15
+- La procédure retourne z, donc p5.2(3) renvoie 5.
+
+2. Quel est le résultat renvoyé par p5.2 si x = -2?
+Si x = -2, alors :
+- y <- 2
+- z <- -2 + 2 = 0
+- Comme x <= 0, x <- 0
+- La procédure retourne z, donc p5.2(-2) renvoie 0.
+
+3. Quel est le résultat renvoyé par p5.2 si x = -4?
+Si x = -4, alors :
+- y <- 2
+- z <- -4 + 2 = -2
+- Comme x <= 0, x <- 0
+- La procédure retourne z, donc p5.2(-4) renvoie -2.
+
+4. Déduire d'après les questions précédentes le rôle de la procédure p5.2
+La procédure p5.2 renvoie la valeur max(0, 3x + 6)
+
+5. Montrer que p5.2 est correcte
+Pour montrer que p5.2 est correcte, nous allons vérifier que les assertions initiales et finales sont respectées.
+Rappel: pour une procédure de la forme:
+Si c, alors S1
+Sinon si S1 c2 alors S2
+Sinon S3
+Fin Si
+On a les hypothèses suivantes:
+- (c ∧ p){S1}q
+- (¬c ∧ c2 ∧ p){S2}q
+- (¬c ∧ ¬c2 ∧ p){S3}q
+Conclusion : (p){Si c alors S1 Sinon si S1 c2 alors S2 Sinon S3 Fin Si}q
+
+Dans notre cas, nous avons:
+- c : z > 0
+- S1 : z <- z * 3
+- S2 : z <- 0
+- p : T (toujours vrai)
+- q : z = x + 2
+Vérifions les hypothèses:
+- (z > 0 ∧ T){z <- z * 3}(z = x + 2) est vérifié car après exécution de S1, z reste égal à x + 2.
+- (¬(z > 0) ∧ T){z <- 0}(z = x + 2) est vérifié car après exécution de S2, z reste égal à x + 2.
+Ainsi, toutes les hypothèses sont vérifiées, et nous pouvons conclure que p5.2 est correcte.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+TD5: Manipulation d'ensembles - Correction
+
+EXO 3: Manipulation de base des ensembles
+A = D = O = F = L 
+|-> {-3, 3} ⊆ J 
+|-> {-3, 3} = 2
+B = G = N 
+|-> ∅ ⊆ de tous les ensembles, par définition
+|-> ∅ = 0
+C = {{∅}} = 1
+E = H 
+|-> ℕ
+|-> ℕ = infini
+I = M 
+|-> {0} ⊆ ℕ = E = H
+|-> {0} = 1
+J = {-3, 3, {3}, {-3}}
+|-> |J| = 4
+K = {3} ⊆ J, E, H, A, D, O, F, L
+|-> |K| = 1
+
+EXO 4: Opérations dans les ensembles
+1. A = "Ensemble des étudiants habitants à moins de 3km du CERI"
+   B = "Ensemble des étudiants qui viennent au CERI à pied"
+   -> A et B sont ensemble des étudiants du CERI
+A ∪ B = "Ensemble des étudiants qui habitent à moins de 3km du CERI ou qui viennent au CERI à pied"
+A ∩ B = "Ensemble des étudiants qui habitent à moins de 3km du CERI et qui viennent au CERI à pied"
+A \ B = "Ensemble des étudiants qui habitent à moins de 3km du CERI mais qui ne viennent pas au CERI à pied"
+B \ A = "Ensemble des étudiants qui viennent au CERI à pied mais qui n'habitent pas à moins de 3km du CERI"
+A^c = "Ensemble des étudiants qui n'habitent pas à moins de 3km du CERI"
+B^c = "Ensemble des étudiants qui ne viennent pas au CERI à pied"
+
+2. A = {1, 2, 3, 4, 5}
+   B = {0, 3, 6}
+   -> A et B sont dans {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+A ∪ B = {0, 1, 2, 3, 4, 5, 6}
+A ∩ B = {3}
+A \ B = {1, 2, 4, 5}
+B \ A = {0, 6}
+A^c = {0, 6, 7, 8, 9, 10}
+B^c = {1, 2, 4, 5, 7, 8, 9, 10}
+
+3. A = {a, b, c, d, e}
+   B = {c, d, e, f, g, h}
+   -> A et B sont dans {a, b, c, d, e, f, g, h}
+A ∪ B = {a, b, c, d, e, f, g, h}
+A ∩ B = {c, d, e}
+A \ B = {a, b}
+B \ A = {f, g, h}
+A^c = {f, g, h}
+B^c = {a, b}
+
+4. A = {x ∈ ℕ | x = 2 * k, k ∈ ℕ} (Ensemble des nombres pairs)
+   B = {x ∈ ℕ | x ≤ 100} (Ensemble des nombres naturels inférieurs ou égaux à 100)
+   -> A et B sont dans ℕ
+A ∪ B = {x ∈ ℕ | x ≤ 100 ∨ x = 2 * k, k ∈ ℕ} (Tous les nombres naturels jusqu'à 100 et tous les nombres pairs)
+A ∩ B = {x ∈ ℕ | x ≤ 100 ∧ x = 2 * k, k ∈ ℕ} (Tous les nombres naturels jusqu'à 100 qui sont pairs)
+A \ B = {x ∈ ℕ | x > 100 ∧ x = 2 * k, k ∈ ℕ} (Tous les nombres pairs supérieurs à 100)
+B \ A =  {x ∈ ℕ | x ≤ 100 ∧ x = 2k + 1, k ∈ ℕ} (Tous les nombres naturels jusqu'à 100 qui sont impairs)
+A^c = {x ∈ ℕ | x = 2k + 1, k ∈ ℕ} (Tous les nombres naturels supérieurs à 100 qui sont impairs)
+B^c = {x ∈ ℕ | x > 100} (Tous les nombres naturels supérieurs à 100)
+
+5. A = "Ensemble des étudiants de licence informatique"
+   B = "Ensemble des étudiants qui suivent des cours d'Algèbre ou des cours d'Analyse"
+   -> A et B sont dans ensemble des étudiants de Avignon Université
+A ∪ B = "Ensemble des étudiants de licence informatique ou qui suivent des cours d'Algèbre ou des cours d'Analyse"
+A ∩ B = "Ensemble des étudiants de licence informatique qui suivent des cours d'Algèbre ou des cours d'Analyse"
+A \ B = "Ensemble des étudiants de licence informatique qui ne suivent pas de cours d'Algèbre et ne suivent pas de cours d'Analyse"
+B \ A = "Ensemble des étudiants qui suivent des cours d'Algèbre ou des cours d'Analyse mais qui ne sont pas en licence informatique"
+A^c = "Ensemble des étudiants de Avignon Université qui ne sont pas en licence informatique"
+B^c = "Ensemble des étudiants de Avignon Université qui ne suivent pas de cours d'Algèbre et ne suivent pas de cours d'Analyse"
+
+EXO 5: Application des principes de base des ensembles
+1. un groupe contient 325 étudiants Informatique et 18 étudiants de Mathématiques
+-> Principe de Multiplication : 325 * 18 = 5850
+Il y a 5850 façons différentes de choisir un étudiant en Informatique et un étudiant de Mathématiques.
+-> Principe de Addition : 325 + 18 = 343
+Il y a 343 façons différentes de choisir un étudiant en Informatique ou un étudiant de Mathématiques.
+
+2. un QCM contient 10 questions. Chaque question a 4 réponses possibles.
+-> Principe de Multiplication : 4^10 = 1 048 576
+Il y a 1 048 576 façons différentes de répondre à ce QCM.
+-> Principe de Multiplication : 5^10 = 9 765 625
+Il y a 9 765 625 façons différentes de répondre à ce QCM si on peut choisir de ne pas répondre à une question.
+
+3. 
+Un groupe de étudiants contient des étudiants de licence informatique, des étudiants licence mathématiques 
+et des étudiants en double-licence informatique et mathématique. On sait que il y a 38 étudiants qui font 
+une licence informatique (licence seule ou double-licence), 23 étudiants qui font une licence de 
+mathématiques (licence seule ou double-licence) et 7 étudiants qui font une double-licence. 
+-> Combien de étudiants y a-t-il dans le groupe ?
+
+-> On peut utiliser la formule de l'union de deux ensembles : |A ∪ B| = |A| + |B| - |A ∩ B|
+Ici, A est l'ensemble des étudiants en licence informatique (38), B est l'ensemble des étudiants en licence de mathématiques (23) et A ∩ B est l'ensemble des étudiants en double-licence (7).
+Donc, le nombre total d'étudiants dans le groupe est : |A ∪ B| = 38 + 23 - 7 = 54
+Il y a 54 étudiants dans le groupe.
+
+EXO 6: Photos de mariage
+Alix et Camille se marient et veulent faire des photos avec leur 4 plus proches invités. La photographe
+propose de aligner ces personnes sur les photos. Combien y  -t-il de façons différentes de arranger les 6
+personnes selon les règles suivantes :
+1. Aucune contrainte
+2. Alix et Camille doivent être côte à côte
+3. Alix et Camille ne doivent pas être côte à côte
+4. Alix doit se situer quelque part à gauche de Camille (mais pas nécessairement à côté)
+5. Alix doit se situer quelque part à droite de Camille (mais pas nécessairement à côté)
+
+-> Il y a 6 personnes à arranger, donc il y a 6! façons différentes de les arranger.
+6! = 720 |-> il y a 720 façons différentes de arranger les 6 personnes sans aucune contrainte.
+
+
+EXO 7: Boutique de vêtements
+Une boutique de vêtements lance une nouvelle collection de tee-shirts. Un tee-shirt est défini par sa coupe,
+sa taille, sa couleur et son motif. On donne les options suivantes pour chaque caractéristique :
+- Ensemble des coupes possibles: coupe homme, coupe femme, coupe neutre (3 options)
+- Ensemble des tailles possibles: XS, S, M, L, XL, XXL (6 options)
+- Ensemble des couleurs possibles: noir, bleu, rouge, vert, jaune, violet, marron (7 options)
+- Ensemble des motifs possibles: unis, pois, rayures, dessins (4 options)
+
+1. Définissez le ensemble des tee-shirts. Quelle est la cardinalité de cet ensemble ?
+Ensemble des tee-shirts peut être défini comme le produit cartésien des ensembles de caractéristiques :
+Tee-shirts = Coupes × Tailles × Couleurs × Motifs
+Où :
+- Coupes = {coupe homme, coupe femme, coupe neutre}
+- Tailles = {XS, S, M, L, XL, XXL}
+- Couleurs = {noir, bleu, rouge, vert, jaune, violet, marron}
+- Motifs = {unis, pois, rayures, dessins}
+La cardinalité de de ensemble des tee-shirts est le produit des cardinalités de chaque ensemble de caractéristiques :
+|Tee-shirts| = |Coupes| × |Tailles| × |Couleurs| × |Motifs|
+|Tee-shirts| = 3 × 6 × 7 × 4 = 504
+Il y a 504 tee-shirts différents dans la nouvelle collection.
+
+Supposons à présent que toutes les combinaisons ne sont pas possibles. Les tailles XL et XXL ne sont 
+disponibles uniquement avec la coupe homme. Les tailles XS et S ne sont disponibles uniquementavec la 
+coupe femme. Les couleurs noir, bleu et rouge ne sont disponibles que pour les tailles M et L. 
+Les couleurs vert et jaunes ne sont disponibles que pour les tailles XL et XXL. Les couleurs violet et 
+marron ne sont disponibles que pour les tailles XS et S. Le motif à dessin est disponible uniquement pour 
+les tailles XS, S et M. Le motif uni est disponible uniquement pour les tailles L et XXL. Le motif à pois 
+est disponible uniquement pour les tailles L et XL. Le motif à rayures est disponible uniquement pour les 
+tailles XS et S.
+2. Définissez le nouvel ensemble des tee-shirts en tenant compte de ces contraintes. Quelle est la cardinalité de ce nouvel ensemble ?
+Ensemble des tee-shirts avec contraintes peut être défini comme suit :
+Tee-shirts = {(c, t, co, m) | c ∈ Coupes, t ∈ Tailles, co ∈ Couleurs, m ∈ Motifs,
+et les contraintes suivantes sont respectées :
+- (t = XL ∨ t = XXL) => c = coupe homme
+- (t = XS ∨ t = S) => c = coupe femme
+- (t = M ∨ t = L) => (co = noir ∨ co = bleu ∨ co = rouge)
+- (t = XL ∨ t = XXL) => (co = vert ∨ co = jaune)
+- (t = XS ∨ t = S) => (co = violet ∨ co = marron)
+- (t = XS ∨ t = S ∨ t = M) => m = dessin
+- (t = L ∨ t = XXL) => m = uni
+- (t = L ∨ t = XL) => m = pois
+- (t = XS ∨ t = S) => m = rayures}
+Calculons la cardinalité de ce nouvel ensemble en tenant compte des contraintes :
+- Pour la coupe homme (c = coupe homme), les tailles possibles sont M, L, XL, XXL. 
+  - Pour M et L, les couleurs possibles sont noir, bleu, rouge, et les motifs possibles sont dessin, uni, pois. 
+    - M : 3 couleurs × 3 motifs = 9 tee-shirts
+    - L : 3 couleurs × 3 motifs = 9 tee-shirts
+  - Pour XL et XXL, les couleurs possibles sont vert, jaune, et les motifs possibles sont uni, pois. 
+    - XL : 2 couleurs × 2 motifs = 4 tee-shirts
+    - XXL : 2 couleurs × 2 motifs = 4 tee-shirts
+- Pour la coupe femme (c = coupe femme), les tailles possibles sont XS, S. 
+  - Pour XS et S, les couleurs possibles sont violet, marron, et les motifs possibles sont dessin, rayures. 
+    - XS : 2 couleurs × 2 motifs = 4 tee-shirts
+    - S : 2 couleurs × 2 motifs = 4 tee-shirts
+- Pour la coupe neutre (c = coupe neutre), les tailles possibles sont M, L. 
+  - Pour M et L, les couleurs possibles sont noir, bleu, rouge, et les motifs possibles sont dessin, uni, pois. 
+    - M : 3 couleurs × 3 motifs = 9 tee-shirts
+    - L : 3 couleurs × 3 motifs = 9 tee-shirts
+En total, le nombre de tee-shirts différents dans la nouvelle collection avec les contraintes est :
+9 (coupe homme M) + 9 (coupe homme L) + 4 (coupe homme XL) + 4 (coupe homme XXL) + 4 (coupe femme XS) + 4 (coupe femme S) + 9 (coupe neutre M) + 9 (coupe neutre L) = 52
+Il y a 52 tee-shirts différents dans la nouvelle collection en tenant compte des contraintes.
