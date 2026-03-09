@@ -77,6 +77,7 @@ void displayCercle(const Cercle& C) {
 // Calcul perimetre cercle
 double perimeterCircle(const Cercle& C) {
     return 2 * M_PI * C.getRayon(); // M_PI est defini dans <cmath>
+    
 }
 
 // Calcul surface cercle par méthode Monte Carlo
