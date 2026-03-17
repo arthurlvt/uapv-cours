@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML/Training - W3C Wiki (version personnelle)</title>
+  <style>
+    /* ── Reset & base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      color: #202122;
+      background: #f8f9fa;
+    }
+
+    a { color: #0645ad; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Layout ── */
+    .page-wrapper {
+      display: flex;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      gap: 2rem;
+    }
+
+    /* ── Header ── */
+    header {
+      background: #fff;
+      border-bottom: 1px solid #a2a9b1;
+      padding: 0.6rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    header .logo {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #005a9c;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    header .logo span { color: #e44d26; }
+    header input[type="search"] {
+      flex: 1;
+      max-width: 400px;
+      padding: 0.35rem 0.7rem;
+      border: 1px solid #a2a9b1;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    /* ── Sidebar (TOC) ── */
+    aside {
+      width: 220px;
+      flex-shrink: 0;
+      padding-top: 1.5rem;
+    }
+    .toc {
+      background: #fff;
+      border: 1px solid #a2a9b1;
+      border-radius: 4px;
+      padding: 1rem;
+      position: sticky;
+      top: 1rem;
+    }
+    .toc h2 {
+      font-size: 14px;
+      font-weight: bold;
+      border-bottom: 1px solid #a2a9b1;
+      padding-bottom: 0.4rem;
+      margin-bottom: 0.6rem;
+    }
+
+    /* ── Sommaire numéroté automatiquement ── */
+    .toc > ol {
+      list-style-type: decimal;
+      padding-left: 1.4em;
+      font-size: 13px;
+    }
+    .toc > ol > li { margin: 0.25rem 0; }
+    .toc ol ol {
+      list-style-type: decimal;
+      padding-left: 1.2em;
+      margin-top: 0.2rem;
+    }
+    .toc a { color: #0645ad; }
+
+    /* ── Main content ── */
+    main {
+      flex: 1;
+      min-width: 0;
+      padding: 1.5rem 0;
+    }
+
+    .page-title {
+      font-family: 'Linux Libertine', Georgia, serif;
+      font-size: 2rem;
+      font-weight: normal;
+      border-bottom: 1px solid #a2a9b1;
+      padding-bottom: 0.3rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .notice {
+      background: #eaf3fb;
+      border: 1px solid #a8d4f0;
+      border-radius: 4px;
+      padding: 0.7rem 1rem;
+      font-size: 13px;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    h2 {
+      font-family: 'Linux Libertine', Georgia, serif;
+      font-size: 1.4rem;
+      font-weight: normal;
+      border-bottom: 1px solid #a2a9b1;
+      padding-bottom: 0.2rem;
+      margin: 1.8rem 0 0.8rem;
+    }
+    h3 {
+      font-size: 1.05rem;
+      font-weight: bold;
+      margin: 1.2rem 0 0.4rem;
+    }
+
+    ul {
+      padding-left: 1.8em;
+      margin-bottom: 0.8rem;
+    }
+    li { margin: 0.2rem 0; }
+
+    .tag-moved {
+      font-size: 11px;
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      border-radius: 3px;
+      padding: 1px 5px;
+      margin-right: 5px;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+
+    /* ── Section dupliquée mise en évidence ── */
+    .section-added {
+      background: #fffbe6;
+      border-left: 3px solid #f0ad4e;
+      padding-left: 0.8rem;
+      border-radius: 0 4px 4px 0;
+    }
+    .section-added h2,
+    .section-added h3 { color: #856404; }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid #a2a9b1;
+      margin-top: 3rem;
+      padding: 1rem 1.5rem;
+      font-size: 13px;
+      color: #555;
+      background: #fff;
+      text-align: center;
+    }
+    footer a { color: #0645ad; }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════ HEADER ══════════════ -->
+<header>
+  <a class="logo" href="#">W3C <span>Wiki</span></a>
+  <input type="search" placeholder="Rechercher dans W3C Wiki…" />
+</header>
+
+<!-- ══════════════ CORPS DE PAGE ══════════════ -->
+<div class="page-wrapper">
+
+  <!-- ── SIDEBAR / TABLE DES MATIÈRES ── -->
+  <aside>
+    <nav class="toc">
+      <h2>Sommaire</h2>
+      <!-- Numérotation automatique via CSS list-style-type: decimal -->
+      <ol>
+        <li><a href="#week1">Week 1</a>
+          <ol>
+            <li><a href="#intro">Introduction à HTML</a></li>
+            <li><a href="#document">Document HTML</a></li>
+          </ol>
+        </li>
+        <li><a href="#week2">Week 2</a>
+          <ol>
+            <li><a href="#hyperlinks">Hyper Links</a></li>
+            <li><a href="#embedded">Contenu embarqué</a></li>
+          </ol>
+        </li>
+        <li><a href="#week2bis">Week 2 (copie)</a>
+          <ol>
+            <li><a href="#hyperlinks2">Hyper Links (copie)</a></li>
+            <li><a href="#embedded2">Contenu embarqué (copie)</a></li>
+          </ol>
+        </li>
+        <li><a href="#week3">Week 3</a>
+          <ol>
+            <li><a href="#tables">Tableaux</a></li>
+            <li><a href="#forms">Formulaires</a></li>
+          </ol>
+        </li>
+        <li><a href="#week4">Week 4</a>
+          <ol>
+            <li><a href="#sections">Sections</a></li>
+            <li><a href="#style">Style et Script</a></li>
+          </ol>
+        </li>
+        <li><a href="#seealso">Voir aussi</a></li>
+        <li><a href="#seealso2">Voir aussi (copie)</a></li>
+      </ol>
+    </nav>
+  </aside>
+
+  <!-- ── CONTENU PRINCIPAL ── -->
+  <main>
+    <h1 class="page-title">HTML/Training</h1>
+
+    <div class="notice">
+      <strong>Note :</strong> Le contenu original de cette page est en cours de migration vers la page dédiée du groupe
+      <a href="https://www.w3.org/community/webed/wiki/HTML/Training">Web Education Community Group</a>.
+      Les éléments marqués <span class="tag-moved">MOVED</span> ont déjà été déplacés.
+    </div>
+
+    <p>Voici les ressources pédagogiques HTML pour débutants.</p>
+
+    <!-- ──────────── WEEK 1 ──────────── -->
+    <h2 id="week1">Week 1</h2>
+
+    <h3 id="intro">Introduction à HTML</h3>
+    <ul>
+      <li><span class="tag-moved">MOVED</span> <a href="https://www.w3.org/wiki/HTML/Training/What_is_HTML%3F">What is HTML?</a></li>
+      <li><span class="tag-moved">MOVED</span> <a href="https://www.w3.org/wiki/HTML/Training/Tag_syntax">Tag syntax</a></li>
+      <li><span class="tag-moved">MOVED</span> <a href="https://www.w3.org/wiki/HTML/Training/Create_HTML">Create HTML</a></li>
+    </ul>
+
+    <h3 id="document">Document HTML</h3>
+    <ul>
+      <li><span class="tag-moved">MOVED</span> <a href="https://www.w3.org/wiki/HTML/Training/HTML_Document">HTML Document</a></li>
+      <li><span class="tag-moved">MOVED</span> <a href="https://www.w3.org/wiki/HTML/Training/Metadata">Metadata</a></li>
+      <li><span class="tag-moved">MOVED</span> <a href="https://www.w3.org/wiki/HTML/Training/Basic_content">Basic content</a></li>
+    </ul>
+
+    <!-- ──────────── WEEK 2 ──────────── -->
+    <h2 id="week2">Week 2</h2>
+
+    <h3 id="hyperlinks">Hyper Links</h3>
+    <ul>
+      <li><span class="tag-moved">MOVED</span> <a href="https://www.w3.org/wiki/HTML/Training/Hyper_Links">Hyper Links</a></li>
+      <li><span class="tag-moved">MOVED</span> <a href="https://www.w3.org/wiki/HTML/Training/Link_options">Link options</a></li>
+    </ul>
+
+    <h3 id="embedded">Contenu embarqué</h3>
+    <ul>
+      <li><span class="tag-moved">MOVED</span> <a href="https://www.w3.org/wiki/HTML/Training/Image">Image</a></li>
+      <li><span class="tag-moved">MOVED</span> <a href="https://www.w3.org/wiki/HTML/Training/Video">Video</a></li>
+    </ul>
+
+    <!-- ──────────── WEEK 2 (DUPLIQUÉ) ──────────── -->
+    <div class="section-added">
+      <h2 id="week2bis">Week 2 (copie — section dupliquée)</h2>
+
+      <h3 id="hyperlinks2">Hyper Links (copie)</h3>
+      <ul>
+        <li><a href="https://www.w3.org/wiki/HTML/Training/Hyper_Links">Hyper Links</a></li>
+        <li><a href="https://www.w3.org/wiki/HTML/Training/Link_options">Link options</a></li>
+        <li><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/a">MDN — Élément &lt;a&gt;</a></li>
+      </ul>
+
+      <h3 id="embedded2">Contenu embarqué (copie)</h3>
+      <ul>
+        <li><a href="https://www.w3.org/wiki/HTML/Training/Image">Image</a></li>
+        <li><a href="https://www.w3.org/wiki/HTML/Training/Video">Video</a></li>
+        <li><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/img">MDN — Élément &lt;img&gt;</a></li>
+      </ul>
+    </div>
+
+    <!-- ──────────── WEEK 3 ──────────── -->
+    <h2 id="week3">Week 3</h2>
+
+    <h3 id="tables">Tableaux</h3>
+    <ul>
+      <li><span class="tag-moved">MOVED</span> <a href="https://www.w3.org/wiki/HTML/Training/Table">Table</a></li>
+    </ul>
+
+    <h3 id="forms">Formulaires</h3>
+    <ul>
+      <li><span class="tag-moved">MOVED</span> <a href="https://www.w3.org/wiki/HTML/Training/Form">Form</a></li>
+      <li><span class="tag-moved">MOVED</span> <a href="https://www.w3.org/wiki/HTML/Training/Basic_form">Form controls</a></li>
+    </ul>
+
+    <!-- ──────────── WEEK 4 ──────────── -->
+    <h2 id="week4">Week 4</h2>
+
+    <h3 id="sections">Sections</h3>
+    <ul>
+      <li><span class="tag-moved">MOVED</span> <a href="https://www.w3.org/wiki/HTML/Training/Sections">Sections</a></li>
+    </ul>
+
+    <h3 id="style">Style et Script</h3>
+    <ul>
+      <li><span class="tag-moved">MOVED</span> <a href="https://www.w3.org/wiki/HTML/Training/Style_Sheet">Style Sheet</a></li>
+      <li><span class="tag-moved">MOVED</span> <a href="https://www.w3.org/wiki/HTML/Training/Script">Script</a></li>
+    </ul>
+
+    <!-- ──────────── SEE ALSO ──────────── -->
+    <h2 id="seealso">Voir aussi</h2>
+    <ul>
+      <li><span class="tag-moved">MOVED</span> <a href="https://www.w3.org/TR/html-markup/">HTML: The Markup Language Reference</a></li>
+      <li><span class="tag-moved">MOVED</span> <a href="https://www.w3.org/wiki/HTML/Elements">Liste des éléments HTML</a></li>
+      <li><span class="tag-moved">MOVED</span> <a href="https://www.w3.org/wiki/HTML/New_HTML5_Elements">Nouveaux éléments HTML5</a></li>
+      <li><span class="tag-moved">MOVED</span> <a href="https://www.w3.org/TR/html5">Spécification HTML5</a></li>
+      <li><span class="tag-moved">MOVED</span> <a href="https://www.w3.org/wiki/MathML/Elements">Liste des éléments MathML</a></li>
+      <li><span class="tag-moved">MOVED</span> <a href="https://www.w3.org/wiki/SVG/Elements">Liste des éléments SVG</a></li>
+      <li><span class="tag-moved">MOVED</span> <a href="https://www.w3.org/wiki/Web_Standards_Curriculum">Web Standards Curriculum</a></li>
+    </ul>
+
+    <!-- ──────────── SEE ALSO (DUPLIQUÉ) ──────────── -->
+    <div class="section-added">
+      <h2 id="seealso2">Voir aussi (copie — section dupliquée)</h2>
+      <ul>
+        <li><a href="https://www.w3.org/TR/html-markup/">HTML: The Markup Language Reference</a></li>
+        <li><a href="https://www.w3.org/wiki/HTML/Elements">Liste des éléments HTML</a></li>
+        <li><a href="https://developer.mozilla.org/fr/docs/Web/HTML">MDN Web Docs — HTML</a></li>
+        <li><a href="https://developer.mozilla.org/fr/docs/Web/CSS">MDN Web Docs — CSS</a></li>
+        <li><a href="https://validator.w3.org/">Validateur HTML W3C</a></li>
+      </ul>
+    </div>
+
+  </main>
+</div>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer>
+  <p>
+    Récupéré depuis <a href="https://www.w3.org/wiki/HTML/Training">https://www.w3.org/wiki/HTML/Training</a> —
+    Modifié localement à des fins pédagogiques.
+  </p>
+  <p style="margin-top:0.4rem;">
+    <a href="https://www.w3.org/wiki/W3C_Wiki:Privacy_policy">Politique de confidentialité</a> ·
+    <a href="https://www.w3.org/wiki/W3C_Wiki:About">À propos du W3C Wiki</a>
+  </p>
+</footer>
+
+</body>
+</html>

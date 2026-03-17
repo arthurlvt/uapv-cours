@@ -1,0 +1,9 @@
+-> La balise qui permet d'afficher une image est la balise <img>
+-> Pour HTML4, le doctype permettant d'utiliser les cadres (<frameset>) est le Frameset :
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+"http://www.w3.org/TR/html4/frameset.dtd">
+-> Pour HTML5, le doctype permettant d'utiliser les cadres (<frameset>) est le Frameset : <iframe>
+-> Le HREF et le REL permettent de lier 2 pages entre elles : <a href="https://example.com" rel="noopener noreferrer external">Lien externe</a>
+
+
+

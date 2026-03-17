@@ -1,0 +1,65 @@
+/* notion de récursivité : "qui se répète tout seul indéfiniment"
+/-> factorielle (n!): 
+= 1 si n =< 1
+= n * (n-1)! pour le reste
+= 1 * 2 * 3 * 4 * ... * n -1 * n
+
+int factorielle(int n) {
+    if(n =< 1) return 1;
+    else return n * fact(n - 1);
+}
+/* notion de récursivité croisée (ou mutuelle) -> parité / imparité (avec fonction booléenne)
+/* structure chainées - arbres (groupe de listes chainées) (racine ; noeuds (fils / pere / frères) ; arbre ; sous-arbre, niveau)
+/* notion de feuille - noeuds sans fils : 
+ -> degré d'un noeud : nombre de fils ; 
+ -> arbre binaire : tous les noeuds de degré 2 max ; 
+ -> profondeur d'un noeud ; 
+ -> hauteur d'un arbre ;
+/* implémentation des arbres binaires : utilisation de 2 structures : 1 pour les noeuds et 1 globale pour l'arbre ;
+class noeud
+{
+    <type> Info ;
+    Noeud *fg, *fd
+    public:
+        ...
+}
+class arbre
+{
+    Noeud *racine;
+    public:
+        ...
+}
+
+Arbre::Arbre() { racine = nullptr; }
+Arbre::Arbre(Noeud *n) { racine = n; }
+ou Arbre::Arbre(Noeud *n = nullptr) {racine = n}
+
+Noeud::Noeud(int I; Noeud *G ; Noeud D)
+{
+    info = I;
+    fg = G;
+    fd = 0;
+}
+
+Arbre A(new Noeud(12, new Noeud(7, new Noeud(16, nullptr, nullptr(new Noeud(4, nullptr, nullptr(new Noeud(2, nullptr, nullptr))))))))
+
+/-> Arbre Binaire ;
+/* soit vide        | nullptr   | Rien
+                    |           |
+/* soit 1 info      |           | Traiter I,
+; 2 arbres          | <I, G, D> | Parcourir G,
++ fg, fd.           |           | Parcourir D
+
+void parcourir(Noeud* n) {
+    if (n == nullptr) return;
+    cout << info;
+    parcourir(n->fg);
+    parcourir(n->fd);
+}
+
+-> Dans Arbre ;
+void Arbre::parcourir
+void Arbre::parcourir() { parcourir(racine); }
+
+-> Dans Noeud ;
+friend class Arbre;
