@@ -1,0 +1,226 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{listings}
+
+\geometry{margin=2.5cm}
+
+% Header and footer configuration
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Licence 1 Informatique}
+\fancyhead[R]{CERI - Avignon Université}
+\fancyfoot[C]{Mathématiques Discrètes \hfill TD1 - Manipuler la logique \hfill Page \thepage/3}
+
+% Title formatting
+\titleformat{\section}
+{\Large\bfseries}
+{\thesection}
+{1em}
+{}
+
+\titleformat{\subsection}
+{\large\bfseries}
+{\thesubsection}
+{1em}
+{}
+
+% Configuration listings pour pseudo-code
+\lstset{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\bfseries,
+    commentstyle=\itshape\color{gray},
+    frame=single,
+    breaklines=true,
+    showstringspaces=false
+}
+
+\begin{document}
+
+\begin{center}
+{\Huge\bfseries TD1 - Manipuler la logique} \\[0.5cm]
+{\large Hiver 2026} \\[0.3cm]
+\end{center}
+
+\vspace{0.5cm}
+
+L'objectif de ce TD est de manipuler les concepts de base de la logique afin de les prendre en main pour les maîtriser.
+
+\section{Formules et priorité}
+
+Ajoutez des parenthèses aux formules à priorités ci-dessous afin de les transformer en formules strictes équivalentes.
+
+\begin{enumerate}
+\item $p \vee q \vee r \vee s \vee t$
+\item $p \wedge q \wedge r \wedge s \wedge t$
+\item $p \Leftrightarrow \neg q \vee r$
+\item $p \vee q \Rightarrow r \wedge s$
+\item $p \vee q \Rightarrow r \Leftrightarrow s$
+\item $p \vee q \wedge r \Rightarrow \neg s$
+\item $p \Rightarrow r \wedge s \Rightarrow t$
+\item $p \vee q \wedge s \vee t$
+\item $p \wedge q \Leftrightarrow \neg r \vee s$
+\item $\neg p \wedge q \vee r \Rightarrow s \Leftrightarrow t$
+\end{enumerate}
+
+\section{Logique et français}
+
+Traduisez les phrases en français ci-dessous en formules logiques en précisant quelles variables sont utilisées pour quelles propositions.
+
+\begin{enumerate}
+\item Il est faux de dire que nous sommes des géants.
+\item Nous sommes inscrits à l'université mais pas à AMU.
+\item Les étudiants qui ont suivi des cours de mathématiques ou d'informatique peuvent s'inscrire.
+\item Je vais au ski cet hiver ou je voyage à l'étranger cet été, mais pas les deux.
+\item Il est nécessaire et suffisant d'être majeur pour avoir le droit de voter.
+\item Je suis riche seulement si je gagne à la loterie
+\item Si le temps est clément et que je suis en forme, alors je vais me balader
+\item Aujourd'hui n'est pas un jour férié.
+\item Je suis des cours de mathématiques et des cours d'informatique.
+\item S'il pleut, j'irai faire les courses. S'il ne pleut pas, j'irai faire les courses quand même, et j'irai en plus me balader à la plage.
+\end{enumerate}
+
+\section{Implication logique et français}
+
+Pour chacune des phrases en français suivantes, donnez la phrase correspondant à la proposition inverse, la proposition réciproque et la proposition contraposée. Précisez quelles phrases ont un sens équivalent.
+
+\begin{enumerate}
+\item S'il pleut, je vais faire les courses.
+\item J'ai mon diplôme seulement si je valide mon année.
+\item Si le temps est clément et que je suis en forme, alors je vais me balader
+\item Si le temps est clément ou que je suis en forme, alors je vais me balader
+\item Si le temps est clément, alors je vais me balader et manger une glace
+\item Si le temps est clément, alors je vais me balader ou manger une glace
+\item Si le temps est clément et que je suis en forme, alors je vais me balader et manger une glace
+\item Si le temps est clément et que je suis en forme, alors je vais me balader ou manger une glace
+\item Si le temps est clément ou que je suis en forme, alors je vais me balader et manger une glace
+\item Si le temps est clément ou que je suis en forme, alors je vais me balader ou manger une glace
+\end{enumerate}
+
+\section{Manipulation de formules}
+
+Montrez les équivalences suivantes en utilisant les équivalences remarquables :
+
+\begin{enumerate}
+\item $\neg(a \Rightarrow b) \equiv a \wedge \neg b$
+\item $a \wedge b \Rightarrow a \equiv \top$
+\item $a \Rightarrow a \vee b \equiv \top$
+\item $x \Rightarrow (y \wedge z) \equiv (x \Rightarrow y) \wedge (x \Rightarrow z)$
+\item $x \Rightarrow (y \vee z) \equiv (x \Rightarrow y) \vee (x \Rightarrow z)$
+\item $(a \vee b) \Rightarrow (c \wedge d) \equiv ((a \Rightarrow c) \wedge (a \Rightarrow d)) \wedge ((b \Rightarrow c) \wedge (b \Rightarrow d))$
+\item $(a \vee b) \Rightarrow (x \wedge y) \equiv (a \Rightarrow (x \wedge y)) \wedge (b \Rightarrow (x \wedge y))$
+\item $(a \wedge b) \Rightarrow (x \vee y) \equiv (a \Rightarrow x) \vee (b \Rightarrow y)$
+\item $(x \Rightarrow y) \Rightarrow x \equiv x \vee y$
+\item $\neg(x \Rightarrow y) \equiv x \Leftrightarrow \neg y$
+\end{enumerate}
+
+\section{Procédure booléenne}
+
+On fournit le pseudo-code de la procédure \texttt{booleenne1}.
+
+\begin{lstlisting}
+Procedure booleenne1()
+    x <- Entier aleatoire entre 1 et 10
+    y <- Entier aleatoire entre 1 et 10
+    Si x > y Alors
+        Renvoyer FAUX
+    Sinon
+        Renvoyer VRAI
+    FinSi
+FinProcedure
+\end{lstlisting}
+
+\begin{enumerate}
+\item Dans quel cas cette procédure renvoie-t-elle la valeur FAUX ?
+\item Dans quel cas cette procédure renvoie-t-elle la valeur VRAI ?
+\item Proposez une procédure \texttt{booleenne2} équivalente.
+\end{enumerate}
+
+\section{Quelques boucles}
+
+\begin{enumerate}
+\item On fournit le pseudo-code de la procédure \texttt{tirage1}. Que peut-on dire une fois cette exécution terminée ? Utilisez une formalisation logique afin de répondre.
+
+\begin{lstlisting}
+Procedure tirage1()
+    a <- Valeur du tirage d'une piece a pile ou face
+    b <- Valeur du tirage d'une piece a pile ou face
+    TantQue (a.estPile()&b.estPile())||(a.estFace()&b.estFace()) Faire
+        a <- Valeur du tirage d'une piece a pile ou face
+        b <- Valeur du tirage d'une piece a pile ou face
+    FinTantQue
+FinProcedure
+\end{lstlisting}
+
+\item On fournit le pseudo-code de la procédure \texttt{tirage2}. Que peut-on dire une fois cette exécution terminée ? Utilisez une formalisation logique afin de répondre.
+
+\begin{lstlisting}
+Procedure tirage2()
+    a <- Valeur du tirage d'une piece a pile ou face
+    b <- Valeur du tirage d'une piece a pile ou face
+    TantQue (a.estPile()&b.estPile())||(a.estFace()&!b.estFace()) Faire
+        a <- Valeur du tirage d'une piece a pile ou face
+        b <- Valeur du tirage d'une piece a pile ou face
+    FinTantQue
+FinProcedure
+\end{lstlisting}
+
+\item Peut-on simplifier ces programmes ?
+\end{enumerate}
+
+\section{Quelques conditionnelles}
+
+On fournit le pseudo-code de la procédure \texttt{conditionnelle1}. On donne les variables logiques et propositions suivantes :
+\begin{itemize}
+\item $a$ : ``$x \leq y$, connaissant $x$ et $y$.''
+\item $b$ : ``$x = y + 1$, connaissant $x$ et $y$.''
+\item $t$ : ``On affiche 'Titi' ''
+\item $o$ : ``On affiche 'Toto' ''
+\item $u$ : ``On affiche 'Tutu' ''
+\end{itemize}
+
+\begin{lstlisting}
+Procedure conditionnelle1()
+    x <- Valeur du tirage d'un de a 6 faces
+    y <- Valeur du tirage d'un de a 6 faces
+    Si x < y Alors
+        Afficher "Titi"
+    SinonSi x = y + 1 Alors
+        Afficher "Toto"
+    Sinon
+        Afficher "Tutu"
+    FinSi
+FinProcedure
+\end{lstlisting}
+
+\begin{enumerate}
+\item Exprimez en fonction de $a$ et $b$ le cas où on affiche 'Titi', c'est-à-dire lorsque la variable $t$ est vraie. Donnez la proposition correspondant à cette formule logique.
+
+\item Exprimez en fonction de $a$ et $b$ le cas où on affiche 'Toto', c'est-à-dire lorsque la variable $o$ est vraie. Donnez la proposition correspondant à cette formule logique.
+
+\item Exprimez en fonction de $a$ et $b$ le cas où on affiche 'Tutu', c'est-à-dire lorsque la variable $u$ est vraie. Donnez la proposition correspondant à cette formule logique.
+
+\item Complétez les conditions dans la procédure suivante, afin qu'elle soit équivalente à \texttt{conditionnelle1}.
+
+\begin{lstlisting}
+Procedure conditionnelle2()
+    x <- Valeur du tirage d'un de a 6 faces
+    y <- Valeur du tirage d'un de a 6 faces
+    Si ............. Alors
+        Afficher "Tutu"
+    SinonSi ............ Alors
+        Afficher "Titi"
+    Sinon
+        Afficher "Toto"
+    FinSi
+FinProcedure
+\end{lstlisting}
+\end{enumerate}
+
+\end{document}

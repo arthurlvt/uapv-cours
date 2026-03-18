@@ -37,7 +37,7 @@ ou Arbre::Arbre(Noeud *n = nullptr) {racine = n}
 Noeud::Noeud(int I; Noeud *G ; Noeud D)
 {
     info = I;
-    fg = G;
+    fg = G;x
     fd = 0;
 }
 

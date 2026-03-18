@@ -525,3 +525,70 @@ Calculons la cardinalité de ce nouvel ensemble en tenant compte des contraintes
 En total, le nombre de tee-shirts différents dans la nouvelle collection avec les contraintes est :
 9 (coupe homme M) + 9 (coupe homme L) + 4 (coupe homme XL) + 4 (coupe homme XXL) + 4 (coupe femme XS) + 4 (coupe femme S) + 9 (coupe neutre M) + 9 (coupe neutre L) = 52
 Il y a 52 tee-shirts différents dans la nouvelle collection en tenant compte des contraintes.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+TD7: Permutations et Combinaisons - Correction
+
+EXO 1: Quelques calculs
+1. Combien de façons existe-il de sélectionner 5 élements dans ordre dans un ensemble de 3 élements
+si les répétitions des éléments sont autorisées ?
+-> Ensemble de n = 3 éléments, 5 élements à sélectionner (ordonnés) : n^k = 3^5 = 243
+2. Combien de façons existe-il de sélectionner 5 élements dans ordre dans un ensemble de 5 élements
+si les répétitions des éléments sont autorisées ?
+-> Ensemble de n = 5 éléments, 5 élements à sélectionner (ordonnés) : n^k = 5^5 = 3125
+3. Combien de chaines de caractères peut-on former si ;
+ a) seule les lettres en minuscules sont autorisées ?
+ b) les lettres en minuscules et les lettres en majuscules sont autorisés ?
+ c) les lettres en minuscules les lettres en majuscules et les chiffres sont autorisés ?
+-> a) 26 lettres en minuscules longueur de la chaine k : 26^k
+-> b) 26 lettres en minuscules + 26 lettres en majuscules = 52 caractères, longueur de la chaine k : 52^k
+-> c) 26 lettres en minuscules + 26 lettres en majuscules + 10 chiffres = 62 caractères, longueur de la chaine k : 62^k
+4. Combien de façons existe-il de distribuer 3 tâches à réaliser à 5 employés, si chaque employé peut effectuer 0, 1, 2 ou 3 tâches ?
+-> Ensemble de n = 5 employés, 3 tâches à distribuer (ordonnées) : n^k = 5^3 = 125
+5. Chaque jours, je prends un sandwich au hasard dans une pile contenant de nombreux exemplaires de 6 sandwichs différents.
+Si le ordre de sélection des sandwichs compte combien de façons existe-il de choisir les sandwichs pendant une semaine (7 jours) ?;
+-> Ensemble de n = 6 sandwichs, 7 jours à sélectionner (ordonnés) : n^k = 6^7 = 279 936
+
+EXO 2: A la boulangerie :
+[RAPPEL: (n, k) = n! / (k! * (n - k)!)]
+1. Le nombre de assortissements de 6 petits pains est de 8^6 = 262 144
+/-> (k + n - 1)! / (k! * (n - 1)!) = 13! / (6! * 7!) = 1716
+2. Le nombre de assortissements de 12 petits pains est de 8^12 = 68 719 476 736
+/-> (19, 12) = 19! / (12! * 7!) = 50388
+3. Le nombre de assortissements de 24 petits pains est de 8^24 = 18 446 744 073 709 551 616
+/-> (31, 24) = 31! / (24! * 7!) = 2629575
+4. Le nombre de assortissements de 12 petits pains contenant au moins un de chaque variétés est de 8! * 8^4 = 1 290 240
+/-> Si on veut au moins un pain de chaque variété ;
+C, N, M, B, R, S, G, F x x x x <=> On calcul le nombre de 4-combinaisons parmi 11 avec répétitions ;
+(11, 4) = 11! / (4! * 7!) = 330
+Ensuite, on multiplie par 8! pour les différentes façons de choisir les 8 pains différents ;
+330 * 8! = 1 290 240
+
+
+EXO 3: A la pizzeria :
+-> Un traiteur propose de réaliser des livraisons de pizzas pour des fêtes. Ils ont à la carte les pizzas suivantes :
+- Margherita
+- Jambon Fromage
+- 3 Fromages
+- Poulet Crème
+- Saumon Pommes de terre
+- Aubergines
+1. Combien existe-il de commandes possibles de 12 pizzas ?
+-> Ensemble de n = 6 pizzas, 12 pizzas à sélectionner (ordonnées) : n^k = 6^12 = 2 176 782 336
+2. Combien existe-il de commandes possibles de 36 pizzas ?
+-> Ensemble de n = 6 pizzas, 36 pizzas à sélectionner (ordonnées) : n^k = 6^36 = 2 176 782 336^3 = 1 031 442 606 796 976 000 000
+3. Combien existe-il de commandes possibles de 24 pizzas avec au moins 2 de chaque variété ?
+-> Si on veut au moins 2 pizzas de chaque variété ;
+M, J, F, P, S, A x x x x x x <=> On calcul le nombre de 12-combinaisons parmi 17 avec répétitions ;
+(17, 12) = 17! / (12! * 5!) = 6188
+Ensuite, on multiplie par 6! pour les différentes façons de choisir les 6 pizzas différentes ;
+6188 * 6! = 4 461 120
+4. Combien existe-il de commandes possibles de 24 pizzas ne contenant pas plus de 2 margherita ?
+-> Si on veut au plus 2 pizzas de Margherita ;
+M x x <=> On calcul le nombre de 22-combinaisons parmi 6 avec répétitions ;
+(27, 22) = 27! / (22! * 5!) = 80730
+Ensuite, on multiplie par 6! pour les différentes façons de choisir les 6 pizzas différentes ;
+80730 * 6! = 5 647 200
