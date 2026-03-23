@@ -5,24 +5,49 @@ saut = "\n"
 # --------------- EXERCICE 1 --------------- #
 def exercice1():
     print("------ EXERCICE 1 ------", saut)
-    A = 3 * np.ones((3, 3)) + 2 * np.eye(3)
-    B = np.eye(3)
-    B[:, 0] = 1
+    # VERSION 1 DE LA MATRICE A
+    A = np.array([[5, 3, 3],
+                  [3, 5, 3],
+                  [3, 3, 5]])
+    # VERSION 2 DE LA MATRICE A
+    Abis = 3 * np.ones((3, 3)) + 2 * np.eye(3)
+    
+    # VERSION 1 DE LA MATRICE B
+    B = np.array([[1, 0, 0],
+                  [1, 1, 0],
+                  [1, 0, 1]])
+    # VERSION 2 DE LA MATRICE B
+    Bbis = np.eye(3)
+    Bbis[:, 0] = 1
+
+    # VERSION 1 DE LA MATRICE C
+    C = np.array([[1, 2, 3, 4],
+                  [5, 6, 7, 8],
+                  [9, 10, 11, 12],
+                  [13, 14, 15, 16]])
+    # VERSION 2 DE LA MATRICE C
     Csize = 4
-    C = np.eye(Csize)
+    Cbis = np.eye(Csize)
     j = 1
     for i in range(Csize):
         for k in range(Csize):
             C[i, k] = j
             j += 1
+
+    # VERSION 1 DE LA MATRICE D
+    D = np.array([[1, 2, 3, 4],
+                  [1, 2, 3, 4],
+                  [1, 2, 3, 4],
+                  [1, 2, 3, 4]])
+    # VERSION 2 DE LA MATRICE D
     Dsize = 4
-    D = np.eye(Dsize)
+    Dbis = np.eye(Dsize)
     for i in range(Dsize):
-        D[:, i] = i + 1
-    print("Matrice A:", saut, A, saut)
-    print("Matrice B:", saut, B, saut)
-    print("Matrice C:", saut, C, saut)
-    print("Matrice D:", saut, D, saut)
+        Dbis[:, i] = i + 1
+    print("Matrice A:", saut, Abis, saut)
+    print("Matrice B:", saut, Bbis, saut)
+    print("Matrice C:", saut, Cbis, saut)
+    print("Matrice D:", saut, Dbis, saut)
 
 
 # --------------- EXERCICE 2 --------------- #
@@ -186,11 +211,11 @@ def exercice10():
     A = np.random.uniform(-5, 5, (5, 3))
     print("Matrice d'origine:", saut, A, saut)
     
-    # Version 1 : avec boucles
+    # VERSION AVEC BOUCLE
     B = A.copy()
-    n = B.shape[0]  # nombre d'individus (lignes)
-    for j in range(B.shape[1]):  # pour chaque caractéristique (colonne)
-        # Calcul de la moyenne m
+    n = B.shape[0]
+    for j in range(B.shape[1]):
+        # Calcul de la moyenne
         m = 0
         for i in range(n):
             m += B[i, j]
@@ -204,10 +229,9 @@ def exercice10():
         for i in range(n):
             B[i, j] = (B[i, j] - m) / et
     print("Normalisée (boucle):", saut, B, saut)
-    
-    # Version 2 : avec numpy
-    m = np.mean(A, axis=0)      # moyenne de chaque colonne
-    et = np.std(A, axis=0)      # écart-type de chaque colonne
+    # VERSION AVEC NUMPY
+    m = np.mean(A, axis=0) # moyenne de chaque colonne
+    et = np.std(A, axis=0) # écart-type de chaque colonne
     C = (A - m) / et
     print("Normalisée (numpy):", saut, C, saut)
     
