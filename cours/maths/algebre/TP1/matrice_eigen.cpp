@@ -12,51 +12,27 @@ void MatrixExo1() {
     cout << "------ EXERCICE 1 ------" << endl;
     // VERSION 1 DE LA MATRICE A
     MatrixXd A(3, 3);    
-    A(0, 0) = 5;
-    A(0, 1) = 3;
-    A(0, 2) = 3;
-    A(1, 0) = 3;
-    A(1, 1) = 5;
-    A(1, 2) = 3;
-    A(2, 0) = 3;
-    A(2, 1) = 3;
-    A(2, 2) = 5;
+    A << 5, 3, 3,
+         3, 5, 3,
+         3, 3, 5;
     // VERSION 2 DE LA MATRICE A
     MatrixXd Abis = 3 * MatrixXd::Ones(3, 3) + 2 * MatrixXd::Identity(3, 3); // On commence par une matrice de 3, puis on ajoute 2 à la diagonale pour obtenir les 5
 
     // VERSION 1 DE LA MATRICE B
     MatrixXd B(3, 3);
-    B(0, 0) = 1;
-    B(0, 1) = 0;
-    B(0, 2) = 0;
-    B(1, 0) = 0;
-    B(1, 1) = 1;
-    B(1, 2) = 1;
-    B(2, 0) = 1;
-    B(2, 1) = 0;
-    B(2, 2) = 1;
+    B << 1, 0, 0,
+         0, 1, 1,
+         1, 0, 1;
     // VERSION 2 DE LA MATRICE B
     MatrixXd Bbis = MatrixXd::Identity(3, 3); // On commence par la matrice identité
     Bbis.col(0) = VectorXd::Ones(3); // On remplace la première colonne par des 1
 
     // VERSION 1 DE LA MATRICE C
     MatrixXd C(4, 4);
-    C(0, 0) = 1;
-    C(0, 1) = 2;
-    C(0, 2) = 3;
-    C(0, 3) = 4;
-    C(1, 0) = 5;
-    C(1, 1) = 6;
-    C(1, 2) = 7;
-    C(1, 3) = 8;
-    C(2, 0) = 9;
-    C(2, 1) = 10;
-    C(2, 2) = 11;
-    C(2, 3) = 12;
-    C(3, 0) = 13;
-    C(3, 1) = 14;
-    C(3, 2) = 15;
-    C(3, 3) = 16;
+    C << 1, 2, 3, 4,
+         5, 6, 7, 8,
+         9, 10, 11, 12,
+         13, 14, 15, 16;
     // VERSION AVEC EIGEN
     MatrixXd Cbis(4, 4);
     for (int i = 0; i < 4; i++) {
@@ -67,22 +43,10 @@ void MatrixExo1() {
 
     // VERSION 1 DE LA MATRICE D
     MatrixXd D(4,4);
-    D(0, 0) = 1;
-    D(0, 1) = 2;
-    D(0, 2) = 3;
-    D(0, 3) = 4;
-    D(1, 0) = 1;
-    D(1, 1) = 2;
-    D(1, 2) = 3;
-    D(1, 3) = 4;
-    D(2, 0) = 1;
-    D(2, 1) = 2;
-    D(2, 2) = 3;
-    D(2, 3) = 4;
-    D(3, 0) = 1;
-    D(3, 1) = 2;
-    D(3, 2) = 3;
-    D(3, 3) = 4;
+    D << 1, 2, 3, 4,
+         1, 2, 3, 4,
+         1, 2, 3, 4,
+         1, 2, 3, 4;
     // VERSION 2 DE LA MATRICE D
     MatrixXd Dbis(4, 4);
     for(int i = 0; i < 4; i++) {
@@ -110,20 +74,9 @@ void MatrixExo2() {
     cout << "------ EXERCICE 2 ------" << endl;
     // VERSION 1 DE LA MATRICE B2
     MatrixXd B2(3, 3);
-    B2(0, 0) = 1;
-    B2(0, 1) = 1;
-    B2(0, 2) = 0;
-    B2(1, 0) = 1;
-    B2(1, 1) = -1;
-    B2(1, 2) = 1;
-    B2(2, 0) = 1;
-    B2(2, 1) = 0;
-    B2(2, 2) = 1;
-    // VERSION 2 DE LA MATRICE B2
-    MatrixXd B2bis(3, 3);
-    B2bis << 1, 1, 0,
-             1, -1, 1,
-             1, 0, 1;
+    B2 << 1, 1, 0,
+          1, -1, 1,
+          1, 0, 1;
     // verifier que B est inversible
     if (B2.determinant() != 0) {
         cout << "La matrice B2 est inversible." << endl;
@@ -141,8 +94,6 @@ void MatrixExo2() {
     VectorXd b_check = B2 * x;
     cout << "Vérification : B2 * x = " << endl << b_check.format(matFmt) << endl;
     cout << "Matrice B2 : " << endl << B2.format(matFmt) << endl;
-    cout << "Matrice B2bis : " << endl << B2bis.format(matFmt) << endl;
-
 }
 
 

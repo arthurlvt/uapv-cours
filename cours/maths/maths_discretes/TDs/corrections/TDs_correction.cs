@@ -592,3 +592,124 @@ M x x <=> On calcul le nombre de 22-combinaisons parmi 6 avec répétitions ;
 (27, 22) = 27! / (22! * 5!) = 80730
 Ensuite, on multiplie par 6! pour les différentes façons de choisir les 6 pizzas différentes ;
 80730 * 6! = 5 647 200
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+TD8: Principe inclusion-exclusion et dérangements - Correction
+EXO 1: Appliquer les bases du principe de inclusion-exclusion
+-> Soit 2 ensembles E1 et E2 tels que |E1| = 12 et |E2| = 18.
+1. Quelle est la cardinalité de E1 ∪ E2 si E1 ∩ E2 = ∅ ?
+Si E1 et E2 sont disjoints, alors |E1 ∪ E2| = |E1| + |E2| = 12 + 18 = 30
+2. Quelle est la cardinalité de E1 ∪ E2 si |E1 ∩ E2| = 1 ?
+Si E1 et E2 sont disjoints, alors |E1 ∪ E2| = |E1| + |E2| - |E1 ∩ E2| = 12 + 18 - 1 = 29
+3. Quelle est la cardinalité de E1 ∪ E2 si |E1 ∩ E2| = 5 ?
+Si E1 et E2 ont une intersection de cardinalité 5, alors |E1 ∪ E2| = |E1| + |E2| - |E1 ∩ E2| = 12 + 18 - 5 = 25
+4. Quelle est la cardinalité de E1 ∪ E2 si |E1 ∩ E2| = 10 ?
+Si E1 et E2 ont une intersection de cardinalité 10, alors |E1 ∪ E2| = |E1| + |E2| - |E1 ∩ E2| = 12 + 18 - 10 = 20
+5. Quelle est la cardinalité de E1 ∪ E2 si E1 ⊆ E2 ?
+Si E1 est un sous-ensemble de E2, alors |E1 ∪ E2| = |E2| = 18
+
+EXO 2: Comprendre la formule du principe général de inclusion-exclusion
+1. Soit 3 ensembles A, B, C, contenant chacun 100 éléments.
+(a). Développer la formule donnant la cardinalité de A ∪ B ∪ C.
+|A ∪ B ∪ C| = |A| + |B| + |C| - |A ∩ B| - |A ∩ C| - |B ∩ C| + |A ∩ B ∩ C|
+(b). Quelle est la cardinalité de A ∪ B ∪ C si les 3 ensembles sont disjoints ?
+Si A, B et C sont disjoints, alors |A ∪ B ∪ C| = |A| + |B| + |C| = 100 + 100 + 100 = 300
+(c). Quelle est la cardinalité de A ∪ B ∪ C si chaque paire de ensembles contient 50 élements mais que aucun élement est présent dans les 3 ensembles ?
+Si chaque paire de ensembles contient 50 éléments, alors |A ∩ B| = |A ∩ C| = |B ∩ C| = 50 et |A ∩ B ∩ C| = 0
+Donc, |A ∪ B ∪ C| = |A| + |B| + |C| - |A ∩ B| - |A ∩ C| - |B ∩ C| + |A ∩ B ∩ C| = 100 + 100 + 100 - 50 - 50 - 50 + 0 = 150
+(d). Quelle est la cardinalité de A ∪ B ∪ C si chaque paire de ensembles contient 50 élements mais que 25 élement sont présent dans les 3 ensembles ?
+Si chaque paire de ensembles contient 50 éléments, alors |A ∩ B| = |A ∩ C| = |B ∩ C| = 50 et |A ∩ B ∩ C| = 25
+Donc, |A ∪ B ∪ C| = |A| + |B| + |C| - |A ∩ B| - |A ∩ C| - |B ∩ C| + |A ∩ B ∩ C| = 100 + 100 + 100 - 50 - 50 - 50 + 25 = 175
+(e). Quelle est la cardinalité de A ∪ B ∪ C si ces 3 ensembles sont égaux ?
+Si A, B et C sont égaux, alors |A ∩ B| = |A ∩ C| = |B ∩ C| = |A ∩ B ∩ C| = 100
+Donc, |A ∪ B ∪ C| = |A| + |B| + |C| - |A ∩ B| - |A ∩ C| - |B ∩ C| + |A ∩ B ∩ C| = 100 + 100 + 100 - 100 - 100 - 100 + 100 = 100
+
+2. Soit 4 ensembles A, B, C, D avec |A| = 10, |B| = 100, |C| = 1000, |D| = 10 000
+(a). Développer la formule donnant la cardinalité de A ∪ B ∪ C ∪ D.
+|A ∪ B ∪ C ∪ D| = |A| + |B| + |C| + |D| - |A ∩ B| - |A ∩ C| - |A ∩ D| - |B ∩ C| - |B ∩ D| - |C ∩ D| + |A ∩ B ∩ C| + |A ∩ B ∩ D| + |A ∩ C ∩ D| + |B ∩ C ∩ D| - |A ∩ B ∩ C ∩ D|
+(b). Quelle est la cardinalité de A ∪ B ∪ C ∪ D si A ⊆ B, B ⊆ C, C ⊆ D ?
+Si A ⊆ B, B ⊆ C, C ⊆ D, alors |A ∪ B ∪ C ∪ D| = |D| = 10 000
+(c). Quelle est la cardinalité de A ∪ B ∪ C ∪ D si les 4 ensembles sont disjoints ?
+Si A, B, C et D sont disjoints, alors |A ∪ B ∪ C ∪ D| = |A| + |B| + |C| + |D| = 10 + 100 + 1000 + 10 000 = 11 110
+(d). Quelle est la cardinalité de A ∪ B ∪ C ∪ D si chaque paire de ensembles contient 2 élements et chaque triplet de ensembles contient 1 élement et que aucun élement est présent dans les 4 ensembles ?
+Si chaque paire de ensembles contient 2 éléments, alors |A ∩ B| = |A ∩ C| = |A ∩ D| = |B ∩ C| = |B ∩ D| = |C ∩ D| = 2 (6 manieres donc 12 éléments au total)
+Si chaque triplet de ensembles contient 1 élément, alors |A ∩ B ∩ C| = |A ∩ B ∩ D| = |A ∩ C ∩ D| = |B ∩ C ∩ D| = 1 (4 manieres donc 4 éléments au total)
+Si aucun élément est présent dans les 4 ensembles, alors |A ∩ B ∩ C ∩ D| = 0
+Donc, |A ∪ B ∪ C ∪ D| = |A| + |B| + |C| + |D| - |A ∩ B| - |A ∩ C| - |A ∩ D| - |B ∩ C| - |B ∩ D| - |C ∩ D| + |A ∩ B ∩ C| + |A ∩ B ∩ D| + |A ∩ C ∩ D| + |B ∩ C ∩ D| - |A ∩ B ∩ C ∩ D| = 10 + 100 + 1000 + 10 000 - 12 + 4 - 0 = 11 102
+(e). Quellle est la cardinalité de A ∪ B ∪ C ∪ D si chaque paire de ensembles contient 3 élements et chaque triplet de ensembles contient 3 élement et que 3 élement sont présents dans les 4 ensembles ?
+Si chaque paire de ensembles contient 3 éléments, alors |A ∩ B| = |A ∩ C| = |A ∩ D| = |B ∩ C| = |B ∩ D| = |C ∩ D| = 3 (6 manieres donc 18 éléments au total)
+Si chaque triplet de ensembles contient 3 éléments, alors |A ∩ B ∩ C| = |A ∩ B ∩ D| = |A ∩ C ∩ D| = |B ∩ C ∩ D| = 3 (4 manieres donc 12 éléments au total)
+Si 3 éléments sont présents dans les 4 ensembles, alors |A ∩ B ∩ C ∩ D| = 3
+Donc, |A ∪ B ∪ C ∪ D| = |A| + |B| + |C| + |D| - |A ∩ B| - |A ∩ C| - |A ∩ D| - |B ∩ C| - |B ∩ D| - |C ∩ D| + |A ∩ B ∩ C| + |A ∩ B ∩ D| + |A ∩ C ∩ D| + |B ∩ C ∩ D| - |A ∩ B ∩ C ∩ D| = 10 + 100 + 1000 + 10 000 - 18 + 12 - 3 = 11 101
+-> (A réviser avec la giga formule générale de inclusion-exclusion pour n ensembles) :
+  n        n
+| U E_i| = ∑(-1)^(k+1)(        ∑             | E_i1 ∩ E_i2 ∩ ... ∩ E_ik |)
+ i=1      k=1          1 =< i < ... < i =< n
+-> RESUMÉ: On fait la somme de chaque union de 1 ensemble puis on soustrait la somme de chaque union de 2 ensembles puis on ajoute la somme de chaque union de 3 ensembles puis on soustrait la somme de chaque union de 4 ensembles etc ;
+
+EXO 3: Modélisation
+1. Soit un panier de 100 pommes. 20 parmis elles sont véreuses 15 sont abîmées et 10 sont véreuses et abîmées. On ne peut vendre que les pommes qui ne sont ni véreuses ni abîmées. Combien de pommes du panier peut-on vendre ?
+Soit V : ensemble des pommes véreuses et A: ensemble des pommes abîmées
+|V| = 20, |A| = 15, |V ∩ A| = 10
+Le nombre de pommes qui ne sont ni véreuses ni abîmées est donné par la @formule du principe de inclusion-exclusion :
+|V^c ∩ A^c| = |V^c| + |A^c| - |V^c ∪ A^c|
+|V^c| = 100 - |V| = 80
+|A^c| = 100 - |A| = 85
+|V^c ∪ A^c| = 100 - |V ∩ A| = 90
+Donc, |V^c ∩ A^c| = 80 + 85 - 90 = 75
+On peut vendre 75 pommes du panier.
+
+2. 
+Une association sportive propose une excursion alpinisme et reçoit 1000 candidatures. Parmis ces candidatures, 450 ont le vertige puis 622 sont en mauvaise condition physique et 30 on est sévères allergies.
+- On sait que 111 candidats ont à la fois le vertige et une mauvaise condition physique
+- On sait que 14 candidats ont la fois le vertige et des allergies sévères
+- On sait que 18 candidats sont à la fois en mauvaise condition physique et ont des allergies sévères
+- On sait que 9 candidats ont le vertige une mauvaise condition physique et des allergies sévères
+Les seules candidatures recevables sont celles de personnes en bonne condition physique qui ont pas le vertige et qui ont pas des allergies sévères. 
+Combien de candidatures recevables cette association reçoit-elle ?
+
+Soit V : ensemble des candidats ayant le vertige
+     C : ensemble des candidats en mauvaise condition physique
+     A : ensemble des candidats ayant des allergies sévères
+|V| = 450, |C| = 622, |A| = 30
+|V ∩ C| = 111, |V ∩ A| = 14, |C ∩ A| = 18
+|V ∩ C ∩ A| = 9
+Le nombre de candidatures recevables est donné par la formule du principe de inclusion-exclusion :
+|V^c ∩ C^c ∩ A^c| = |V^c| + |C^c| + |A^c| - |V^c ∩ C^c| - |V^c ∩ A^c| - |C^c ∩ A^c| + |V^c ∩ C^c ∩ A^c|
+On regarde les différentes parties de la formule:
+|V^c| = 1000 - |V| = 550
+|C^c| = 1000 - |C| = 378
+|A^c| = 1000 - |A| = 970
+On regarde ensuite les doublets:
+|V^c ∩ C^c| = 1000 - |V ∩ C| = 889
+|V^c ∩ A^c| = 1000 - |V ∩ A| = 986
+|C^c ∩ A^c| = 1000 - |C ∩ A| = 982
+Puis on regarde le triplet:
+|V^c ∩ C^c ∩ A^c| = 1000 - |V ∩ C ∩ A| = 991
+Donc, |V^c ∩ C^c ∩ A^c| = 550 + 378 + 970 - 889 - 986 - 982 + 991 = 942
+Il y a 942 candidatures recevables que cette association reçoit.
+
+3.
+A une soirée, chaque invité peut mettre des accessoires. Les accessoires à disposition sont des lunettes des chapeaux des vestes et des cravates.
+Les invités peuvent mettre plusieurs accessoires mais pas plusieurs fois le même accessoire. Chacun des accessoires est porté par 10 personnes. Chaque paire
+de accessoire est portée par 5 personnes. Chaque ensemble de 3 accessoires est porté par 3 personnes et une seule personne a choisi de porter 4 accessoires.
+Si tous les invités portent au moins un accessoire combien de invités y a-t-il à cette soirée ?
+
+Soit L : ensemble des invités portant des lunettes
+     C : ensemble des invités portant des chapeaux
+     V : ensemble des invités portant des vestes
+     R : ensemble des invités portant des cravates
+|L| = |C| = |V| = |R| = 10
+|L ∩ C| = |L ∩ V| = |L ∩ R| = |C ∩ V| = |C ∩ R| = |V ∩ R| = 5
+|L ∩ C ∩ V| = |L ∩ C ∩ R| = |L ∩ V ∩ R| = |C ∩ V ∩ R| = 3
+|L ∩ C ∩ V ∩ R| = 1
+Le nombre des invités à cette soirée est donné par la formule du principe de inclusion-exclusion :
+|L ∪ C ∪ V ∪ R| = |L| + |C| + |V| + |R| - |L ∩ C| - |L ∩ V| - |L ∩ R| - |C ∩ V| - |C ∩ R| - |V ∩ R| + |L ∩ C ∩ V| + |L ∩ C ∩ R| + |L ∩ V ∩ R| + |C ∩ V ∩ R| - |L ∩ C ∩ V ∩ R|
+Donc, |L ∪ C ∪ V ∪ R| = 10 + 10 + 10 + 10 - 5 - 5 - 5 - 5 - 5 - 5 + 3 + 3 + 3 + 3 - 1 = 28
+Il y a 28 invités à cette soirée.
+

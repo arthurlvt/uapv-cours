@@ -37,3 +37,5 @@ grep -f<(cat result.txt)
 EXERCICE COMMANDE FIND
 2. find . -name "*.cc"
 3. find . -name "san*"
+4. find . -iname "san*"
+5. 
