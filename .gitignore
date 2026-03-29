@@ -1,6 +1,6 @@
 cours/CMI-Projets/
-cours/maths/analyse1/ressources/
-cours/maths/base_maths/ressources/
+cours/maths/archives/analyse1/ressources/
+cours/maths/archives/base_maths/ressources/
 cours/fondementInformatique/ressources/
 cours/maths_discretes/chap1-logique&raisonnement.pdf
 cours/maths_discretes/chap2-combinatoire.pdf
@@ -12,4 +12,5 @@ cours/programmation/introSysE/
 cours/anglais.txt
 cours/cours.txt
 .vscode/
-cours/.vscode
+cours/.vscode/
+**/.DS_Store
