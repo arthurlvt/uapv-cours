@@ -1,0 +1,26 @@
+import RPi.GPIO as GPIO
+import time
+
+# Définissez les broches GPIO que vous avez utilisées pour le contrôle du moteur
+DIR = 20  # Remplacez par le numéro de la broche GPIO que vous avez utilisée pour le contrôle de la direction
+STEP = 21  # Remplacez par le numéro de la broche GPIO que vous avez utilisée pour le contrôle des pas
+
+# Configuration des broches GPIO
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(DIR, GPIO.OUT)
+GPIO.setup(STEP, GPIO.OUT)
+
+# Fonction pour faire tourner le moteur
+def rotate_motor(steps, direction):
+    GPIO.output(DIR, direction)
+    for _ in range(steps):
+        GPIO.output(STEP, GPIO.HIGH)
+        time.sleep(0.005)  # Réglage de la vitesse de rotation
+        GPIO.output(STEP, GPIO.LOW)
+        time.sleep(0.005)
+
+# Exemple : Faire tourner le moteur de 200 pas dans le sens des aiguilles d'une montre
+rotate_motor(200, GPIO.HIGH)
+
+# Nettoyage des broches GPIO
+GPIO.cleanup()

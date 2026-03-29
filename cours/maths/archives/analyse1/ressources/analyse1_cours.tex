@@ -1,0 +1,385 @@
+\documentclass[a4paper,11pt]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+
+% Configuration de la page
+\geometry{margin=2cm}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Analyse 1}
+\fancyhead[R]{Résumé de cours}
+\fancyfoot[C]{\thepage}
+
+% Environnements personnalisés
+\tcbuselibrary{theorems}
+
+\newtcolorbox{defbox}[1]{
+    colback=blue!5!white,
+    colframe=blue!75!black,
+    fonttitle=\bfseries,
+    title=#1
+}
+
+\newtcolorbox{propbox}[1]{
+    colback=green!5!white,
+    colframe=green!75!black,
+    fonttitle=\bfseries,
+    title=#1
+}
+
+\newtcolorbox{theorembox}[1]{
+    colback=red!5!white,
+    colframe=red!75!black,
+    fonttitle=\bfseries,
+    title=#1
+}
+
+\newtcolorbox{methodbox}[1]{
+    colback=orange!5!white,
+    colframe=orange!75!black,
+    fonttitle=\bfseries,
+    title=#1
+}
+
+% Titre
+\title{\textbf{Analyse 1} \\ Résumé de cours}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Les nombres réels : Généralités et propriétés}
+
+\begin{defbox}{Définition : Majorant minorant borné}
+Soit $A$ une partie non-vide de $\mathbb{R}$ :
+\begin{itemize}
+    \item $M \in \mathbb{R}$ est \textbf{majorant} de $A$ si $\forall a \in A, \; a \leq M$
+    \item $m \in \mathbb{R}$ est \textbf{minorant} de $A$ si $\forall a \in A, \; a \geq m$
+    \item $A$ est \textbf{bornée} si elle est à la fois majorée et minorée
+\end{itemize}
+\end{defbox}
+
+\begin{defbox}{Définition : Maximum et minimum}
+\begin{itemize}
+    \item $M$ est le \textbf{maximum} de $A$ si $M$ est un majorant de $A$ et $M \in A$
+    \item $m$ est le \textbf{minimum} de $A$ si $m$ est un minorant de $A$ et $m \in A$
+\end{itemize}
+\end{defbox}
+
+\begin{defbox}{Définition : Supremum et infimum}
+\begin{itemize}
+    \item Si $A$ majorée : le \textbf{supremum} est le plus petit des majorants (noté sup $A$)
+    \item Si $A$ minorée : l'\textbf{infimum} est le plus grand des minorants (noté inf $A$)
+\end{itemize}
+\end{defbox}
+
+\section{Rappel sur les fonctions}
+
+\subsection{Fonctions croissante, décroissante, monotone}
+
+\begin{defbox}{Définition}
+Soit $f$ une fonction et $D \subseteq \mathbb{R}$ :
+\begin{itemize}
+    \item $f$ \textbf{croissante} sur $D$ : $\forall x, y \in D, \; x < y \Rightarrow f(x) \leq f(y)$
+    \item $f$ \textbf{décroissante} sur $D$ : $\forall x, y \in D, \; x < y \Rightarrow f(x) \geq f(y)$
+    \item $f$ \textbf{monotone} : si croissante ou décroissante
+\end{itemize}
+\end{defbox}
+
+\subsection{Fonctions paires et impaires}
+
+\begin{defbox}{Définition : Domaine symétrique}
+$D$ symétrique par rapport à 0 : $\forall x \in D, \; -x \in D$
+
+Sur un tel domaine :
+\begin{itemize}
+    \item $f$ \textbf{paire} : $\forall x \in D, \; f(-x) = f(x)$
+    \item $f$ \textbf{impaire} : $\forall x \in D, \; f(-x) = -f(x)$
+\end{itemize}
+\end{defbox}
+
+\subsection{Fonctions périodiques}
+
+\begin{defbox}{Définition : Fonction $T$-périodique}
+$f$ est $T$-périodique ($T > 0$) si : $\forall x \in D, \; f(x + T) = f(x)$
+\end{defbox}
+
+\newpage
+\section{Fonctions polynomiales et rationnelles}
+
+\subsection{Fonction polynomiale d'ordre $n$}
+
+\begin{defbox}{Définition}
+$P(x) = a_0 + a_1x + \ldots + a_nx^n$ avec $a_n \neq 0$
+\end{defbox}
+
+\subsection{Fonction rationnelle}
+
+\begin{defbox}{Définition}
+$F(x) = \frac{P(x)}{Q(x)}$ où $P$ et $Q$ sont des fonctions polynomiales
+\end{defbox}
+
+\section{Fonctions trigonométriques}
+
+\subsection{Cercle trigonométrique}
+
+\begin{propbox}{Propriétés importantes}
+\begin{itemize}
+    \item $M(a) \in \mathbb{R}$ correspond au point $M$ du cercle unité
+    \item Valeurs usuelles : 
+    \begin{itemize}
+        \item $\sin(0) = 0$, $\cos(0) = 1$
+        \item $\sin(\frac{\pi}{2}) = 1$, $\cos(\frac{\pi}{2}) = 0$
+        \item $\sin(\pi) = 0$, $\cos(\pi) = -1$
+    \end{itemize}
+\end{itemize}
+\end{propbox}
+
+\subsection{Formules d'addition}
+
+\begin{propbox}{Formules essentielles}
+\begin{align*}
+\cos(a + b) &= \cos a \cos b - \sin a \sin b \\
+\sin(a + b) &= \sin a \cos b + \cos a \sin b \\
+\cos(a - b) &= \cos a \cos b + \sin a \sin b \\
+\sin(a - b) &= \sin a \cos b - \cos a \sin b
+\end{align*}
+\end{propbox}
+
+\newpage
+\section{Limites et continuité}
+
+\subsection{Limites : rappels}
+
+\begin{defbox}{Définition : Taux de variation}
+$T_f(a,b) = \frac{f(b) - f(a)}{b - a}$
+\end{defbox}
+
+\subsection{Théorème de l'encadrement (Théorème des gendarmes)}
+
+\begin{theorembox}{Théorème}
+Si $g(x) \leq f(x) \leq h(x)$ et $\lim_{x \to a} g(x) = \lim_{x \to a} h(x) = \ell$
+
+Alors $\lim_{x \to a} f(x) = \ell$
+\end{theorembox}
+
+\subsection{Méthodes classiques de calcul de limites}
+
+\subsubsection{Limite d'une fonction polynomiale à l'infini}
+
+\begin{methodbox}{Méthode}
+Pour $P(x) = a_0 + a_1x + \ldots + a_nx^n$ avec $a_n \neq 0$ :
+
+\[\lim_{x \to \pm\infty} P(x) = \lim_{x \to \pm\infty} a_nx^n\]
+
+\textbf{Cas $n$ pair :}
+\begin{itemize}
+    \item Si $a_n > 0$ : $\lim_{x \to \pm\infty} P(x) = +\infty$
+    \item Si $a_n < 0$ : $\lim_{x \to \pm\infty} P(x) = -\infty$
+\end{itemize}
+
+\textbf{Cas $n$ impair :}
+\begin{itemize}
+    \item Si $a_n > 0$ : $\lim_{x \to +\infty} P(x) = +\infty$ et $\lim_{x \to -\infty} P(x) = -\infty$
+    \item Si $a_n < 0$ : $\lim_{x \to +\infty} P(x) = -\infty$ et $\lim_{x \to -\infty} P(x) = +\infty$
+\end{itemize}
+\end{methodbox}
+
+\subsubsection{Limite d'une fonction rationnelle à l'infini}
+
+\begin{methodbox}{Méthode}
+Pour $F(x) = \frac{P(x)}{Q(x)}$ avec $P$ de degré $n$ et $Q$ de degré $m$ :
+
+\begin{itemize}
+    \item Si $n = m$ : $\lim_{x \to \pm\infty} F(x) = \frac{a_n}{b_m}$
+    \item Si $m > n$ : $\lim_{x \to \pm\infty} F(x) = 0$
+    \item Si $n > m$ : la limite est $\pm\infty$ selon le signe de $\frac{a_n}{b_m}$ et la parité de $n - m$
+\end{itemize}
+\end{methodbox}
+
+\subsubsection{Limite en un pôle (quand $Q(a) = 0$)}
+
+\begin{methodbox}{Méthode}
+Pour $F(x) = \frac{P(x)}{Q(x)}$ avec $Q(a) = 0$ :
+
+On factorise : $Q(x) = (x - a)^p S(x)$ avec $S(a) \neq 0$
+
+De même pour $P$ si $P(a) = 0$
+
+Alors : $F(x) = (x - a)^m \frac{R(x)}{S(x)}$ avec $m \in \mathbb{Z}$
+
+\textbf{Cas :}
+\begin{itemize}
+    \item Si $m = 0$ : $\lim_{x \to a} F(x) = \frac{R(a)}{S(a)}$
+    \item Si $m < 0$ : étudier séparément $m$ pair et impair
+\end{itemize}
+\end{methodbox}
+
+\subsubsection{Forme indéterminée avec racines}
+
+\begin{methodbox}{Méthode : Quantité conjuguée}
+Pour calculer $\lim_{x \to +\infty} (\sqrt{x + 3} - \sqrt{x + 1})$ :
+
+\textbf{Astuce :} multiplier et diviser par la quantité conjuguée
+
+\[f(x) = \frac{(\sqrt{x + 3} - \sqrt{x + 1})(\sqrt{x + 3} + \sqrt{x + 1})}{\sqrt{x + 3} + \sqrt{x + 1}} = \frac{2}{\sqrt{x + 3} + \sqrt{x + 1}}\]
+
+Donc $\lim_{x \to +\infty} f(x) = 0$
+\end{methodbox}
+
+\subsection{Théorème de L'Hôpital}
+
+\begin{theorembox}{Théorème de L'Hôpital}
+Soit $f$ et $g$ deux fonctions dérivables au voisinage de $a$ (sauf peut-être en $a$).
+
+Si on a une forme indéterminée $\frac{0}{0}$ ou $\frac{\infty}{\infty}$ et que $\lim_{x \to a} \frac{f'(x)}{g'(x)}$ existe, alors :
+
+\[\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}\]
+
+\textbf{Attention :} Ce théorème s'applique aussi pour $a = \pm\infty$
+\end{theorembox}
+
+\begin{methodbox}{Application pratique}
+\textbf{Exemple :} Calculer $\lim_{x \to 0} \frac{\sin x}{x}$
+
+On a la forme indéterminée $\frac{0}{0}$
+
+En appliquant L'Hôpital : $\lim_{x \to 0} \frac{\sin x}{x} = \lim_{x \to 0} \frac{\cos x}{1} = 1$
+\end{methodbox}
+
+\newpage
+\section{Continuité}
+
+\subsection{Prolongement par continuité}
+
+\begin{defbox}{Définition}
+Soit $f : I \backslash \{x_0\} \to \mathbb{R}$ et $\ell = \lim_{x \to x_0} f(x)$
+
+On définit $\tilde{f}(x) = \begin{cases} f(x) & \text{si } x \neq x_0 \\ \ell & \text{si } x = x_0 \end{cases}$
+
+$\tilde{f}$ s'appelle le \textbf{prolongement par continuité} de $f$ en $x_0$
+\end{defbox}
+
+\subsection{Théorème des valeurs intermédiaires (TVI)}
+
+\begin{theorembox}{Théorème des valeurs intermédiaires}
+Soit $f$ continue sur $[a, b]$. Alors $f$ atteint toutes les valeurs comprises entre $f(a)$ et $f(b)$ :
+
+\[\forall y \in [\min(f(a), f(b)), \max(f(a), f(b))], \; \exists x \in [a, b] : y = f(x)\]
+\end{theorembox}
+
+\subsection{Théorème des bornes atteintes (TBA - Admis)}
+
+\begin{theorembox}{Théorème des bornes atteintes}
+Soit $f : [a, b] \to \mathbb{R}$ continue sur $[a, b]$. 
+
+Alors $f$ est bornée sur $[a, b]$ et atteint ses bornes :
+
+\[\exists \alpha, \beta \in [a, b] : f(\alpha) = \min_{x \in [a,b]} f(x) \text{ et } f(\beta) = \max_{x \in [a,b]} f(x)\]
+\end{theorembox}
+
+\newpage
+\section{Fonctions monotones et bijections}
+
+\subsection{Bijection}
+
+\begin{defbox}{Définition : Bijection}
+$f : D \to \mathbb{R}$ est une \textbf{bijection} de $D$ sur $D'$ si :
+\begin{enumerate}
+    \item $f(D) \subset D'$ (image incluse dans $D'$)
+    \item $\forall y \in D', \; \exists! x \in D : y = f(x)$ (tout élément de $D'$ a un unique antécédent)
+\end{enumerate}
+\end{defbox}
+
+\subsection{Bijection réciproque}
+
+\begin{defbox}{Définition : Bijection réciproque}
+Si $f : D \to D'$ est une bijection, la \textbf{bijection réciproque} $g : D' \to D$ vérifie :
+
+\[\forall y \in D', \; x = f^{-1}(y) \Leftrightarrow \begin{cases} x \in D \\ y = f(x) \end{cases}\]
+
+On note $g = f^{-1}$
+\end{defbox}
+
+\subsection{Théorème de la bijection}
+
+\begin{theorembox}{Théorème}
+Soit $f : I \to \mathbb{R}$ continue et strictement monotone sur $I = (a, b)$. Alors :
+\begin{enumerate}
+    \item $f$ établit une bijection de $I$ dans $J = f(I)$
+    \item La bijection réciproque $f^{-1}$ est continue et strictement monotone sur $J$, avec le même sens de variation que $f$
+\end{enumerate}
+\end{theorembox}
+
+\subsection{Exemples de fonctions réciproques}
+
+\subsubsection{Fonction carré et racine carrée}
+
+\begin{propbox}{Propriété}
+$f : [0, +\infty[ \to \mathbb{R}$ définie par $f(x) = x^2$ est une bijection de $[0, +\infty[$ sur $[0, +\infty[$
+
+La bijection réciproque est $f^{-1} : x \mapsto \sqrt{x}$
+\end{propbox}
+
+\subsubsection{Fonction cube et racine cubique}
+
+\begin{propbox}{Propriété}
+$f : \mathbb{R} \to \mathbb{R}$ définie par $f(x) = x^3$ est une bijection de $\mathbb{R}$ sur $\mathbb{R}$
+
+La bijection réciproque est $f^{-1}(x) = \sqrt[3]{x}$ ou $x^{1/3}$
+\end{propbox}
+
+\subsubsection{Racine $n$-ième}
+
+\begin{propbox}{Propriété : $n$ pair strictement positif}
+$f : [0, +\infty[ \to \mathbb{R}$ définie par $f(x) = x^n$ est une bijection sur $[0, +\infty[$
+
+La bijection réciproque est $f^{-1}(x) = \sqrt[n]{x} = x^{1/n}$
+
+Pour $n = 2$ : $\sqrt[2]{x} = \sqrt{x}$
+\end{propbox}
+
+\begin{propbox}{Propriété : $n$ impair positif}
+$f : \mathbb{R} \to \mathbb{R}$ définie par $f(x) = x^n$ est une bijection sur $\mathbb{R}$
+
+La bijection réciproque est $f^{-1}(x) = \sqrt[n]{x} = x^{1/n}$
+\end{propbox}
+
+\newpage
+\section{Fonctions circulaires réciproques}
+
+\subsection{Rappels}
+
+\begin{propbox}{Formules importantes}
+\begin{itemize}
+    \item $\forall x \in [-1, 1], \; \cos(\arccos x) = x$ et $\sin(\arcsin x) = x$
+    \item $\forall x \in \mathbb{R}, \; \tan(\arctan x) = x$
+\end{itemize}
+
+Et réciproquement :
+\begin{itemize}
+    \item $\arccos(\cos x) = x \Leftrightarrow x \in [0, \pi]$
+    \item $\arcsin(\sin x) = x \Leftrightarrow x \in [-\frac{\pi}{2}, \frac{\pi}{2}]$
+    \item $\arctan(\tan x) = x \Leftrightarrow x \in ]-\frac{\pi}{2}, \frac{\pi}{2}[$
+\end{itemize}
+\end{propbox}
+
+\vspace{1cm}
+\begin{center}
+\textit{--- Fin du résumé ---}
+\end{center}
+
+\end{document}
