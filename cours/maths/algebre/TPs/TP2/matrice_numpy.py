@@ -66,6 +66,40 @@ def LU_decomposition_pivot(A):
     return P, L, U
 
 
+# -- Q2-1 : Inverse d'une matrice triangulaire inférieure -- #
+def inverse_triang_inf(L):
+    N = L.shape[0]
+    X = np.zeros((N, N))
+
+    for h in range(N):
+        for j in range(N):
+            X[h, j] = (np.eye(N)[h, j] - sum(L[h, k] * X[k, j] for k in range(h))) / L[h, h]
+
+    return X
+
+
+# -- Q2-2 : Inverse d'une matrice triangulaire supérieure -- #
+def inverse_triang_sup(U):
+    # (A^T)^-1 = (A^-1)^T
+    return inverse_triang_inf(U.T).T
+
+
+# -- Q2-3 : Inverse d'une matrice carrée via PA = LU -- #
+def inverse_matrice(A):
+    P, L, U = LU_decomposition_pivot(A)
+    L_inv = inverse_triang_inf(L)
+    U_inv = inverse_triang_sup(U)
+    # PA = LU  =>  A = P^T LU  =>  A^-1 = U^-1 L^-1 P
+    return U_inv @ L_inv @ P
+
+
+# -- Q2-4 : Résolution de AX = B -- #
+def resoudre_systeme(A, B):
+    A_inv = inverse_matrice(A)
+    return A_inv @ B
+
+
+
 # ------------------- MAIN -------------------- #
 if __name__ == "__main__":
     A = np.array([[2, 1, 1],
@@ -98,11 +132,40 @@ if __name__ == "__main__":
         print("U:\n", U)
         print("P @ A:\n", P @ A)
         print("L @ U:\n", L @ U)
-
+    def q5():
+        print("===== Q2-1 : Inverse triangulaire inférieure =====")
+        L, U = LU_decomposition(A)
+        L_inv = inverse_triang_inf(L)
+        print("L:\n", L)
+        print("L^-1:\n", L_inv)
+        print("L @ L^-1 (= I) :\n", np.round(L @ L_inv, 10))
+    def q6():
+        print("===== Q2-2 : Inverse triangulaire supérieure =====")
+        L, U = LU_decomposition(A)
+        U_inv = inverse_triang_sup(U)
+        print("U:\n", U)
+        print("U^-1:\n", U_inv)
+        print("U @ U^-1 (= I) :\n", np.round(U @ U_inv, 10))
+    def q7():
+        print("===== Q2-3 : Inverse de A =====")
+        A_inv = inverse_matrice(A)
+        print("A^-1:\n", A_inv)
+        print("A @ A^-1 (= I) :\n", np.round(A @ A_inv, 10))
+    def q8():
+        print("===== Q2-4 : Résolution AX = B =====")
+        B = np.array([1, 2, 3], dtype=float)
+        print("B :", B)
+        X = resoudre_systeme(A, B)
+        print("X :", X)
+        print("A @ X (= B) :", A @ X)
     questions = {
-        1: ("LU avec boucles (Crout)", q1),
-        2: ("LU matricielle (sans boucles internes)", q3),
-        3: ("LU avec pivot partiel", q4),
+        1: ("LU avec boucles (Q1-1) + Vérification détaillée L × U (Q1-2)", q1),
+        2: ("LU matricielle (Q1-3a)", q3),
+        3: ("LU avec pivot partiel (Q1-3b/Q1-4)", q4),
+        4: ("Inverse triangulaire inférieure (Q2-1)", q5),
+        5: ("Inverse triangulaire supérieure (Q2-2)", q6),
+        6: ("Inverse de A (Q2-3)", q7),
+        7: ("Résolution AX = B (Q2-4)", q8),
     }
 
     while True:
