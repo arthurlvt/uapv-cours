@@ -1,7 +1,0 @@
--> mdkir
--> rm
--> rm -r
--> rmdir
--> touch
--> cp
--> mv
