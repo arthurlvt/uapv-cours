@@ -1,0 +1,511 @@
+<!-- DTD for HTML5 - Same model that has been used in TP0 -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Groupe TD1" />
+    <meta name="email" content="groupe.td1@example.com" />
+    <meta
+      name="description"
+      content="Example of using meta tags and attributes in HTML."
+    />
+    <meta
+      name="keywords"
+      content="HTML, meta, tags, attributes, workshop, first attempt"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="en" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>TP1 - HTML Basics</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+      /* ── Sélection paragraph0 ── */
+      p#paragraph0::selection {
+        background: yellow;
+        color: black;
+      }
+
+      /* ── Justification paragraphes 1-3 ── */
+      p#paragraph1,
+      p#paragraph2,
+      p#paragraph3 {
+        text-align: justify;
+      }
+
+      /* ── Style paragraph4 ── */
+      p#paragraph4 {
+        font-family: "Helvetica", sans-serif;
+        color: #007ea5;
+      }
+
+      /* ── Style paragraphe générique ── */
+      p#paragraph {
+        font-family: "Arial", sans-serif;
+        color: #333333;
+        text-align: justify;
+      }
+
+      /* ── Bloc de code ── */
+      pre {
+        background-color: #1e1e1e;
+        color: #d4d4d4;
+        border: 1px solid #444;
+        border-left: 4px solid #007ea5;
+        border-radius: 6px;
+        padding: 1.2em 1.5em;
+        overflow-x: auto;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 14px;
+        line-height: 1.6;
+        margin: 1.5em 0;
+      }
+      code {
+        font-family: inherit;
+      }
+
+      /* ── Coloration syntaxique ── */
+      .kw {
+        color: #569cd6;
+      }
+      .fn {
+        color: #dcdcaa;
+      }
+      .inc {
+        color: #c586c0;
+      }
+      .str {
+        color: #ce9178;
+      }
+      .cmt {
+        color: #6a9955;
+        font-style: italic;
+      }
+      .ns {
+        color: #4ec9b0;
+      }
+
+      /* ── Séparateur personnalisé ── */
+      hr.sep {
+        width: 100%;
+        border: none;
+        border-top: 2px solid #007ea5;
+        margin: 20px 0;
+      }
+
+      /* ── Tableaux : style commun ── */
+      table {
+        border-collapse: collapse;
+        font-family: "Arial", sans-serif;
+        font-size: 14px;
+      }
+      table caption {
+        font-weight: bold;
+        padding-bottom: 6px;
+      }
+      table th,
+      table td {
+        border: 1px solid black;
+        padding: 6px 10px;
+      }
+      table thead th {
+        background-color: #f0f0f0;
+      }
+
+      /* ── Div conteneur des tableaux ── */
+      .tables_div {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        align-items: flex-start;
+        margin-bottom: 20px;
+      }
+
+      /* ── Navigation ── */
+      nav.indexation {
+        background-color: var(--white);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 0.8rem 1.2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+      }
+
+      nav.indexation ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem 0.2rem;
+        padding: 0;
+      }
+
+      nav.indexation ul li a {
+        display: inline-block;
+        padding: 0.35rem 0.9rem;
+        background-color: var(--accent-light);
+        color: var(--accent-dark);
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: bold;
+        text-decoration: none;
+        transition:
+          background-color 0.2s,
+          color 0.2s;
+      }
+
+      nav.indexation ul li a:hover {
+        background-color: var(--accent);
+        color: var(--white);
+      }
+
+      /* ── Liens ── */
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body style="font-family: &quot;Arial&quot;, sans-serif; margin: 20px 40px">
+    <h1>
+      Tokyo, ville la plus chère du monde — Asuncion la moins chère, Paris 17e
+    </h1>
+
+    <hr class="sep" />
+
+    <h2>Le classement général</h2>
+    <p id="paragraph4_1">
+      <u
+        ><b><span style="color: yellow">Tokyo</span></b></u
+      >
+      est la ville la plus chère du monde, suivie de
+      <u
+        ><b><span style="color: yellow">Londres</span></b></u
+      >
+      tandis que
+      <u
+        ><b><span style="color: yellow">Paris</span></b></u
+      >
+      arrive à la 17e place et
+      <u
+        ><b><span style="color: yellow">Asuncion</span></b></u
+      >
+      arrive à la dernière place du classement, selon une enquête réalisée par
+      le cabinet de conseil Mercer HRC.
+    </p>
+
+    <hr class="sep" />
+
+    <h2>Le podium</h2>
+    <p id="paragraph4_2">
+      La capitale japonaise occupait déjà la première place du classement
+      l'année dernière, en revanche la capitale anglaise est remontée de la
+      cinquième à la deuxième place. C'est la russe
+      <u
+        ><b><span style="color: yellow">Moscou</span></b></u
+      >
+      qui monte sur la troisième marche du podium, suivie d'une autre ville
+      japonaise
+      <u
+        ><b><span style="color: yellow">Osaka</span></b></u
+      >
+      et de
+      <u
+        ><b><span style="color: yellow">Hong-Kong</span></b></u
+      >
+      en cinquième position.
+    </p>
+
+    <hr class="sep" />
+
+    <h2>L'Amérique du Nord</h2>
+    <p id="paragraph4_3">
+      <u
+        ><b><span style="color: yellow">New York</span></b></u
+      >, la ville la plus onéreuse d'<span
+        style="font-family: Helvetica; color: blue"
+        >Amérique du Nord</span
+      >, s'affiche à la 12e place du classement. Et c'est au sud du continent
+      américain, à
+      <u
+        ><b><span style="color: yellow">Asuncion</span></b></u
+      >
+      au <span style="font-family: Helvetica; color: blue">Paraguay</span>
+      que la vie est la moins chère du monde, selon cette étude.
+    </p>
+
+    <hr class="sep" />
+
+    <h2>Les raisons des fluctuations</h2>
+    <p id="paragraph4_4">
+      "Les importantes modifications dans le classement sur le coût de la vie
+      sont dues aux fluctuations monétaires, notamment à celle du dollar et de
+      l'euro", relève l'enquête. S'agissant de
+      <u
+        ><b><span style="color: yellow">Paris</span></b></u
+      >, l'étude note que "le logement reste très difficile à trouver surtout
+      lorsqu'il s'agit d'habitations meublées".
+    </p>
+
+    <hr class="sep" />
+
+    <h2>L'Europe</h2>
+    <p id="paragraph4_5">
+      Quatre des cinq villes les moins chères d'<span
+        style="font-family: Helvetica; color: blue"
+        >Europe</span
+      >
+      font partie des nouveaux entrants de l'Union européenne :
+      <u
+        ><b><span style="color: yellow">Ljubljana</span></b></u
+      >
+      (<span style="font-family: Helvetica; color: blue">Slovénie</span>),
+      <u
+        ><b><span style="color: yellow">Vilnius</span></b></u
+      >
+      (<span style="font-family: Helvetica; color: blue">Lituanie</span>),
+      <u
+        ><b><span style="color: yellow">Limassol</span></b></u
+      >
+      (<span style="font-family: Helvetica; color: blue">Chypre</span>) et
+      <u
+        ><b><span style="color: yellow">Bucarest</span></b></u
+      >
+      (<span style="font-family: Helvetica; color: blue">Roumanie</span>). Parmi
+      les cinquante villes les plus chères, près de la moitié (24) sont
+      européennes. Dans cette zone géographique,
+      <u
+        ><b><span style="color: yellow">Londres</span></b></u
+      >, la plus chère en raison "du logement et du transport", est suivie de
+      <u
+        ><b><span style="color: yellow">Copenhague</span></b></u
+      >
+      (<span style="font-family: Helvetica; color: blue">Danemark</span>) et de
+      <u
+        ><b><span style="color: yellow">Milan</span></b></u
+      >
+      (<span style="font-family: Helvetica; color: blue">Italie</span>).
+    </p>
+
+    <hr class="sep" />
+
+    <h2>L'Amérique Latine</h2>
+    <p id="paragraph4_6">
+      En
+      <span style="font-family: Helvetica; color: blue">Amérique Latine</span>,
+      c'est la capitale du
+      <span style="font-family: Helvetica; color: blue">Pérou</span>,
+      <u
+        ><b><span style="color: yellow">Lima</span></b></u
+      >, qui se situe à la première place sur le continent. L'étude, qui porte
+      sur 144 villes, se fonde sur des critères relatifs au logement, à la
+      nourriture, à l'habillement et les appareils ménagers ou encore aux
+      transports et aux loisirs.
+    </p>
+
+    <hr class="sep" />
+
+    <!-- Citations-->
+
+    <!-- Citation courte inline avec <q> -->
+    <p>
+      <q><strong>Cogito ergo sum</strong></q> — Descartes
+    </p>
+
+    <!-- Citation longue avec <blockquote> -->
+    <blockquote>
+      <p>
+        <strong
+          >« Gravitation cannot be held responsible for people falling in love »
+          — Albert Einstein</strong
+        >
+      </p>
+    </blockquote>
+
+    <!--
+    <q>       → citation courte, inline, guillemets automatiques
+    <blockquote> → citation longue, en bloc, retrait visuel
+  -->
+
+    <hr class="sep" />
+
+    <!-- Source code with syntax highlighting -->
+
+    <pre><code><span class="inc">#include</span> <span class="str">&lt;iostream&gt;</span>
+
+<span class="kw">void</span> <span class="fn">sayHello</span>() {
+    <span class="ns">std</span>::cout &lt;&lt; <span class="str">"Hello, World!"</span> &lt;&lt; <span class="ns">std</span>::endl;
+}
+
+<span class="kw">int</span> <span class="fn">main</span>() {
+    <span class="fn">sayHello</span>();
+    <span class="kw">return</span> 0;
+}</code></pre>
+
+    <hr class="sep" />
+
+    <!-- Quote with multiple paragraphs -->
+
+    <blockquote>
+      <p>
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum."
+      </p>
+      <p>
+        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
+        illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+        explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
+        odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+        voluptatem sequi nesciunt."
+      </p>
+    </blockquote>
+
+    <hr class="sep" />
+
+    <p id="mathsParagraph">
+      &rarr; The volume of a sphere with radius <var>r</var> is given by the
+      formula: <var>V</var> = (4/3) &times; &pi; &times; <var>r</var>&sup3;
+      <br />
+      &rarr; Equation <var>y</var> = <var>m</var> &times; <var>x</var>&sup3; +
+      <var>b</var> uses variables <var>y</var> and <var>x</var>
+    </p>
+
+    <hr class="sep" />
+
+    <div class="tables_div">
+      <!-- ── Tableau Simple ── -->
+      <table>
+        <caption>
+          Tableau Simple
+        </caption>
+        <thead>
+          <tr>
+            <th>Euros</th>
+            <th>Francs</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1 E</td>
+            <td>6,56 F</td>
+          </tr>
+          <tr>
+            <td colspan="2">ainsi de suite pour chaque ligne...</td>
+          </tr>
+          <tr>
+            <td>15,24 E</td>
+            <td>100 F</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- ── Tableau Complexe 1 ── -->
+      <table>
+        <caption>
+          Tableau complexe 1
+        </caption>
+        <thead>
+          <tr>
+            <th>Titre 1</th>
+            <th>Titre 2</th>
+            <th>Titre 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cellule Simple</td>
+            <td>Cellule Simple</td>
+            <td>Cellule Simple</td>
+          </tr>
+          <tr>
+            <td colspan="2">2 colonnes assemblées</td>
+            <td>Cellule Simple</td>
+          </tr>
+          <tr>
+            <td>Cellule Simple</td>
+            <td>Cellule Simple</td>
+            <td rowspan="2">2 lignes assemblées</td>
+          </tr>
+          <tr>
+            <td>Cellule Simple</td>
+            <td>Cellule Simple</td>
+          </tr>
+          <tr>
+            <td>Cellule Simple</td>
+            <td colspan="2" rowspan="2">2 lignes et 2 colonnes assemblées</td>
+          </tr>
+          <tr>
+            <td>Cellule Simple</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- ── Tableau Complexe 2 (Kumquats) ── -->
+      <table>
+        <caption>
+          Kumquats contre œil poché, par sexe
+        </caption>
+        <thead>
+          <tr>
+            <th colspan="2" style="border-bottom: none;"></th>
+            <th colspan="2">Préférences</th>
+          </tr>
+          <tr>
+            <th colspan="2" style="border-top: none;"></th>
+            <th>Déguster des Kumquats</th>
+            <th>Pocher un œil</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="4" style="vertical-align: middle">Sexe</td>
+            <td>Hommes en dessous de 18 ans</td>
+            <td style="text-align: center">94%</td>
+            <td style="text-align: center">6%</td>
+          </tr>
+          <tr>
+            <td>Hommes au-dessus de 18 ans</td>
+            <td style="text-align: center">73%</td>
+            <td style="text-align: center">27%</td>
+          </tr>
+          <tr>
+            <td>Femmes en dessous de 18 ans</td>
+            <td style="text-align: center">34%</td>
+            <td style="text-align: center">66%</td>
+          </tr>
+          <tr>
+            <td>Femmes au-dessus de 18 ans</td>
+            <td style="text-align: center">16%</td>
+            <td style="text-align: center">84%</td>
+          </tr>
+          <tr>
+            <td colspan="4" style="text-align: center; font-style: italic">
+              Note : les yeux pochés n'entraînent aucune lésion permanente
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr class="sep" />
+
+    <!-- Indexation of pages-->
+    <nav class="indexation">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="annexes/annexeA.html">Annexe A</a></li>
+        <li><a href="annexes/annexeB/annexeB1.html">Annexe B1</a></li>
+        <li><a href="documents/exemple.html">Exemple</a></li>
+        <li><a href="documents/perso/fic3.html">Fic3</a></li>
+      </ul>
+    </nav>
+  </body>
+</html>

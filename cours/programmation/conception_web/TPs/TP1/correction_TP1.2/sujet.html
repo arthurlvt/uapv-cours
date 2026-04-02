@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TP2</title>
+        <meta charset="utf-8">
+    </head>
+
+    <body>
+        <h1 id="sommaire">Table des matières</h1>
+        <ol>
+            <li><a href="#ex1">Liens relatifs et listes</a></li>
+            <li><a href="#ex2">Ancres nommées et liens</a></li>
+        </ol>
+        <h2>TP 2 - Liens hypertextes</h2>
+        <h2>Liens hypertextes et listes</h2>
+        <h3 id="ex1"><span style="color: inherit; font-family: inherit;">1. Liens relatifs et listes</span></h3>
+        <p><a href="#sommaire">Retour au sommaire</a></p>
+        <p><a href="index.html">Liens vers l'exercice</a></p>
+        <p>Afin de simuler l'organisation des pages web au sein d'un site, nous allons créer des fichiers (vides) qui ne contiendront que des liens (relatifs) les uns vers les autres.</p>
+        <h4>A faire :</h4>
+        <table style="width: 100%;" border="1">
+            <tbody>
+                <tr>
+                    <td valign="top" width="100%">
+                        <div class="box">
+                            <ul>
+                                <li>Créer la structure de répertoires (dossiers) suivante dans votre espace de stockage personnel :<br /> <img src="https://e-uapv2018.univ-avignon.fr/pluginfile.php/86976/mod_page/content/19/arbo.png" height="142" width="426" /></li>
+                                <li>Créer ensuite <strong>vous-même</strong> chacun des 5 fichiers html selon le schéma précédent en les placant dans les dossiers correspondants. Chaque fichier devra contenir seulement un menu : une liste (numérotée) de liens relatifs vers tous les autres fichiers.</li>
+                                <li>Puis en guise de contenu pour le fichier <code>exemple.html</code> ajouter une liste non numérotée imbriquée dans une liste numérotée imbriquée dans une liste non numérotée. Items des listes au choix (i.e. le contenu est sans importance).</li>
+                                <li>Vérifier qu'on peut atteindre tous les fichiers depuis n'importe lequel d'entre eux.</li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p></p>
+        <p>Rappel sur l'écriture des URL relatives - 4 cas :</p>
+        <ol>
+            <li>Ressource située dans le <span style="font-weight: bold;">même répertoire</span> que la page d'appel (ie le fichier qui contient le lien) : la valeur prise par l'attribut <code>href</code> est simplement le nom du fichier, par exemple <code>href="index.html"</code>.</li>
+            <li>Ressource située dans un <span style="font-weight: bold;">sous-répertoire du répertoire</span> contenant la page d'appel : il faut citer la suite des sous-répertoires pour "descendre" jusqu'au fichier ressource, par exemple <code>href="archives/2001/18072001.html"</code>.</li>
+            <li>Ressource située dans un <span style="font-weight: bold;">répertoire contenant la page d'appel</span> : il faut "remonter" successivement chaque répertoire par "../". Dans cet exemple, le répertoire visé est le supérieur hiérarchique de deuxième rang (le grand-père) : <code>href="../../index.html"</code>.</li>
+            <li>Ressource située dans un <span style="font-weight: bold;">répertoire situé dans une branche latérale</span> : il faut remonter au répertoire commun par "../" puis redescendre la bonne branche, par exemple <code>href="../../produits/convecteurs/rh1200x.html"</code>.</li>
+        </ol>
+        <p><span style="color: #ff0000; font-weight: bold;" class="important">Important</span> : il faut privilégier les adresses relatives dans les documents HTML ! En effet, lors de la création d'un site destiné à être accessible sur un seul serveur (cas général), tous les liens internes doivent être sous forme relative. Car on développe sur sa propre machine avant de transférer l'ensemble du site créé sur le serveur. Si les liens internes sont sous forme absolue (http://nom du serveur/rep1/rep1.8/document.html), ils ne seront plus valides après le transfert (puisque les répertoires ne seront pas forcement les mêmes sur le serveur).</p>
+        <h3 id="ex2">2. Ancres nommées et liens</h3>
+        <p><a href="#sommaire">Retour au sommaire</a></p>
+        <p><a href="#">Liens vers l'exercice</a></p>
+        <h4>A faire :</h4>
+        <table style="width: 100%;" border="1">
+            <tbody>
+                <tr>
+                    <td valign="top" width="100%">
+                        <div class="box">
+                            <ul>
+                                <li>Sauvegarder le fichier html de ce sujet de TP (donc la page que vous avez sous les yeux actuellement) dans votre espace de stockage.</li>
+                                <li>Insérer une table des matières hypertexte au début du fichier : c'est à dire la liste des titres de niveau H3 présents dans le sujet avec des liens vers les titres eux-mêmes qui se trouveront plus bas dans le corps du sujet. Pour cela il faut :</li>
+                            <ul>
+                                <li>Créer une ancre nommée au niveau de chaque titre</li>
+                                <li>Créer un lien "Retour au sommaire" vers le sommaire au niveau de chaque titre (pour remonter instantanément au début de la page)</li>
+                                <li>Créer le sommaire en début de page : c'est à dire une liste de liens internes vers les ancres nommées</li>
+                            </ul>
+                                <li>Créer une ancre nommée "HAUT DE LA PAGE". Placer un lien vers cette ancre en bas de votre page. Cette ancre va vous permettre de revenir au début de votre page web.</li>
+                                <li>Au niveau de chaque titre d'exercice, insérer un nouveau lien vers le fichier qui contient la réponse.</li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p><span style="color: #ff0000; font-weight: bold;" class="important">Important</span> : vous avez maintenant une idée pour faire des archives de rendu de TP correctes. La dernière étape devra être reproduite à parti de maintenant pour tous les rendus de TP, afin de faciliter la manipulation des rendus par vos chargés de TP.</p>
+		<a href="#">HAUT DE LA PAGE</a>
+    </body>
+</html>
