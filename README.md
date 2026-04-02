@@ -1,4 +1,4 @@
-# 📁 Arborescence du projet UAPV
+# 📁 Arborescence des cours UAPV
 
 ```
 cours/
