@@ -29,7 +29,7 @@ cours/
 │   │       ├── ressources/
 │   │       │   ├── CCs/
 │   │       │   └── cours/
-│   │       └── base_maths_cours.pdf  
+│   │       └── base_maths_cours.pdf
 │   └── maths_discretes/
 │       ├── CCs/
 │       ├── cours/
@@ -40,9 +40,9 @@ cours/
     │   │   ├── TDs/
     │   │   └── TPs/
     │   ├── GitBurger/
-    │   ├── Python/
-    │   │   ├── TDs/ 
-    │   │   └── TPs/
+    │   └── Python/
+    │       ├── TDs/
+    │       └── TPs/
     ├── conception_web/
     │   ├── cours.pdf
     │   └── TPs/
