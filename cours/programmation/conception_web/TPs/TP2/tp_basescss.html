@@ -5,10 +5,113 @@
     <title>Exemple de page &agrave; mettre en forme avec CSS.</title>
   </head>
   <style>
+    body {
+      font-family: "Papyrus", "Lucida Console", cursive, sans-serif;
+      background-color: rgb(0, 221, 255);
+    }
+    h1 {
+      font-size: xx-large;
+    }
+    #first-part {
+      background: url("./funnydog.gif") repeat;
+    }
+    #first-part h1, h2, h3 {
+      color: brown;
+      display: flex;
+      justify-content: center;
+    }
+    #first-part blockquote::first-letter {
+      color: red;
+      font-family: "Helvetica", sans-serif;
+      font-size: 250%;
+      font-weight: bold;
+    }
+    #first-part blockquote {
+      left: 6em;
+      position: relative;
+    }
     #second-part {
       color: orange;
       font-size: small;
     }
+    .produit {
+      background-color: rgb(255, 242, 0);
+    }
+    .reference {
+      background-color: rgb(225, 90, 0);
+    }
+    .general {
+      background-color: rgba(183, 1, 0.897);
+    }
+    .table-titles {
+      font-variant-caps: small-caps;
+    }
+    th {
+      text-decoration: wavy overline;
+    }
+    #third-part {
+      background-color: rgb(0, 255, 242);
+    }
+    .border {
+      border: 5px solid blue;
+      border-style: groove;
+      padding: 20ex;
+    }
+    .ptittext {
+      text-align: right;
+      right: 20px;
+      position: relative;
+    }
+    .image {
+      position: absolute;
+      background-color: rgb(255, 255, 255);
+      height: 500vh;
+      width: 100%;
+    }
+    .carre_rouge {
+      background-color: rgb(255, 0, 0);
+      height: 200px;
+      width: 200px;
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      z-index: 1;
+    }
+    .carre_vert {
+      background-color: rgb(0, 255, 0);
+      height: 500px;
+      width: 300px;
+      position: absolute;
+      top: 60px;
+      left: 60px;
+      z-index: 0;
+    }
+    .carre_bleu {
+      background-color: rgb(0, 0, 255);
+      height: 200px;
+      width: 500px;
+      position: absolute;
+      top: 100px;
+      left: 300px;
+      z-index: 1;
+    }
+    .src {
+      position: absolute;
+      top: 200px;
+      left: 400px;
+      width: 10%;
+      height:3%;
+      z-index: 2;
+    }
+    .src2 {
+      position: absolute;
+      top: 100px;
+      left: 100px;
+      width: 20%;
+      height: 5%;
+      z-index: 3;
+    }
+
   </style>
   <body>
     <h1 id="great-title">Grand titre</h1>
@@ -71,29 +174,29 @@
         <col span="1" />
         <col span="2" />
         <tbody>
-          <tr>
-            <th>Produit</th>
-            <th>R&eacute;f&eacute;rence</th>
-            <th>Prix unitaire (euros)</th>
-            <th>Quantit&eacute;</th>
+          <tr class="table-titles">
+            <th class="produit">Produit</th>
+            <th class="reference">R&eacute;f&eacute;rence</th>
+            <th class="general">Prix unitaire (euros)</th>
+            <th class="general">Quantit&eacute;</th>
           </tr>
           <tr>
-            <td>Poudre de Perlimpimpin</td>
-            <td>PP579733</td>
-            <td>1.5</td>
-            <td>1</td>
+            <td class="produit">Poudre de Perlimpimpin</td>
+            <td class="reference">PP579733</td>
+            <td class="general">1.5</td>
+            <td class="general">1</td>
           </tr>
           <tr>
-            <td>Poudre d'escampette</td>
-            <td>22</td>
-            <td>22</td>
-            <td>22</td>
+            <td class="produit">Poudre d'escampette</td>
+            <td class="reference">22</td>
+            <td class="general">22</td>
+            <td class="general">22</td>
           </tr>
           <tr>
-            <td>Poudre aux yeux</td>
-            <td>PY2121</td>
-            <td>5</td>
-            <td>2</td>
+            <td class="produit">Poudre aux yeux</td>
+            <td class="reference">PY2121</td>
+            <td class="general">5</td>
+            <td class="general">2</td>
           </tr>
         </tbody>
       </table>
@@ -102,7 +205,7 @@
     <div id="second-part">
       <h2>Seconde partie</h2>
 
-      <h3>border</h3>
+      <h3 class="border">border</h3>
 
       <p id="pborder">
         Une petite citation de Pierre Dac...<br />
@@ -115,12 +218,19 @@
     </div>
     <hr/>
     <div id="third-part">
-      <p>Petit<br/>texte<br/>&agrave;<br/>droite</p>
+      <p class="ptittext">Petit<br/>texte<br/>&agrave;<br/>droite</p>
       <p>Le mot de la fin&nbsp;:<br /><cite id="last-citation"
         >"Point n'est besoin d'esp&eacute;rer pour entreprendre, ni de
           r&eacute;ussir pour pers&eacute;v&eacute;rer"</cite
         >, Guillaume d'Orange.
       </p>
     </div><br/><br/>
+    <div class="image">
+      <div class="carre_rouge"></div>
+      <div class="carre_vert"></div>
+      <div class="carre_bleu"></div>
+          <img src="./papillon.gif" alt="" class="src">
+          <img src="./papillon2.gif" alt="" class="src2">
+    </section>
   </body>
 </html>
