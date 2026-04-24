@@ -1,0 +1,101 @@
+body {
+  font-family: "Gilroy Bold", sans-serif;
+  margin: 0;
+  padding-top: 230px;
+}
+header {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  width: calc(100% - 50px);
+  max-width: 1500px;
+  margin: 0;
+  padding: 20px;
+  background-color: white;
+  opacity: 0.9;
+}
+
+header:hover {
+  cursor: default;
+}
+header a {
+  text-decoration: none;
+  color: black;
+  font-size: large;
+}
+header .links {
+  display: grid;
+  gap: 20px;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.article1,
+.article2,
+.article3 {
+  width: calc(100% - 50px);
+  max-width: 1200px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  margin: 50px auto 0;
+  padding: 30px;
+  transition: transform 0.3s ease-in-out;
+}
+.article1:hover,
+.article2:hover,
+.article3:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+.article1 h1,
+.article2 h1,
+.article3 h1 {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  font-size: xx-large;
+  margin-top: 0;
+}
+.article1 h2,
+.article2 h2,
+.article3 h2 {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  font-size: x-large;
+}
+.article1 .pArticle,
+.article2 .pArticle,
+.article3 .pArticle {
+  font-size: large;
+  text-align: justify;
+  display: none;
+}
+.mediaSection {
+  width: calc(100% - 50px);
+  max-width: 1200px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  margin: 50px auto 0;
+  padding: 30px;
+}
+.mediaSection h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: xx-large;
+  margin-top: 0;
+}
+.mediaSection audio,
+.mediaSection video {
+  width: 100%;
+  margin-top: 15px;
+}

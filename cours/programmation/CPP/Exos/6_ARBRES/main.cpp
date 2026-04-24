@@ -5,6 +5,7 @@ class noeud
 {
     int info;
     noeud *fg, *fd;
+    friend class arbre;
     public:
         noeud(int i, noeud *g, noeud *d) { info = i; fg = g; fd = d; };
         ~noeud() { delete fg; delete fd; };
@@ -40,6 +41,28 @@ class arbre
             if (racine == nullptr) return 0;
             return racine->max_2();
         }
-        // maximum dans une arbre ordonné
-        
+        void insert_rec(noeud *n, int i) {
+            if (i < n->info) {
+                if (n->fg == nullptr) {
+                    n->fg = new noeud(i, nullptr, nullptr);
+                    return;
+                }
+                insert_rec(n->fg, i);
+            } else {
+                if (n->fd == nullptr) {
+                    n->fd = new noeud(i, nullptr, nullptr);
+                    return;
+                }
+                insert_rec(n->fd, i);
+            }
+        }
+        // insérer un élément dans un arbre binaire de recherche de manière récursive
+        void insert(int i) {
+            if (racine == nullptr) {
+                racine = new noeud(i, nullptr, nullptr);
+                return;
+            }
+            insert_rec(racine, i);
+        }
+     
 };

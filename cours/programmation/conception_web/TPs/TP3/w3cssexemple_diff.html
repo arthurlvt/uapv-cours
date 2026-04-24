@@ -3,147 +3,299 @@
 <title>W3.CSS Exemple : Une page CV</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-
+<!-- 
+  THÈME GLOBAL W3.CSS : on importe ici le thème indigo.
+  Pour changer de thème, il suffit de modifier "w3-theme-indigo" par ex. en :
+    - w3-theme-teal, w3-theme-blue, w3-theme-red, w3-theme-green, w3-theme-orange...
+  TOUTES les couleurs de la page s'adapteront automatiquement car elles utilisent
+  des classes relatives au thème (w3-theme, w3-theme-l1, w3-theme-d1, w3-theme-text, etc.)
+-->
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 
 <style>
-html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+html,body,h1,h2,h3,h4,h5,h6 { font-family: "Roboto", sans-serif; }
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+
+/* ANIMATION 1 — Entrée de la colonne gauche depuis la gauche (slideInLeft) */
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.anim-slide-left {
+  animation: slideInLeft 0.8s ease-out both;
+}
+
+/* ANIMATION 2 — Entrée de la colonne droite depuis la droite (slideInRight) */
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.anim-slide-right {
+  animation: slideInRight 0.8s ease-out 0.2s both;
+}
+
+/* ANIMATION 3 — Les barres de progression se remplissent au chargement (growBar) */
+@keyframes growBar {
+  from { width: 0 !important; }
+}
+.anim-bar {
+  animation: growBar 1.2s ease-out both;
+}
+/* Délais en cascade pour les barres */
+.anim-bar:nth-child(1) { animation-delay: 0.4s; }
+.anim-bar:nth-child(2) { animation-delay: 0.6s; }
+.anim-bar:nth-child(3) { animation-delay: 0.8s; }
+.anim-bar:nth-child(4) { animation-delay: 1.0s; }
+
+/* ANIMATION 4 — Photo avec zoom léger au hover (bonus interactif) */
+.photo-hover {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.photo-hover:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+}
+
+/* ANIMATION 5 — Apparition progressive du nom (fadeInDown) */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.anim-name {
+  animation: fadeInDown 0.7s ease-out 0.5s both;
+}
+
+/* ANIMATION 6 : Selection de couleur sur le texte */
+h1::selection, 
+h2::selection, 
+h3::selection, 
+h4::selection, 
+h5::selection, 
+h6::selection, 
+p::selection {
+  background-color: #3f51b5; /* w3-theme-indigo */
+  color: white;
+}
+/* Style tableau de navigation */
+.nav-table a {
+  text-decoration: none;
+  font-weight: bold;
+}
+.nav-table a:hover {
+  text-decoration: underline;
+}
 </style>
 
 <body class="w3-light-grey">
 
-<!-- Page Container -->
 <div class="w3-container w3-content w3-margin-top" style="max-width:1400px;">
-
-  <!-- The Grid -->
   <div class="w3-row-padding" style="margin:0 -16px">
-  
-    <!-- Left Column -->
-    <div class="w3-half">
-    
+    <div class="w3-col anim-slide-left" style="width:35%">
       <div class="w3-white w3-text-grey w3-card-4">
-        <div class="w3-display-container">
-          <img src="w3images/geek.jpg" style="width:50%" alt="Avatar">
-          <div class="w3-display-middle w3-container w3-text-black">
-<!-- 
- 			<div class="w3-container w3-text-black w3-teal">
- -->
-            <h2>François Dupont</h2>
-          </div>
-        </div>
-        <div class="w3-container ">
-          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Developpeur</p>
-          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Avignon, FR</p>
-          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>biggeek@alumni.univ-avignon.fr</p>
-          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>0123456789</p>
+        <img src="./w3images/geek.jpg" class="photo-hover" style="width:100%" alt="Avatar">
+
+        <div class="w3-container">
+          <h2 class="anim-name">François Dupont</h2>
+
+          <!-- Infos : couleur des icônes = w3-theme-text (couleur principale du thème) -->
+          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-theme-text"></i>Developpeur</p>
+          <p><i class="fa fa-home      fa-fw w3-margin-right w3-large w3-theme-text"></i>Avignon, FR</p>
+          <p><i class="fa fa-envelope  fa-fw w3-margin-right w3-large w3-theme-text"></i>biggeek@alumni.univ-avignon.fr</p>
+          <p><i class="fa fa-phone     fa-fw w3-margin-right w3-large w3-theme-text"></i>0123456789</p>
           <hr>
 
-          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Compétences</b></p>
+          <!-- Compétences : titre avec couleur thème -->
+          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-theme-text"></i>Compétences</b></p>
+
+          <!-- ANIMATION 3 : les barres w3-progressbar ont la classe anim-bar -->
           <p>Programmation Python</p>
           <div class="w3-progress-container w3-round-xlarge w3-small">
-            <div class="w3-progressbar w3-round-xlarge w3-teal" style="width:90%">
+            <!-- Fond de piste = w3-theme-l4 (teinte claire du thème) -->
+            <!-- Barre remplie = w3-theme (couleur principale du thème) -->
+            <div class="w3-progressbar w3-round-xlarge w3-theme anim-bar" style="width:90%">
               <div class="w3-center w3-text-white">90%</div>
             </div>
           </div>
           <p>Conception Internet</p>
           <div class="w3-progress-container w3-round-xlarge w3-small">
-            <div class="w3-progressbar w3-round-xlarge w3-teal" style="width:80%">
+            <div class="w3-progressbar w3-round-xlarge w3-theme anim-bar" style="width:80%">
               <div class="w3-center w3-text-white">80%</div>
             </div>
           </div>
           <p>Sciences (math, physique...)</p>
           <div class="w3-progress-container w3-round-xlarge w3-small">
-            <div class="w3-progressbar w3-round-xlarge w3-teal" style="width:75%">
+            <div class="w3-progressbar w3-round-xlarge w3-theme anim-bar" style="width:75%">
               <div class="w3-center w3-text-white">75%</div>
             </div>
           </div>
           <p>Communication</p>
           <div class="w3-progress-container w3-round-xlarge w3-small">
-            <div class="w3-progressbar w3-round-xlarge w3-teal" style="width:70%">
+            <div class="w3-progressbar w3-round-xlarge w3-theme anim-bar" style="width:70%">
               <div class="w3-center w3-text-white">70%</div>
             </div>
           </div>
           <br>
 
-          <p class="w3-large w3-text-teal"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
+          <!-- Langages -->
+          <p class="w3-large w3-theme-text"><b><i class="fa fa-globe fa-fw w3-margin-right w3-theme-text"></i>Languages</b></p>
           <p>Python</p>
           <div class="w3-progress-container w3-round-xlarge">
-            <div class="w3-progressbar w3-round-xlarge w3-teal" style="width:100%"></div>
+            <div class="w3-progressbar w3-round-xlarge w3-theme anim-bar" style="width:100%"></div>
           </div>
           <p>Java</p>
           <div class="w3-progress-container w3-round-xlarge">
-            <div class="w3-progressbar w3-round-xlarge w3-teal" style="width:75%"></div>
+            <div class="w3-progressbar w3-round-xlarge w3-theme anim-bar" style="width:75%"></div>
+          </div>
+          <p>HTML/CSS</p>
+          <div class="w3-progress-container w3-round-xlarge">
+            <div class="w3-progressbar w3-round-xlarge w3-theme anim-bar" style="width:60%"></div>
           </div>
           <br>
         </div>
       </div><br>
-
-    <!-- End Left Column -->
     </div>
 
-    <!-- Right Column -->
-    <div class="w3-half">
-    
+    <div class="w3-col anim-slide-right" style="width:65%">
       <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-truck fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Formation</h2>
+        <h2 class="w3-text-grey w3-padding-16">
+          <i class="fa fa-map fa-fw w3-margin-right w3-xxlarge w3-theme-text"></i>Plan du CV
+        </h2>
+        <div class="w3-container w3-margin-bottom">
+          <!--
+            w3-table-all : affiche TOUTES les bordures et le striping
+            On utilise cette variante car elle rend bien les liens dans les cellules
+            Autres options W3.CSS disponibles (note perso):
+              - w3-table : sans bordures
+              - w3-bordered : bordures extérieures uniquement
+              - w3-striped : lignes alternées
+              - w3-hoverable : surlignage au survol
+          -->
+          <table class="w3-table w3-table-all w3-hoverable nav-table">
+            <thead>
+              <tr class="w3-theme-d2 w3-text-white">
+                <th></th>
+                <th>Avant 2010</th>
+                <th>2010 – 2013</th>
+                <th>2013 – 2015</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>Ma Formation</b></td>
+                <td>
+                  <a class="w3-theme-text" href="#formation-bac">
+                    <i class="fa fa-graduation-cap w3-margin-right"></i>Bac S
+                  </a>
+                </td>
+                <td>
+                  <a class="w3-theme-text" href="#formation-licence">
+                    <i class="fa fa-graduation-cap w3-margin-right"></i>Licence Info.
+                  </a>
+                </td>
+                <td>
+                  <a class="w3-theme-text" href="#formation-master">
+                    <i class="fa fa-graduation-cap w3-margin-right"></i>Master Info.
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td><b>Mon Expérience</b></td>
+                <td>
+                  <a class="w3-theme-text" href="#xp-aupres">
+                    <i class="fa fa-briefcase w3-margin-right"></i>Surveillance Auprés
+                  </a>
+                </td>
+                <td>
+                  <a class="w3-theme-text" href="#xp-agora">
+                    <i class="fa fa-briefcase w3-margin-right"></i>Dév. Web Agora
+                  </a>
+                </td>
+                <td>—</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="w3-container w3-card-2 w3-white w3-margin-bottom" id="formation">
+        <h2 class="w3-text-grey w3-padding-16">
+          <i class="fa fa-asterisk fa-fw w3-margin-right w3-xxlarge w3-theme-text"></i>Formation
+        </h2>
         <div class="w3-container">
-          <h5 ><b>OuverteSalledeClasses.com</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Permanent</h6>
+          <h5><b>OuverteSalledeClasses.com</b></h5>
+          <h6 class="w3-theme-text"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Permanent</h6>
           <p>Tout langage, technologie. Formation en ligne et mise à niveau.</p>
           <hr>
         </div>
-        <div class="w3-container">
-          <h5 ><b>CERI - Master Informatique, Université d'Avignon</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2013 - 2015</h6>
+        <div class="w3-container" id="formation-master">
+          <h5><b>CERI - Master Informatique, Université d'Avignon</b></h5>
+          <h6 class="w3-theme-text"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2013 - 2015</h6>
           <p>Master en Informatique, spécialité ILSEN (Ingénierie Logicielle et Société Numérique). Stage chez maboite@com.</p>
           <hr>
         </div>
-        <div class="w3-container">
-          <h5 ><b>CERI - Licence Informatique, Université d'Avignon</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2010 - 2013</h6>
-          <p>Licence en Informatique (Bachelor Degree), spécialité Ingénierie Logicielle. Stage chez Agora.</p><br>
+        <div class="w3-container" id="formation-licence">
+          <h5><b>CERI - Licence Informatique, Université d'Avignon</b></h5>
+          <h6 class="w3-theme-text"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2010 - 2013</h6>
+          <p>Licence en Informatique (Bachelor Degree), spécialité Ingénierie Logicielle. Stage chez Agora.</p>
+          <hr>
         </div>
-        <div class="w3-container">
-          <h5 ><b>Bac S - Lycée de la Tchatche</b></h5>
+        <div class="w3-container" id="formation-bac">
+          <h5><b>Bac S - Lycée de la Tchatche</b></h5>
+          <h6 class="w3-theme-text"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2007 - 2010</h6>
           <p>Baccalauréat série S. Mention Bien.</p><br>
         </div>
       </div>
 
-      <div class="w3-container w3-card-2 w3-white">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Expérience professionnelle</h2>
-        <div class="w3-container">
-          <h5 ><b>Stage Développeur chez maboite@com</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Juil 2016 - Current</h6>
+      <!-- Expérience professionnelle -->
+      <div class="w3-container w3-card-2 w3-white" id="experience">
+        <h2 class="w3-text-grey w3-padding-16">
+          <i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-theme-text"></i>Expérience professionnelle
+        </h2>
+        <div class="w3-container" id="xp-maboite">
+          <h5><b>Stage Développeur chez maboite@com</b></h5>
+          <h6 class="w3-theme-text">
+            <i class="fa fa-calendar fa-fw w3-margin-right"></i>Juil 2016 -
+            <!-- ANIMATION 6 : badge "Current" qui pulse -->
+            <span class="w3-tag w3-theme w3-small anim-pulse">Current</span>
+          </h6>
           <p>Dans le contexte de ce stage j'ai du revoir toute la stratégie de développement de la start-up maboite.com, spécialisée dans la fourniture clefs en main d'un package numérique aux nouvelles entreprises.</p>
           <hr>
         </div>
-        <div class="w3-container">
-          <h5 ><b>Développeur Web chez Agora</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Juil-Aou 2012 et Juil-Aou 2013</h6>
+        <div class="w3-container" id="xp-agora">
+          <h5><b>Développeur Web chez Agora</b></h5>
+          <h6 class="w3-theme-text"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Juil-Aou 2012 et Juil-Aou 2013</h6>
           <p>L'entreprise Agora est spécialisée dans le recueil des opinions de panels d'utilisateurs pour des entreprises. Dans ce contexte, j'ai eu à revoir l'architecture de la base de données sur laquelle repose toutes les interfaces web utilisées par les télé-opérateurs.</p>
           <hr>
         </div>
-        <div class="w3-container">
-          <h5 ><b>Surveillance chez Auprés</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jun-Sept 2009</h6>
+        <div class="w3-container" id="xp-aupres">
+          <h5><b>Surveillance chez Auprés</b></h5>
+          <h6 class="w3-theme-text"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jun-Sept 2009</h6>
           <p>Intégré dans l'équipe surveillance d'un magasin Auprés de ma ville. En charge du matériel électronique.</p><br>
         </div>
       </div>
 
-
-    <!-- End Right Column -->
     </div>
-    
-  <!-- End Grid -->
-  </div>
-  
-  <!-- End Page Container -->
-</div>
+    <!-- End Right Column -->
 
-<footer class="w3-container w3-teal w3-center w3-margin-top">
-  <p><i class="fa fa-copyright fa-fw w3-margin-right"></i>2016, François Dupont, contactez-moi aussi sur : ??</p>
+  </div>
+  <!-- End Grid -->
+
+</div>
+<!-- End Page Container -->
+
+<!-- Footer : w3-theme (couleur principale du thème) au lieu de w3-teal codé en dur -->
+<footer class="w3-container w3-theme w3-center w3-margin-top">
+  <p>
+    <i class="fa fa-copyright fa-fw w3-margin-right"></i>2016, François Dupont, contactez-moi aussi sur :
+    <a href="#" class="w3-text-white w3-hover-opacity"><i class="fa fa-linkedin fa-fw"></i></a>
+    <a href="#" class="w3-text-white w3-hover-opacity"><i class="fa fa-github fa-fw"></i></a>
+  </p>
 </footer>
- 
+
 </body>
 </html>
