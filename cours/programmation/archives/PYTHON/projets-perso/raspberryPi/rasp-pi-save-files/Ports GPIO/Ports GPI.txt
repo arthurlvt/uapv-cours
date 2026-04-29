@@ -1,6 +1,0 @@
-Les numéro qui se trouvent en bas des broches son des numéro BMC.
-Les numéro qui se trouvent au millieu (à gauche et à droite) des broches sont les numéro des ports GPI (Il y en à 40 au total).  
-jsx
-
-https://gpiozero.readthedocs.io/en/stable/recipes.html#led
-https://sourceforge.net/p/raspberry-gpio-python/wiki/Examples/

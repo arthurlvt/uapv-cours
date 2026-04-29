@@ -1,6 +1,0 @@
-C:\Users\vm_42_000\SkyDrive\Documents\Elephorm\Exercices\Decompte\bin\Debug\Decompte.exe.config
-C:\Users\vm_42_000\SkyDrive\Documents\Elephorm\Exercices\Decompte\bin\Debug\Decompte.exe
-C:\Users\vm_42_000\SkyDrive\Documents\Elephorm\Exercices\Decompte\bin\Debug\Decompte.pdb
-C:\Users\vm_42_000\SkyDrive\Documents\Elephorm\Exercices\Decompte\obj\Debug\Decompte.csprojResolveAssemblyReference.cache
-C:\Users\vm_42_000\SkyDrive\Documents\Elephorm\Exercices\Decompte\obj\Debug\Decompte.exe
-C:\Users\vm_42_000\SkyDrive\Documents\Elephorm\Exercices\Decompte\obj\Debug\Decompte.pdb

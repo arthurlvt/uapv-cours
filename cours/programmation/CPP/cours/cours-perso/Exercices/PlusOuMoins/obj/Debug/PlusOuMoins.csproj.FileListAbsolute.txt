@@ -1,5 +1,0 @@
-C:\Users\vm_42_000\SkyDrive\Documents\Elephorm\Exercices\PlusOuMoins\bin\Debug\PlusOuMoins.exe.config
-C:\Users\vm_42_000\SkyDrive\Documents\Elephorm\Exercices\PlusOuMoins\bin\Debug\PlusOuMoins.exe
-C:\Users\vm_42_000\SkyDrive\Documents\Elephorm\Exercices\PlusOuMoins\bin\Debug\PlusOuMoins.pdb
-C:\Users\vm_42_000\SkyDrive\Documents\Elephorm\Exercices\PlusOuMoins\obj\Debug\PlusOuMoins.exe
-C:\Users\vm_42_000\SkyDrive\Documents\Elephorm\Exercices\PlusOuMoins\obj\Debug\PlusOuMoins.pdb

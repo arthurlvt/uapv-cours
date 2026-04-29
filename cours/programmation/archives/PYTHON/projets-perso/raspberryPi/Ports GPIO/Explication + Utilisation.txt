@@ -1,6 +1,0 @@
-Les numéro qui se trouvent en bas des broches sont des numéros BMC.
-Les numéro qui se trouvent au millieu (à gauche et à droite) des broches, sont les numéro des ports GPI (Il y en à 40 au total).  
-Le raspberry est compatible avec 3,3 voltes uniquement.
-
-Site pour gérer les ports GPIO avec Python : https://gpiozero.readthedocs.io/en/stable/installing.html
-Vidéo explicative concernant le contrôle des ports GPIO avec Python : https://youtu.be/4hWG9X6kstY (7:56)
