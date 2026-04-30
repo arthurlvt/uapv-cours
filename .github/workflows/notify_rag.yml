@@ -1,0 +1,19 @@
+name: 📡 Notifier uapv-rag d'un nouveau push
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'cours/**'   # se déclenche uniquement si un fichier de cours change
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚀 Envoyer le signal à uapv-rag
+        run: |
+          curl -X POST \
+            -H "Authorization: token ${{ secrets.RAG_DISPATCH_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/arthurlvt/uapv-rag/dispatches \
+            -d '{"event_type": "cours_updated"}'
