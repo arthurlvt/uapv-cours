@@ -17,4 +17,4 @@ cours/.vscode/
 .github/
 ./.github/workflows/
 **/__pycache__/
-./programmation/conception_web/TPs/MINI-PROJET/
+cours/programmation/conception_web/TPs/MINI-PROJET/
