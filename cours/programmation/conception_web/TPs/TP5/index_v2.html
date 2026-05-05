@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire stylé</title>
+    <!-- W3.CSS -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <style>
+        * {
+            border-radius: 12px !important;
+        }
+        .no-radius {
+            border-radius: 0 !important;
+        }
+    </style>
+</head>
+<body class="w3-light-grey" style="font-family: 'Inter', sans-serif;">
+    <div class="w3-content" style="max-width: 980px; padding: 24px 16px 48px;">
+        <!-- HEADER -->
+        <div class="w3-container w3-padding-32 w3-margin-bottom w3-theme">
+            <h1 class="w3-xxxlarge">Bienvenue sur ce magnifique site</h1>
+            <p class="w3-large w3-opacity">Version propre avec W3.CSS</p>
+        </div>
+        <form class="w3-container">
+            <!-- INFOS -->
+            <div class="w3-card w3-white w3-margin-bottom">
+                <div class="w3-container w3-padding w3-theme-l3">
+                    <h2>Informations personnelles</h2>
+                </div>
+                <div class="w3-container w3-padding-24">
+                    <div class="w3-row-padding">
+                        <div class="w3-half">
+                            <label>Nom</label>
+                            <input class="w3-input w3-border w3-light-grey" type="text">
+                        </div>
+                        <div class="w3-half">
+                            <label>Prénom</label>
+                            <input class="w3-input w3-border w3-light-grey" type="text">
+                        </div>
+                    </div>
+                    <div class="w3-row-padding w3-margin-top">
+                        <div class="w3-half">
+                            <label>Age</label>
+                            <input class="w3-input w3-border w3-light-grey" type="number">
+                        </div>
+                        <div class="w3-half">
+                            <label>Email</label>
+                            <input class="w3-input w3-border w3-light-grey" type="email">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- PREFERENCES -->
+            <div class="w3-card w3-white w3-margin-bottom">
+                <div class="w3-container w3-padding w3-theme-l2">
+                    <h2>Préférences</h2>
+                </div>
+                <div class="w3-container w3-padding-24">
+                    <!-- GENRE -->
+                    <div class="w3-panel w3-pale-blue w3-border w3-border-blue" style="overflow:hidden;">
+                        <p><strong>Genre</strong></p>
+                        <div>
+                            <label><input class="w3-radio" type="radio" name="g"> Homme</label><br>
+                            <label><input class="w3-radio" type="radio" name="g"> Femme</label><br>
+                            <label><input class="w3-radio" type="radio" name="g"> Autre</label>
+                        </div>
+                    </div>
+                    <!-- SPORTS -->
+                    <div class="w3-panel w3-pale-green w3-border w3-border-green" style="overflow:hidden;">
+                        <p><strong>Sports</strong></p>
+                        <div>
+                            <label><input class="w3-check" type="checkbox"> Football</label><br>
+                            <label><input class="w3-check" type="checkbox"> Basket</label><br>
+                            <label><input class="w3-check" type="checkbox"> Natation</label><br>
+                            <label><input class="w3-check" type="checkbox"> Vélo</label>
+                        </div>
+                    </div>
+                    <!-- VILLE -->
+                    <div class="w3-margin-top">
+                        <label>Ville</label>
+                        <select class="w3-select w3-border w3-light-grey">
+                            <option>Paris</option>
+                            <option selected>Marseille</option>
+                            <option>Lyon</option>
+                        </select>
+                    </div>
+                    <!-- TEXTE -->
+                    <div class="w3-margin-top">
+                        <label>Commentaires</label>
+                        <textarea class="w3-input w3-border w3-light-grey" rows="4"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BOUTONS -->
+            <div class="w3-card w3-white w3-padding">
+                <button class="w3-button w3-theme w3-margin-right">
+                    Soumettre
+                </button>
+                <button class="w3-button w3-light-grey">
+                    Reset
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
