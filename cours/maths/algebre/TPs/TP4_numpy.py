@@ -66,9 +66,7 @@ def echanger_lignes(M, i, j):
     M[i], M[j] = M[j].copy(), M[i].copy()
 
 def transvection(M, i, j, c):
-    coeff_i = M[i, c]
-    coeff_j = M[j, c]
-    M[j] = coeff_i * M[j] - coeff_j * M[i]
+    M[j]= M[i,c]*M[j] - M[j,c]*M[i]
     
 def echelonner(A_original):
     A = A_original.copy()
