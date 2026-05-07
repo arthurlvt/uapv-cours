@@ -77,19 +77,19 @@ def echelonner(A_original):
     l = 0
     colonnes_pivot = []
     for c in range(n2):
-        if l == (n1 - 1): break
+        if l == n1: break
         pivot = chercher_pivot(A, l, c)
         if A[pivot][c] == 0: continue
         if pivot > l:
             echanger_lignes(A, l, pivot)
         for k in range(l + 1, n1):
             transvection(A, l, k, c)
-        colonnes_pivot.append(c)  # on retient la colonne du pivot
+        colonnes_pivot.append(c)
         l = l + 1
     
     rang = l
-    famille_libre = A_original[:, colonnes_pivot]  # colonnes de la matrice originale
-    return rang, famille_libre
+    famille_libre = A_original[:, colonnes_pivot]
+    return A, rang, famille_libre
         
 
 # ------------------- MAIN ------------------- #
@@ -152,14 +152,12 @@ if __name__ == "__main__":
         
         A = np.array([[1,2,1,1],[2,4,2,2],[3,6,3,4]], dtype=float)
         B = np.array([[1,2,1,3,3],[2,4,0,4,4],[1,2,3,5,5],[2,4,0,4,7]], dtype=float)
-
-        print(f"\nMatrice A de départ :\n{A}")
-        echelonner(A)
-        print(f"Matrice A échelonnée :\n{A}")
-
-        print(f"\nMatrice B de départ :\n{B}")
-        echelonner(B)
-        print(f"Matrice B échelonnée :\n{B}")
+        A_orig = np.array([[1,2,1,1],[2,4,2,2],[3,6,3,4]], dtype=float)
+        A_ech, rang, famille = echelonner(A_orig)
+        print(f"Matrice A de départ :\n{A_orig}")
+        print(f"Matrice A échelonnée :\n{A_ech}")
+        print(f"Rang : {rang}")
+        print(f"Famille libre :\n{famille}")
         
     questions = {
         1: ("Résolution d'un système linéaire", q1),
