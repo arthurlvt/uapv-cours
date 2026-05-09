@@ -1,0 +1,9 @@
+total 0
+drwxr-xr-x@ 8 arthurr  staff  256 Mar 23 14:06 01-04-2020
+drwxr-xr-x@ 7 arthurr  staff  224 Mar 23 14:06 02-07-2020
+drwxr-xr-x@ 7 arthurr  staff  224 Mar 23 14:06 All
+drwxr-xr-x@ 2 arthurr  staff   64 Mar 31 09:24 big_images
+-rw-r--r--@ 1 arthurr  staff    0 Mar 31 09:35 liste.txt
+drwxr-xr-x@ 4 arthurr  staff  128 Mar 31 09:25 pdf
+drwxr-xr-x@ 4 arthurr  staff  128 Mar 31 08:55 san_francisco
+drwxr-xr-x@ 2 arthurr  staff   64 Mar 31 09:24 small_images

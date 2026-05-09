@@ -1,0 +1,10 @@
+UAPV30899:L3:MARTIN:Marie:12/12/1990:Avignon:Anglais:12
+UAPV30900:L2:BERNARD:Thomas:08/01/1991:Le_Pontet:Programmation:10
+UAPV30901:L1:THOMAS:Léa:03/04/1992:Avignon:Conception:12
+UAPV30902:M1:PETIT:Nicolas:23/04/1989:Marseille:Programmation:12
+UAPV30903:L1:ROBERT:Camille:06/08/1992:Nice:Anglais:13
+UAPV30904:L1:RICHARD:Maxime:21/05/1992:Avignon:Modélisation:13
+UAPV30905:M2:DUBOIS:Chloé:04/12/1988:Avignon:Projet:17
+UAPV30906:M2:MOREAU:Alexandre:03/01/1988:Nice:Projet:12
+UAPV30907:L1:LAURENT:Julie:02/01/1993:Le_Pontet:Anglais:6
+UAPV30908:L3:SIMON:Julien:27/12/1990:Montfavet:Réseau:5
