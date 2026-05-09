@@ -1,0 +1,303 @@
+ANGLAIS - COURS
+
+Future Hope or Dangerous Science - The Human Genome Project
+It is important for scientists and doctors to understand how the human body works Now, the human groome project has made it possible. This knowledge could solve many of the world's health problems. But many people think that it is dangerous-people could use this knowledge in a bad way. Can we accept the vision of a healthier future? Maybe, but there are questions to answer before we do. First of all, what is a genome? Science calls it, "the code that describes an individual. This code is inside every cell of the human body. It is formed by four different molecules. One genome it a sequence of 70,000 million of these molecules. In most people, the sequence of molecules is different. This is why most people are different, too.  The project to describe the human genome beman in Britain and the US in the 1990's. The work was difficult because the mumber of molecules in a genome is so large. Two things made it possible: money from governments and private business, and faster computers. By the year 2000, the description of the haman genome was ready. Best of all, anyone with a computer could read it. This description is only the first part of the project. But newspapers say that the future for health looks good. Why? There are many examples. Ons is the problem of family illness. Families often suffer from the same illness because their genetic sequences are similar. Information about a person's genome could help doctors protect their patients. With signs of a possible heart problem, for example, a doctor could suggest healthy food and exercise. This could stop the illness happening. In the future, science could change an unhealthy genome sequence for a healthy one Many thousands of lives would be saved. But many people don't like this idea. They say it's unnatural. There are other dangers, too. Governments could use genetic information to produce the type of populations they want. Private companies could use it to decide about the workers they employ. In the case of insurance companies, everyone could suffer. Insurance costs could be higher for people with 'unhealthy' genes. Parents could use the information to plan the type of children that they want. People think that using the human genome information in this way is bad. But it is difficult to see how to prevent it. Everyone agrees that the human genome project has given us one of science's most important discoveries. The question is can we use the information wisely? Science cannot help. We must answer the question for ourselves.
+
+[14:28] 
+Scientists probe anti-aging gene - By Roland Pease - BBC Science Correspondent
+
+« Scientists in the US have discovered a gene that can keep mice alive for 30% longer than normal » 
+They say the gene has a key role to play in many of the processes related to ageing. Because humans have a very similar version of the gene, the hope is that it will show a way to improve our declining years. The gene studied in the new research is called Klotho, named after a minor Greek goddness who spins life's thread. The gene certainly seems to do that. Mice - and people - with defective forms of the gene appear to age prematurely. Now, researchers have show that by boosting the activity of the genen they can extend the natural lives of male mice from two to three years. The effect is not quite so strong in female mice.
+Downsides (= Drawbacks, Cons)
+“It could be one of the significant steps for developing anti-ageing therapy,” Dr Makoto Kuro-o, assistant professor of pathology at the University of Texas’ Southwestern Medical Center and senior author of the study, told Science magazine. Klotho seems to delay many of the effects of old age, like the weakening of bones, clogging of the arteries and loss of muscle fitness. This is important for those researching the causes of ageing, whose intention is not so much to prolong life as to improve the quality of our final years. But there may be downsides with Klotho. The long-lived mice in the new experiments tend to be less fertile. And the gene may also predispose people to diabetes. The trick for researchers will be to find ways of getting the life-enhancing results of Klotho while avoiding the drawback.
+
+——————————————————————————————————————————————————————————————————
+
+
+-> First, this document is a text that is named « Future Hope or Dangerous Science, the Human Genome Project ». Thanks to the name, we learn that this texte deals with the future of humans body and how it could work in a close future. The goal of this project was to analyse the genome cells sequences in order to reduce health problems all across the world. We can learn that the project was really hard because of the number of different sequences of genomes but thanks to government and private business, this had made possible. On the second part of this text, we learn that people don’t agree with this project because they think the information scientists and doctors get will become public and then it could have a lot of problems next. In recent years, science has made incredible progress in understanding the human body and its functions. One of the greatest achievements is the Human Genome Project, a large international scientific program launched in the 1990s. The genome, which is the complete set of genetic information contained in our cells, acts like a code that determines the characteristics of every individual. However, while this project offers hope for new medical solutions and healthier lives, it also raises important concerns. On the one hand, genetic knowledge could help doctors prevent diseases and even save lives. On the other hand, it may create serious ethical, social, and political dangers, such as discrimination or the manipulation of human life.
+
+
+New York Pedestrians face iPod ban : English Test
+Crossing the street while listening to an MP3 player may soon be illegal in New York. The law has been proposed in response to several deaths apparently caused by pedestrians stepping into traffic while listening to iPods. The ban would also extend to other electronic devices including cell phones, video games and handheld emailing devices such as Blackberries, and offenders would face a $100 fine.
+
+Senator Carl Kruger, who proposed the ban, said that pedestrians are getting so involved with what they are listening to on their iPods that they don’t pay enough attention to the traffic, often with tragic consequences. Speaking of these pedestrians, Kruger said, “What’s happening is when they’re tuning into their iPod or Blackberry or cell phone or video game, they’re walking into speeding buses and moving automobiles. It’s becoming a nationwide problem.”
+
+According to Kruger, three people have been killed since September in the Brooklyn area as a result of stepping off the sidewalk in front of fast-moving vehicles. In one case, a fellow pedestrian shouted a warning but the victim couldn’t hear it because of the MP3 player. Kruger suggests that the use of such devices should be limited to benches or parks. His proposed legislation would also extend to joggers and cyclists and would apply to the larger cities in New York State.
+
+——————————————————————————————————————————————————————————————————
+
+——————————————————————————————————————————————————————————————————
+
+——————————————————————————————————————————————————————————————————
+
+
+Document 1 : Taking the Earth’s pulse
+IN THE wilds of the San Jacinto Mountains, along a steep canyon, scientists are turning 12 hectares of pines and hardwoods in California into a futuristic vision of environmental study. They are linking up more than 100 tiny sensors, robots, cameras and computers, which are beginning to paint an unusually detailed portrait of this lush world, home to more than 30 rare and endangered species. Much of the instrumentation is wireless. Devices the size of a deck of playing cards — known as motes — can measure light, wind speed, rainfall, temperature, humidity and barometric pressure, detecting the presence of a warm body or tracking the progress of a chill wind up a canyon. “The potential for environmental science is amazing,” said Dr. Alexandra Issern, a program director at the National Science Foundation. “With this technology, we can start to understand what is an event and what is normal. We’re recognizing more and more how different processes in the environment operate at different frequencies. To comprehend that, you need to take measurements all the time.” Scientists hope to learn more about soil contaminants, land changes, water flow, invasive species, ocean cycles, continent formation, the places atmospheric carbon is stored, why volcanoes erupt and the ways viruses and gene fragments move through the environment. Motes have custom-designed computer chips and sensors and are wireless and powered by batteries or solar cells, allowing scientists to use them in remote places and to move them around. Networks of them, and their larger cousins, are envisioned as dotting swathes of North America and running through the waters of the West Coast from California to Canada. “It’s a sea change across a whole range of fields,” said Dr. Roberts, a senior scientist at the Woods Hole Oceanographic Institution on Cape Cod, Massachusetts. “The objective is long-term investigation of temporal, climate or human impact. It’s a big change.”
+
+From The New York Times / Le Monde; May 21, 2005.
+
+——————————————————————————————————————————————————————————————————
+
+Taking the earth's pulse" discusses how scientists are using advanced technology to study the environment in the San Jacinto Mountains. This includes a network of tiny sensors, cameras, and robots that can monitor a wide range of environmental factors. The goal is to gain a detailed understanding of the ecosystem, including soil contaminants, climate change, water flow, and invasive species. Scientists hope this research will help them comprehend and address environmental changes. The article highlights the potential of environmental science and the importance of such detailed, long-term investigations.
+
+
+
+Document 2 : 12 top nanotechnology examples (builtin.com)
+
+
+Document 3 : Climate Change
+1 So far, much of the debate on climate change has been about future predictions, such as how much sea levels will rise in the next 100 years. However, fast and unpredictable changes in world weather are no longer just visions of the future — they are already happening. Already, we are seeing more frequent heatwaves and more intense cyclones. Already, more areas are being hit by droughts and floods. Already, the world’s glaciers and ice caps are melting.
+
+2 There is abundant evidence of climate change from all corners of the globe. In Zambia, the rains have arrived late for the last three years and have lasted only a few days. In the village of Chikani, farmers prepared their fields for planting in November, as usual, but in mid-December, it still hadn’t rained. Unpredictable weather is a serious problem for farmers, who base their annual round of activities such as planting and harvesting on previous experience. When the climate changes, previous experience is no longer a reliable guide. “We waited, but the first drop didn’t fall till December 20. After a day, the rains stopped. Three weeks later, it started to rain again. But then it stopped again after a few days. Since then, we have had no rain. We have never known anything like this before,” says Julius Njame, a local farmer.
+
+3 The changing climate is wreaking havoc in a different way on low-lying and densely populated Bangladesh. There, government meteorologists this year reported a 10% increase in intensity and frequency in major cyclones hitting the country — two of the most powerful cyclones ever recorded have hit the country in the last three years. “We are getting too much water in the rainy season and too little in the dry season,” says Raja Debashish Roy, Bangladesh’s environment minister. The intense rainfall destroys crops, leading to poor harvests, food shortages, and malnutrition.
+
+4 In Nepal, scientists are recording some of the fastest increases in temperatures and rainfall anywhere in the world. Many lakes in Nepal and neighbouring Bhutan, which collect glacier meltwater, are said by the UN to be growing so rapidly that they burst their banks. The amount of water washing down the mountainsides is leading to a serious problem of soil erosion. Meanwhile, in the Caribbean, the hurricane season has reached record lengths, and hurricanes are getting more frequent and intense. As a result, poor countries such as Haiti are facing devastating floods which destroy crops, homes, and infrastructure.
+
+5 If climate change predictions are accurate, we haven’t seen anything yet. Global warming has only just started. In places like north-east Brazil, temperatures have only risen by 1°C so far. They may rise by 3° or 4°C in the years to come, but it is already much hotter than it used to be and it stays hotter for longer. Droughts have already forced many young farmers to abandon the region and look for work in the south. The Pernambuco state environment minister, Aloysio Costa, says: “In 20 years’ time we could be a desert region. In some communities there are no young people left at all. This is an emergency. Food production is going down in many areas.” But this is not just a problem in Pernambuco. Climate change is starting to devastate communities all over the world. This is fast becoming a global emergency.
+
+——————————————————————————————————————————————————————————————————
+
+> This Document describes a scientific project in the Santa Jacinto Moutains (California), where researchers are creating an advanced monitoring system, let’s explain ; They use something like more than an hundred wireless devices wich are called « motes », powered by batteries or solar energy and wich can be placed or moved around easily, even in hard places and remote locations.These devices are equiped with a lot of technologies such as cameras, sensors and computers. These devices can measure many environmental factors such as light, wind, temperature, humidity and sure in order to collect constant detailed data so they will better understand natural process including soil quality, land changes, water flows, invasive species, oeacan cycles and even how viruses and gene spread in this new environment.
+
+> To conclude, I would say that researchers believe that this technology will bring major progresses and a real help for improvements across many scientific fields by allowing long term studies and inquiries about climate change and then global warming.
+
+
+
+Document 4 : The environmental Impact of Nanotechnology (www.azonano.com) 
+Tiny fixes for a big planet (EcolnnovaTech, 4.21)
+Green nanotechnology represents a critical area of innovation, offering eco-friendly solutions to global sustainability challenges, particularly climate change. This technology focuses on developing non-toxic nanomaterials and processesto minimize environmental harm.
+
+Green nanotechnology delivers significant benefits across multiple sectors:
+
+Water and Air Quality: Solutions like nano filters are used for water purification, while nano sensors efficiently detect air pollutants.
+
+Eco-Efficiency: The process itself reduces toxic waste from traditional technologies and enhances efficiency in manufacturing and agriculture (via nanoagrochemicals).
+
+Global Impact: Real-world successes in regions like India, Brazil, and Europe demonstrate its potential for large-scale CO2​ reduction.
+
+To realize the full potential projected by 2040, challenges must be overcome. These include addressing high production costs and mitigating safety concerns regarding the long-term impacts of certain nanomaterials. Continued investment and research into consistent, bio-based nanos are essential for widespread adoption. In essence, green nanotechnology is a transformative field that balances technological advancement with environmental responsibility, offering a powerful tool for a cleaner, more sustainable future.
+
+
+Document 5 : Green Nanotechnology and Sustainability Challenges (cf YTB)
+> Green nanotechnology is emerging as a key advancement in the transition toward sustainable technological solutions. Based on the use of nanomaterials produced through non-toxic and environmentally friendly processes (such as plant-based synthesis), it aims to minimize ecological impact while addressing major climate challenges. In a context where climate change could cost up to $200 billion per year by 2025, these technologies stand out as essential tools for the future.
+
+-> Green nanotechnology represents a major advancement in the development of sustainable technologies. It is based on the creation of nanomaterials using non-toxic and environmentally friendly methods, such as plant-based synthesis, with the goal of reducing ecological impact while addressing major climate challenges. As climate change is expected to cost up to 200 billion dollars per year by 2025, these technologies are increasingly viewed as essential.
+Green nanotechnology aims to use safer materials, reduce hazardous waste, lower risks to ecosystems, and improve efficiency in how resources are produced and used. Its applications are already visible in several key areas. In water purification, green nanomaterials enable more efficient and accessible treatment systems. In air quality management, advanced nanosensors and filtration devices help monitor and reduce pollution. In industrial processes, these technologies contribute to reduced energy consumption. In agriculture, nano-agrochemicals support more efficient use of water and fertilizers.
+Several countries, including India, Brazil, and regions in Europe, have successfully implemented green nanotechnology solutions across various industries. Despite its potential, the field still faces challenges such as high production costs and concerns about the safety and environmental impact of nanomaterial disposal. However, increasing investment and continuous technological innovation suggest that broader adoption is likely.
+By 2040, projections indicate significant global benefits from green nanotechnology, including the purification of 200 billion liters of water, the creation of five million jobs, and the development of new sustainable industrial sectors. Individuals and organizations are encouraged to support green technologies, promote sustainability-focused policies, and help spread awareness within their communities.
+
+
+
+Document 6 : Thanksgiving history EFL (Amy Rodulfo, 3.18)
+-> Thanksgiving is a beloved American holiday, celebrated annually with turkey, pumpkin pie, family gatherings, football, and parades. The video traces these traditions back to their deep historical roots in the early 17th century.
+
+-> The narrative begins in 1620 with the arrival of the Pilgrims—102 English settlers, including those seeking religious freedom—who reached the New World aboard the Mayflower. The video details the Pilgrims' challenging circumstances, including a harsh initial winter that caused significant loss of life. A critical turning point was the aid provided by the Wanoig Indigenous people. A key figure, Squanto, offered vital assistance and knowledge, helping the settlers survive and succeed in farming. The historical foundation of the holiday is the 1621 harvest celebration. This feast, influenced by European harvest festivals, saw the Pilgrims and their Indigenous allies break bread together, reflecting a moment of community and gratitude for a successful crop. It was a spontaneous, three-day harvest festival—not yet a formalized annual holiday.
+
+-> Thanksgiving’s journey of tradition-building and cultural evolution culminated in 1941, when Congress officially recognized it as a legal national holiday. Today, the focus has shifted. While the 1621 event centered on survival and a successful harvest, modern Thanksgiving is celebrated as a family-centric holiday focused on reflection, gratitude for blessings, and strengthening bonds with loved ones. Modern celebrations have incorporated large-scale traditions like the Macy's parade and televised football games.
+
+
+
+Document 7 : Why is it called Black Friday? (www.britannica.com)
+
+-> Oral Expression or/and Writing Expression : The origin, meaning and evolution of both events.
+
+Writing Expression Part :
+
+
+Oral Expression Part :
+Black Friday would have two origin theories ; 
+On one hand, we can learn that Black Friday could have come from the fact that the D-Day (wich is the day following thanksgiving) is a kind of financial loss, or the day that puts national chains stores « into the red » and then they say that they are « in the black » which is really untrue. On the other hand there is a second theory which could be more consistent  and goes back to the 60’s ; It’s said that the « Black Friday » term could describe the chaos which occured because of the  Saturday’s annual Army-Navy football game that used to attract a lot of suburban tourists that came in the city and created 
+a headache for the police with accidents, traffic jams and others. Next in the 80’s, « Black Friday » took on a more positive 
+connotation, used to talk about the day businesses make the biggest profit of the year in the USA. When they saw how 
+profittable this was, store chains invented new big shopping days such as cyber monday for online shopping or 
+Small Business Saturday to encourage the local retail. However, historically, Black Friday got another connotation when in 
+1869, two men occured a big bankruptcy for a thousand of americans because of a rate fall of the gold when the president 
+stopped it. (Add my opinion ‘bout Black Friday before and nowadays)
+
+To conclude, my personnal opinion is that the Black Friday is a good thing because like everyone, I like it too, but there is also a bad side 
+because even if people didn’t want to buy something, they waste money and it’s also bad for the carbon footprint.
+
+
+——————————————————————————————————————————————————————————————————
+
+
+The Carbon Footprint of Watching Television : English Test
+
+In the Green Technology project here at BBC R&D we are looking at the environmental impact of media technology and how it could be reduced. In order to get an overview of where the biggest impacts are and so where to focus our efforts, we recently did some work to estimate the carbon footprint of the end-to-end television chain from a programme’s production all the way through to watching it at home. 
+In recent years, we have seen a growth in the number of consumer electronic devices people have in their homes and an increase in individual viewing. Both of these are causing an increase in total power consumption, and hence in carbon footprint.
+When we considered the whole television chain of production, distribution and consumption, we found that the largest environmental impact associated with a television programme was not the energy consumed in making it, but the energy used by the millions of televisions, set-top boxes and other consumer devices involved in watching it. This amounts to 76% of the total for digital terrestrial television (Freeview); 78% if the programme is watched on BBC iPlayer on a desktop PC and 37% if watched on BBC iPlayer using laptop computers. The trend for larger television and computer screens could increase this, although there is a parallel increase in viewing on low-power mobile devices. Programme-making contributes just 12% to 35% of the carbon footprint of watching television.
+When we compared broadcasting with distribution over the Internet, we found that broadcast has a smaller carbon footprint per viewer-hour than Internet distribution for average sized audiences, but not for small audiences or for homes using an aerial amplifier.
+Overall, the element with the biggest impact is the display. Larger screens generally use more power and the size of the screen has a bigger effect on the power consumption than the technology that it uses. New screen technology such as OLED displays look very promising in terms of their power consumption.
+So, what can viewers do? We suggest viewers take energy consumption into account when purchasing new television sets. Very soon, the UK will be introducing energy labels for televisions, similar to those for washing machines, fridge freezers etc. This will give televisions a rating for their energy efficiency and so help consumers make purchasing decisions. However, don’t replace your current TV just to save energy, because there will still be the environmental impact of manufacturing and disposal to take account of.
+
+——————————————————————————————————————————————————————————————————
+——————————————————————————————————————————————————————————————————
+——————————————————————————————————————————————————————————————————
+
+
+Tenses -> Present / Past / Future
+Aspects -> Perfect / Continuous / Simple with perfect continuous and simple
+/-> By the way, perfect link between 2 tenses (for example past before past, future before future…)
+/-> By the way, continous is to talk about what’s in progress
+-> For example, with the verb to rain ;
+/-> Now, it's raining
+/-> Every months, it rains
+/-> It has been raining for 2 hours actually
+/-> Tomorrow, it will rain / Tomorrow, it will be rain at 10 AM / Tomorrow, it will have been raining for 2 hours
+/-> Yesterday it rained / Yesterday, it was raining at 10 AM  / Yesterday, it had been raining for 2 hours
+
+Alan Turing (born in 1912) was one of the greatest mathematical geniuses of the 20th century. 
+Gifted with an extraordinary mind, he was capable of solving incredibly complex problems entirely 
+in his head. During World War II, he designed a revolutionary machine to crack Enigma, the secret 
+code used by the Nazis. This contribution proved decisive in the Allied victory, making him a true 
+world hero — though his work remained classified for decades. In 1950, he published groundbreaking 
+research laying the foundations of what we now call artificial intelligence, envisioning a world 
+where machines could think and reason like humans. Yet despite everything he had given to humanity, 
+Turing was persecuted for his homosexuality, which was criminalized in England at the time. 
+Convicted and subjected to forced chemical castration, he fell into a deep depression and died in 
+1954 under tragic circumstances. His legacy is immense: he is today regarded as the father of computer 
+science and AI. A brilliant life shattered by prejudice — and a painful reminder of what intolerance can 
+cost the world.
+
+The video explores the concept of the Turing test, a seminal idea introduced by computer scientist 
+Alan Turing in 1950 to address the question, “Can machines think?” The Turing test is a hypothetical 
+game involving three participants: an interrogator, a human, and a computer. The interrogator, isolated 
+from the other two, asks questions to determine which participant is human and which is a machine. 
+The computer’s goal is to deceive the interrogator into misidentifying it as the human. If the computer 
+succeeds frequently enough, it suggests the machine exhibits human-like intelligence. However, the video 
+highlights that the Turing test is not without flaws. It tends to reward trickery rather than genuine 
+understanding or intelligence. For instance, some AI programs have faked language deficits to mask 
+limitations. Furthermore, the test does not consider forms of intelligence that are not human-like, 
+meaning certain advanced AI systems might fail the test yet still represent significant progress. 
+Ultimately, while passing the Turing test is an intriguing milestone, it should not be equated with true
+machine intelligence or consciousness. The test prompts valuable reflection on how we define intelligence 
+and what qualities we desire in intelligent machines.
+
+
+——————————————————————————————————————————————————————————————————
+——————————————————————————————————————————————————————————————————
+——————————————————————————————————————————————————————————————————
+
+Doc 1 -> The history of St Patrick's Day (Lear Bright | isc collective)
+Doc 2 -> St Patrick's Day - Bet you didn't know (History)
+Doc 3 -> The story behind St Patrick's Day (EchilonMedia)
+|-> Oral Expression (around 5min)         | intro + dev
+|-> Writing Expression (around 250 words) | + conclude
+
+<-----------------------------| Remind: |----------------------------->
+Present Perfect or Past Simple? Exercice 1               | exercices
+(englishgrammarspot, 4.47)                               |
+Present Perfect or Past - English Grammar Tutorial, 2.17 | lesson
+
+-> Last friday, I watched the match with Bob
+-> I have never seen a live tennis match
+-> Last week, we heard about a nice pub
+-> Mary broke her leg last month
+-> They have already sent him a card
+-> Anna became / has become a member of the club
+-> I know for sure she ate / has eaten my cake
+-> This morning, I didn't receive the paper
+-> This restaurant opened two weeks ago
+-> I know many people who have tried this
+-> They started their course in 2012
+-> Have you read this magasine yet?
+-> Did you see this film last night?
+-> Last week, he wrote a letter to me
+-> Did you already check / have you checked your parachute?
+
+
+
+-> The person is dead - I met him twice
+-> The person is alive - I have met him twice
+-> It's 10a.m - This morning, he has eaten 2 cakes
+-> She has eaten for sure 6 or 7 cakes
+-> Have you ever seen this film?
+<--------------------------------------------------------------------->
+
+Doc 1 -> History of Measurement | System (The learning reservoir, 2.48)
+A lot of measurements had been invented for a lot of centuries. It started for example when egyptian
+wanted to build their pyramids so they invented the cubit which is the lenght from the elbow to the 
+tip of the middle finger when the arm is extended. Next there are also measurements such as the foot,
+(which is 12 inches), the palm, which is the width of the four fingers when they are placed together.
+This measurement system was very problematic because, for example, body part measurements are not really
+accurate when dealing with fractions of body parts and people also have different sized body parts.
+Next, despite it was already used for a lot of time, they invented the metric system, especially the french
+government that commissioned the Academy of Science to design a simple decimal-based system of units in 1790,
+named later, in the 60', the Système International d'Unité (also called SI as shortcut) and used know in a lot
+of countries, almost every, excepted United States which kept the imperial units.
+
+Doc 2 -> Imperial Units and Measurements | English Vocabulary
+Units for lenght: inch, foot, yard, mile
+Units for weight: pound, stone, ouce
+Units for fluids: pint, gallon
+Units for surface area: squarefoot
+Unit for temperature: fahrenheit
+
+-> Reminder on past : Be + pp
+"He will talk about the problem" -> "The problem will be talked"
+"He is painting the room" -> "The room is being painting"
+"Someone has reported the incident" -> "The incident has been reported by someone"
+
+History of computers
+17th century -> Blaise Pascal introduced the blaise pascal, arithmetical machine that is able to realise some calculs
+- ABACUS
+
+- Doc 1 : History of computers ; From abacus to Moderne PCs (Global Wise Hub, 2:20)
+- Doc 2 : Who invented the computer? (Computer History Museum, 4:55)
+- Doc 3 : Who invented the first computer? (Griffith Archive, 1:01)
+- Doc 4 : Eniac the first computer (University of Pensylvania, 2:15)
+|-> Work to do: W.E (around 250 works) and / or O.E (around 5mins)
+
+
+- Doc 1 : History of computers ; From abacus to Moderne PCs (Global Wise Hub, 2:20)
+First video explores the fascinating evolution of computers, tracing their origins from ancient arithmetic tools to 
+the sophisticated devices we use today. It highlights key milestones in computing history, including early mechanical 
+calculators, pioneering inventors and inventions, the emergence of electronic computers, and the personal computer revolution. 
+The narrative is presented in a clear chronological order, focusing on major developments and the technologies that paved the way 
+for modern computing.
+
+
+- Doc 2 : Who invented the computer? (Computer History Museum, 4:55)
+This video explores the fascinating history behind one of the most important inventions in human history—the computer. It traces 
+the evolution of computing machines, showcasing key inventors and their contributions, from early theoretical designs to fully 
+functioning electronic computers. The narrative is chronological and emphasizes the collaborative and incremental nature of the 
+computer’s invention, highlighting major milestones and legal controversies surrounding patent rights. The content is engagingly 
+presented by weaving historical facts with technological explanations, illustrating how many pioneers collectively shaped the 
+evolution of computing.
+
+
+- Doc 3 : Who invented the first computer? (Griffith Archive, 1:01)
+This video introduces the historical beginnings of the computer, highlighting Charles Babbage’s invention of the world’s first 
+computational machine in 1837—the Analytical Engine. It explains how the concept of a computer originally referred to human 
+mathematicians and explores Babbage’s vision of automating calculations through a mechanical device with distinct components 
+similar to modern computers. The introduction also touches on Ada Lovelace’s pioneering role in programming and how her insight 
+expanded the potential uses of computers beyond mathematics. The explanation blends historical context with core technological 
+concepts to set the foundation for understanding computer evolution.
+
+
+- Doc 4 : Eniac the first computer (University of Pensylvania, 2:15)
+This video introduces the historical breakthroughs at the Moore School of Electrical Engineering, University of Pennsylvania, 
+where pioneering engineers sought to tackle complex mathematical problems that traditional methods could not solve efficiently. 
+To do this, they invented the ENIAC, the world’s first all-electronic general-purpose digital computer. The content explains how 
+this invention revolutionized computation, enabled rapid advancements in various fields, and laid the foundation for modern computing 
+architecture. The explanation mixes historical narrative with technical milestones, highlighting the human drive for knowledge 
+creation.
+
+
+From ancient arithmetic tools to the sophisticated devices we use today, the history of computers is a fascinating journey spanning 
+several centuries, driven by human curiosity and the constant need to solve complex problems faster and more efficiently. Long before 
+electronic machines existed, the word "computer" referred to human mathematicians tasked with performing calculations by hand. Early 
+civilizations developed mechanical aids such as the abacus to assist with arithmetic, laying the very first groundwork for automated 
+computation. The first major conceptual leap came in 1837, when British mathematician Charles Babbage designed the Analytical Engine — 
+widely regarded as the world's first programmable computing machine. It already featured distinct components strikingly similar to 
+those found in modern computers. His collaborator, Ada Lovelace, took this vision even further by writing what is considered the 
+first computer program, and by recognizing that the machine's potential extended far beyond pure mathematics. She is now celebrated 
+as the world's first programmer. However, the true turning point came in 1945, at the Moore School of Electrical Engineering at the 
+University of Pennsylvania, where engineers built the ENIAC — the Electronic Numerical Integrator and Computer. It was the first 
+fully electronic, general-purpose digital computer, designed to tackle mathematical problems that traditional methods simply could 
+not handle efficiently. The ENIAC revolutionized computation and established the architectural foundations that modern computers 
+still build upon. From there, the invention of the computer cannot be credited to a single individual — it was a collaborative, 
+incremental process, marked by countless pioneers, competing patents, and legal controversies. By the 1970s and 80s, the Personal 
+Computer revolution brought computing out of research labs and into everyday life, leading directly to the powerful devices we rely 
+on today. 
