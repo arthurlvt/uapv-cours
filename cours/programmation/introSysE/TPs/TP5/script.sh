@@ -56,8 +56,8 @@ EOF
     for vignette in vignettes/*.jpg; do
         original="${vignette#vignettes/}"
         cat <<EOF >> index.html
-        <a href="../$original" target="_blank">
-            <img src="$vignette" alt="$original">
+        <a href="$dir/vignettes/$original" target="_blank">
+            <img src="$dir/$vignette" alt="$original">
         </a>
 EOF
     done

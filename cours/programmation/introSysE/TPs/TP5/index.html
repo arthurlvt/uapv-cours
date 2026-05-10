@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie d'images</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .gallery img {
+            width: 128px;
+            height: 128px;
+            object-fit: cover;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            transition: transform 0.2s;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+            border-color: #777;
+        }
+    </style>
+</head>
+<body>
+    <h1>Galerie d'images</h1>
+    <div class="gallery">
+        <a href="galerie/vignettes/vignette_photo1.jpg" target="_blank">
+            <img src="galerie/vignettes/vignette_photo1.jpg" alt="vignette_photo1.jpg">
+        </a>
+        <a href="galerie/vignettes/vignette_photo2.jpg" target="_blank">
+            <img src="galerie/vignettes/vignette_photo2.jpg" alt="vignette_photo2.jpg">
+        </a>
+        <a href="galerie/vignettes/vignette_photo3.jpg" target="_blank">
+            <img src="galerie/vignettes/vignette_photo3.jpg" alt="vignette_photo3.jpg">
+        </a>
+        <a href="galerie/vignettes/vignette_photo4.jpg" target="_blank">
+            <img src="galerie/vignettes/vignette_photo4.jpg" alt="vignette_photo4.jpg">
+        </a>
+        <a href="galerie/vignettes/vignette_photo5.jpg" target="_blank">
+            <img src="galerie/vignettes/vignette_photo5.jpg" alt="vignette_photo5.jpg">
+        </a>
+        <a href="galerie/vignettes/vignette_photo6.jpg" target="_blank">
+            <img src="galerie/vignettes/vignette_photo6.jpg" alt="vignette_photo6.jpg">
+        </a>
+        <a href="galerie/vignettes/vignette_photo7.jpg" target="_blank">
+            <img src="galerie/vignettes/vignette_photo7.jpg" alt="vignette_photo7.jpg">
+        </a>
+    </div>
+</body>
+</html>
