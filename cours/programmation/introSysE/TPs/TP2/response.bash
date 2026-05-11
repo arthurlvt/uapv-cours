@@ -49,5 +49,3 @@ grep -f<(cat result.txt)
 
 # ----------------- EXERCICE 3 ----------------- #
 # Redirections des flux d'entrée/sortie
-
-
