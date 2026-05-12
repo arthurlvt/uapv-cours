@@ -179,12 +179,6 @@ and what qualities we desire in intelligent machines.
 ——————————————————————————————————————————————————————————————————
 ——————————————————————————————————————————————————————————————————
 
-Doc 1 -> The history of St Patrick's Day (Lear Bright | isc collective)
-Doc 2 -> St Patrick's Day - Bet you didn't know (History)
-Doc 3 -> The story behind St Patrick's Day (EchilonMedia)
-|-> Oral Expression (around 5min)         | intro + dev
-|-> Writing Expression (around 250 words) | + conclude
-
 <-----------------------------| Remind: |----------------------------->
 Present Perfect or Past Simple? Exercice 1               | exercices
 (englishgrammarspot, 4.47)                               |
@@ -213,7 +207,43 @@ Present Perfect or Past - English Grammar Tutorial, 2.17 | lesson
 -> It's 10a.m - This morning, he has eaten 2 cakes
 -> She has eaten for sure 6 or 7 cakes
 -> Have you ever seen this film?
+
+
+-> Reminder on past : Be + pp
+"He will talk about the problem" -> "The problem will be talked"
+"He is painting the room" -> "The room is being painting"
+"Someone has reported the incident" -> "The incident has been reported by someone"
+
+-> Passive Voice - English Lesson (Anglo Link, 14.29) et Passive Voice Exercises (Anglo Link , 11.32)
 <--------------------------------------------------------------------->
+
+
+History of St Patrick's Day
+Doc 1 -> The history of St Patrick's Day (Lear Bright | isc collective)
+Doc 2 -> St Patrick's Day - Bet you didn't know (History)
+Doc 3 -> The story behind St Patrick's Day (EchilonMedia)
+|-> Work to do: W.E (around 250 works) and / or O.E (around 5mins) : intro + dev + conclusion
+
+Doc 1 -> The history of St Patrick's Day (Lear Bright | isc collective)
+St Patrick’s Day originated from the historical figure Saint Patrick, who transformed Ireland’s 
+religious landscape through his Christian mission. Celebrated every March 17th to mark his death, 
+the day evolved from a devout church holiday to a vibrant global festival highlighting Irish culture, 
+cuisine, and folklore. Key symbols such as the shamrock and the color green connect deeply to Irish 
+identity and mythology. Recognizing the holiday’s dual religious and cultural evolution offers rich 
+insight into how traditions adapt and spread worldwide.
+
+
+Doc 2 -> St Patrick's Day - Bet you didn't know (History)
+
+
+<--------------------------------------------------------------------->
+
+
+History Of Measurement
+Doc 1 -> History of Measurement | System (The learning reservoir, 2.48)
+Doc 2 -> Imperial Units and Measurements | English Vocabulary
+|-> Work to do: W.E (around 250 works) and / or O.E (around 5mins) : intro + dev + conclusion
+
 
 Doc 1 -> History of Measurement | System (The learning reservoir, 2.48)
 A lot of measurements had been invented for a lot of centuries. It started for example when egyptian
@@ -227,6 +257,7 @@ government that commissioned the Academy of Science to design a simple decimal-b
 named later, in the 60', the Système International d'Unité (also called SI as shortcut) and used know in a lot
 of countries, almost every, excepted United States which kept the imperial units.
 
+
 Doc 2 -> Imperial Units and Measurements | English Vocabulary
 Units for lenght: inch, foot, yard, mile
 Units for weight: pound, stone, ouce
@@ -234,15 +265,12 @@ Units for fluids: pint, gallon
 Units for surface area: squarefoot
 Unit for temperature: fahrenheit
 
--> Reminder on past : Be + pp
-"He will talk about the problem" -> "The problem will be talked"
-"He is painting the room" -> "The room is being painting"
-"Someone has reported the incident" -> "The incident has been reported by someone"
+
+<--------------------------------------------------------------------->
+
 
 History of computers
-17th century -> Blaise Pascal introduced the blaise pascal, arithmetical machine that is able to realise some calculs
-- ABACUS
-
+17th century -> Blaise Pascal introduced the blaise pascal, arithmetical machine that is able to realise some calculs : ABACUS
 - Doc 1 : History of computers ; From abacus to Moderne PCs (Global Wise Hub, 2:20)
 - Doc 2 : Who invented the computer? (Computer History Museum, 4:55)
 - Doc 3 : Who invented the first computer? (Griffith Archive, 1:01)
@@ -283,6 +311,7 @@ To do this, they invented the ENIAC, the world’s first all-electronic general-
 this invention revolutionized computation, enabled rapid advancements in various fields, and laid the foundation for modern computing 
 architecture. The explanation mixes historical narrative with technical milestones, highlighting the human drive for knowledge 
 creation.
+
 
 
 From ancient arithmetic tools to the sophisticated devices we use today, the history of computers is a fascinating journey spanning 

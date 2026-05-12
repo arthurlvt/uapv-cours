@@ -35,6 +35,7 @@ cat result.txt | cut -f6 -d":" | sed "s/:/ /g" | grep "e.*e" | sort -u
 or
 grep -f<(cat result.txt)
 
+
 # ----------------- EXERCICE 2 ----------------- #
 # Commande find
 2. find . -name "*.cc"

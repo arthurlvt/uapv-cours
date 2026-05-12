@@ -1,0 +1,6 @@
+U2021,Dupont,Paul,admin,2500,paul.dupont@exemple.com,2022
+U2022,Martin,Claire,utilisateur,1900,claire.martin@exemple.com,2023
+U2023,Durand,Chloé,utilisateur,1800,chloe.durand@exemple.com,2023
+U2024,Lemoine,Paul,utilisateur,1700,paul.lemoine@exemple.com,2023
+U2025,Roux,Claire,utilisateur,2000,claire.roux@exemple.com,2022
+U2026,Garcia,Louis,admin,3000,louis.garcia@exemple.com,2024

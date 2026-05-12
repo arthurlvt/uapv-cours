@@ -1,0 +1,6 @@
+uapv30347,Leclerc,Julie,Anglais,15
+uapv30345,Dupont,Paul,Mathématique,12
+uapv30345,Dupont,Paul,Français,9
+uapv30346,Martin,Lucie,Anglais,16
+uapv30347,Leclerc,Julie,Mathématique,13
+uapv30346,Martin,Lucie,Français,14
