@@ -234,6 +234,32 @@ insight into how traditions adapt and spread worldwide.
 
 
 Doc 2 -> St Patrick's Day - Bet you didn't know (History)
+Saint Patrick’s Day is rich in layered history that combines authentic biography, myth, and immigrant 
+cultural expression. While Saint Patrick himself was not Irish by birth, his missionary legacy and ensuing 
+legends like driving out snakes and using the shamrock deeply influenced Irish Christian identity. Interestingly, 
+modern Saint Patrick’s Day parades and the vibrant wearing of green trace their origins to Irish immigrants in 
+America rather than Ireland itself. Understanding these nuances enhances appreciation of how history and culture 
+intertwine in this globally celebrated holiday.
+
+
+Doc 3 -> The story behind St Patrick's Day (EchilonMedia)
+The video provides a clear and detailed explanation of St. Patrick’s Day origins, revealing that St. Patrick himself 
+was not Irish by birth but was instrumental in bringing Christianity to Ireland after escaping slavery. It highlights 
+how traditions such as the shamrock and the holiday’s colors evolved, blending religious symbolism with Irish folklore. 
+This understanding not only enriches appreciation for the holiday but also clarifies common misconceptions, framing St. 
+Patrick’s Day as a celebration of history, faith, and cultural identity.
+
+Summary:
+
+Saint Patrick's Day, celebrated every March 17th, commemorates the death of Saint Patrick — a figure not Irish by birth, 
+but who brought Christianity to Ireland after escaping slavery. The holiday evolved from a devout religious feast day into 
+a vibrant global celebration of Irish culture, identity, and folklore.
+Points clés à retenir
+🍀 Le trèfle (shamrock) → symbole utilisé par St Patrick pour expliquer la Trinité
+🟢 Le vert → couleur fortement associée à l'identité irlandaise
+🐍 Les serpents → légende : St Patrick les aurait chassés d'Irlande
+🗽 Les parades + le port du vert → traditions nées chez les immigrés irlandais aux États-Unis, pas en Irlande
+🌍 Aujourd'hui : fête à la fois religieuse et culturelle, célébrée dans le monde entier
 
 
 <--------------------------------------------------------------------->
@@ -264,6 +290,14 @@ Units for weight: pound, stone, ouce
 Units for fluids: pint, gallon
 Units for surface area: squarefoot
 Unit for temperature: fahrenheit
+
+
+Summary:
+Measurement systems have existed for millennia. Ancient civilisations invented body-based units for practical needs like 
+construction — notably the Egyptians, who used the cubit (elbow to fingertip) to build their pyramids. Over time, these informal 
+systems proved unreliable, leading to the creation of the standardised metric system in 1790 by the French Academy of Sciences, 
+later formalised as the Système International d'Unités (SI) in the 1960s. Today, the SI is used in almost every country — except 
+the United States, which still uses imperial units.
 
 
 <--------------------------------------------------------------------->
@@ -312,8 +346,7 @@ this invention revolutionized computation, enabled rapid advancements in various
 architecture. The explanation mixes historical narrative with technical milestones, highlighting the human drive for knowledge 
 creation.
 
-
-
+Summary:
 From ancient arithmetic tools to the sophisticated devices we use today, the history of computers is a fascinating journey spanning 
 several centuries, driven by human curiosity and the constant need to solve complex problems faster and more efficiently. Long before 
 electronic machines existed, the word "computer" referred to human mathematicians tasked with performing calculations by hand. Early 
@@ -330,3 +363,50 @@ still build upon. From there, the invention of the computer cannot be credited t
 incremental process, marked by countless pioneers, competing patents, and legal controversies. By the 1970s and 80s, the Personal 
 Computer revolution brought computing out of research labs and into everyday life, leading directly to the powerful devices we rely 
 on today. 
+
+The history of computers spans several centuries, driven by the human need to solve complex problems. Originally, "computer" 
+referred to human mathematicians. The first major milestone came in 1837 with Charles Babbage's Analytical Engine — the first 
+programmable computing machine, featuring components strikingly similar to modern computers. Ada Lovelace, his collaborator, 
+wrote what is considered the first computer program, earning her the title of the world's first programmer. The real turning 
+point was in 1945, when engineers at the University of Pennsylvania built the ENIAC — the first fully electronic, general-purpose 
+digital computer. By the 1970s–80s, the Personal Computer revolution brought computing into everyday life.
+Chronologie clé
+Date	Événement
+Antiquité	Abacus — first arithmetic tool
+1837	Babbage → Analytical Engine (1st programmable machine)
+1837	Ada Lovelace → 1st computer program
+1945	ENIAC → 1st electronic general-purpose computer (UPenn)
+1970s–80s	Personal Computer revolution
+
+
+
+Documents Importants:
+
+-> History of Measurement System (The Learning Reservoir, 2.48)
+(Already resumed before)
+
+-> Saint Patrick's Day - Bet you didn't know (History, 2.34)
+(Already resumed before)
+
+-> CERN VR - LHC and Grid Computing (CERN, 2.11)
+This video outlines how the Large Hadron Collider at CERN generates colossal amounts of collision data and how a vast global 
+computing network processes it. It emphasizes the efficiency required in filtering data, the physical infrastructure underground, 
+and the collaborative technological solutions like the World Wide Web invented to meet these challenges. Understanding this 
+framework is essential for grasping how modern experimental physics handles data-intensive science to reveal the universe’s deepest 
+secrets.
+
+The Large Hadron Collider (LHC) at CERN generates enormous amounts of collision data. A vast global computing network processes it 
+through a system called the Grid. The World Wide Web was invented at CERN precisely to meet the challenge of sharing this data 
+internationally. Key concepts: data filtering, physical underground infrastructure, collaborative computing.
+
+
+-> Bet you didn't know - Easter (History, 3.11)
+Easter combines profound Christian religious observance with vibrant secular customs centered on themes of fertility and renewal. 
+It is rooted in early Christian practices but enriched by cultural traditions like the Easter Bunny, decorated eggs, and candy. 
+These customs reflect both historical church rules and broader springtime symbolism. Over time, Easter has grown into one of the 
+most celebrated holidays, blending deep faith with joyful public festivities. Understanding Easter’s origins—from its religious 
+core to the stories behind its symbols and treats—adds meaningful layers to how we experience this springtime celebration.
+
+Easter combines Christian religious observance (resurrection of Christ) with secular customs rooted in spring fertility symbolism. 
+Traditions like the Easter Bunny, decorated eggs, and candy reflect both historical Church rules and broader springtime renewal 
+themes. Easter is one of the most widely celebrated holidays worldwide, blending deep faith with public festivities.
