@@ -1,0 +1,32 @@
+<!-- code de base -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>TP8</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>  
+    <h1>TP8 - JavaScript : les fonctions</h1>
+    <p id="paragraphe">
+        <a class="inline">Les</a> chaussettes 
+        <a class="inline">de</a> l'Archi 
+        <a class="inline">Duchesse</a> sont-
+        <a class="inline">elles</a> sèches 
+        <a class="inline">ou</a> archi 
+        <a class="inline">sèches</a>
+    </p>
+</body>
+<script>
+    let liens = document.querySelectorAll(".inline");
+    liens.forEach(function(a) {
+        a.onclick = function() { a.style.color = "gray"; };
+        a.onmouseover = function() { a.style.color = "brown"; };
+        a.ondblclick = function() { a.style.color = "blue"; };
+        // reset l'event pour ne pas que les événements s'accumulent
+        a.onmouseout = function() { a.style.color = ""; };
+    });
+    
+</script>

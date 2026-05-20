@@ -1,0 +1,107 @@
+[
+        {
+                "titre": "Inception",
+                "realisateur": "Christopher Nolan",
+                "genres": ["Science-fiction", "Action"],
+                "date": "2010-07-16",
+                "duree": 148
+        },
+        {
+                "titre": "Le Parrain",
+                "realisateur": "Francis Ford Coppola",
+                "genres": ["Drame", "Crime"],
+                "date": "1972-03-24",
+                "duree": 175
+        },
+        {
+                "titre": "Parasite",
+                "realisateur": "Bong Joon-ho",
+                "genres": ["Thriller", "Comédie noire"],
+                "date": "2019-05-30",
+                "duree": 132
+        },
+        {
+                "titre": "Interstellar",
+                "realisateur": "Christopher Nolan",
+                "genres": ["Science-fiction", "Aventure"],
+                "date": "2014-11-05",
+                "duree": 169
+        },
+        {
+                "titre": "Retour vers le futur",
+                "realisateur": "Robert Zemeckis",
+                "genres": ["Science-fiction", "Comédie"],
+                "date": "1985-07-03",
+                "duree": 116
+        },
+        {
+                "titre": "Pulp Fiction",
+                "realisateur": "Quentin Tarantino",
+                "genres": ["Drame", "Crime"],
+                "date": "1994-10-14",
+                "duree": 154
+        },
+        {
+                "titre": "The Dark Knight",
+                "realisateur": "Christopher Nolan",
+                "genres": ["Action", "Crime"],
+                "date": "2008-07-18",
+                "duree": 152
+        },
+        {
+                "titre": "La Liste de Schindler",
+                "realisateur": "Steven Spielberg",
+                "genres": ["Drame", "Historique"],
+                "date": "1993-12-15",
+                "duree": 195
+        },
+        {
+                "titre": "Forrest Gump",
+                "realisateur": "Robert Zemeckis",
+                "genres": ["Drame", "Romance"],
+                "date": "1994-07-06",
+                "duree": 142
+        },
+        {
+                "titre": "Gladiator",
+                "realisateur": "Ridley Scott",
+                "genres": ["Action", "Aventure"],
+                "date": "2000-05-05",
+                "duree": 155
+        },
+        {
+                "titre": "Le Seigneur des Anneaux: La Communauté de l'Anneau",
+                "realisateur": "Peter Jackson",
+                "genres": ["Aventure", "Fantastique"],
+                "date": "2001-12-19",
+                "duree": 178
+        },
+        {
+                "titre": "Matrix",
+                "realisateur": "Lana Wachowski, Lilly Wachowski",
+                "genres": ["Science-fiction", "Action"],
+                "date": "1999-03-31",
+                "duree": 136
+        },
+        {
+                "titre": "Avatar",
+                "realisateur": "James Cameron",
+                "genres": ["Science-fiction", "Aventure"],
+                "date": "2009-12-18",
+                "duree": 162
+        },
+        {
+                "titre": "Oppenheimer",
+                "realisateur": "Christopher Nolan",
+                "genres": ["Drame", "Historique"],
+                "date": "2023-07-21",
+                "duree": 180
+        },
+        {
+                "titre": "Dune",
+                "realisateur": "Denis Villeneuve",
+                "genres": ["Science-fiction", "Aventure"],
+                "date": "2021-10-22",
+                "duree": 166
+        }
+]

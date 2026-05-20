@@ -1,0 +1,15 @@
+Inception|Christopher Nolan|Science-fiction, Action|2010-07-16|148
+Le Parrain|Francis Ford Coppola|Drame, Crime|1972-03-24|175
+Parasite|Bong Joon-ho|Thriller, Comédie noire|2019-05-30|132
+Interstellar|Christopher Nolan|Science-fiction, Aventure|2014-11-05|169
+Retour vers le futur|Robert Zemeckis|Science-fiction, Comédie|1985-07-03|116
+Pulp Fiction|Quentin Tarantino|Drame, Crime|1994-10-14|154
+The Dark Knight|Christopher Nolan|Action, Crime|2008-07-18|152
+La Liste de Schindler|Steven Spielberg|Drame, Historique|1993-12-15|195
+Forrest Gump|Robert Zemeckis|Drame, Romance|1994-07-06|142
+Gladiator|Ridley Scott|Action, Aventure|2000-05-05|155
+Le Seigneur des Anneaux: La Communauté de l'Anneau|Peter Jackson|Aventure, Fantastique|2001-12-19|178
+Matrix|Lana Wachowski, Lilly Wachowski|Science-fiction, Action|1999-03-31|136
+Avatar|James Cameron|Science-fiction, Aventure|2009-12-18|162
+Oppenheimer|Christopher Nolan|Drame, Historique|2023-07-21|180
+Dune|Denis Villeneuve|Science-fiction, Aventure|2021-10-22|166
