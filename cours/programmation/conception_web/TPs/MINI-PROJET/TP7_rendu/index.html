@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP8 - JavaScript Formulaires</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .form-group { margin: 10px 0; }
+        label { display: inline-block; width: 150px; }
+        input, select { margin: 4px; padding: 4px; }
+        button { margin: 4px; padding: 6px 12px; cursor: pointer; }
+        #modal-formulaire { display: none; }
+    </style>
+</head>
+<body>
+
+    <h1>TP8 - JavaScript : les fonctions</h1>
+    <p id="paragraphe">
+        <a class="inline">Les</a> chaussettes
+        <a class="inline">de</a> l'Archi
+        <a class="inline">Duchesse</a> sont-
+        <a class="inline">elles</a> sèches
+        <a class="inline">ou</a> archi
+        <a class="inline">sèches</a>
+    </p>
+    <hr>
+    <button onclick="document.getElementById('modal-formulaire').style.display='block'">
+        Contact
+    </button>
+    <div id="modal-formulaire" class="w3-modal" onclick="fermerModalSiDehors(event)">
+        <div class="w3-modal-content w3-card-4" style="max-width:500px; padding:20px; position:relative;">
+            <!-- Croix fermeture (Partie 5.3) -->
+            <span onclick="document.getElementById('modal-formulaire').style.display='none'"
+                  style="position:absolute; top:8px; left:12px; font-size:1.4em; cursor:pointer;"
+                  title="Fermer">&times;</span>
+            <h2 style="margin-top:0; text-align:center;">Formulaire de contact</h2>
+            <div class="form-group">
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" value="votre nom"
+                       onfocus="viderSiDefaut(this, 'votre nom')"
+                       onblur="remettreSiVide(this, 'votre nom')">
+            </div>
+            <div class="form-group">
+                <label for="prenom">Prénom :</label>
+                <input type="text" id="prenom" value="votre prénom"
+                       onfocus="viderSiDefaut(this, 'votre prénom')"
+                       onblur="remettreSiVide(this, 'votre prénom')"
+                       onkeypress="validerParEntree(event)">
+            </div>
+            <div class="form-group">
+                <label for="age">Âge :</label>
+                <input type="text" id="age" placeholder="Votre âge"
+                       onkeypress="validerParEntree(event)">
+                <button onclick="VerifAge()">Vérifier âge</button>
+            </div>
+            <div class="form-group">
+                <label for="mail">Mail :</label>
+                <input type="text" id="mail" placeholder="p.nom@alumni.univ-avignon.fr"
+                       onkeypress="validerParEntree(event)">
+                <button onclick="VerifMail()">Vérifier mail</button>
+            </div>
+            <div class="form-group">
+                <label for="activites">Activités :</label>
+                <select id="activites">
+                    <option value="sport">Sport</option>
+                    <option value="musique">Musique</option>
+                    <option value="lecture">Lecture</option>
+                    <option value="cinema">Cinéma</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="nouvelle-activite">Nouvelle, nom :</label>
+                <input type="text" id="nouvelle-activite" placeholder="Nouvelle activité"
+                       onkeypress="validerParEntree(event)">
+                <button onclick="ajouterActivite()">nouvelle</button>
+            </div>
+            <!-- ===== 3 : Bouton unique de validation + soumission ===== -->
+            <div class="form-group" style="text-align:center; margin-top:16px;">
+                <button onclick="validerEtSoumettre()" style="background:#3a7bd5; color:white; padding:10px 30px; font-size:1em;">
+                    Valider et envoyer
+                </button>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        let liens = document.querySelectorAll(".inline");
+        liens.forEach(function(a) {
+            a.onmouseover = function() {
+                a.style.lineHeight   = "2em";
+                a.style.fontSize     = "2.5em";
+                a.style.textTransform= "capitalize";
+                a.style.fontFamily   = "Tahoma, sans-serif";
+                a.style.textDecoration = "underline";
+            };
+            a.onmouseout = function() {
+                a.style.lineHeight   = "";
+                a.style.fontSize     = "";
+                a.style.textTransform= "";
+                a.style.fontFamily   = "";
+                a.style.textDecoration = "";
+            };
+            a.onclick = function() { a.style.color = "gray"; };
+            a.ondblclick = function() { a.style.color = "blue"; };
+        });
+        function viderSiDefaut(champ, valeurDefaut) {
+            if (champ.value === valeurDefaut) {
+                champ.value = "";
+            }
+        }
+        function remettreSiVide(champ, valeurDefaut) {
+            if (champ.value.trim() === "") {
+                champ.value = valeurDefaut;
+            }
+        }
+        function ajouterActivite() {
+            let champNvelle = document.getElementById("nouvelle-activite");
+            let texte = champNvelle.value.trim();
+            if (texte === "") {
+                alert("Veuillez saisir un nom d'activité.");
+                return;
+            }
+            let select = document.getElementById("activites");
+            let option = document.createElement("option");
+            option.value = texte.toLowerCase();
+            option.text  = texte;
+            select.add(option);
+            // Sélectionner la nouvelle option par défaut
+            select.value = texte.toLowerCase();
+            champNvelle.value = "";
+        }
+        function VerifAge() {
+            let valeur = document.getElementById("age").value;
+            let age = parseInt(valeur);
+            if (isNaN(age) || age < 0 || age > 120) {
+                alert("Âge invalide ! Veuillez entrer un nombre entier entre 0 et 120.");
+                return false;
+            }
+            return true;
+        }
+        function VerifMail() {
+            let mail = document.getElementById("mail").value;
+            // Format attendu : x.x@alumni.univ-avignon.fr
+            // (prénom.nom ou p.nom, donc au moins un char, un point, au moins un char)
+            let regex = /^[a-zA-Z]+\.[a-zA-Z]+@alumni\.univ-avignon\.fr$/;
+            if (!regex.test(mail)) {
+                alert("Adresse mail invalide !\nFormat attendu : prenom.nom@alumni.univ-avignon.fr");
+                return false;
+            }
+            return true;
+        }
+        function validerEtSoumettre() {
+            if (!VerifAge())  return;
+            if (!VerifMail()) return;
+            alert("Formulaire valide ! Envoi en cours...");
+            // document.getElementById("mon-form").submit(); // si on avait un vrai form
+        }
+        function validerParEntree(event) {
+            // keyCode 13 = Entrée
+            if (event.keyCode === 13 || event.key === "Enter") {
+                validerEtSoumettre();
+            }
+        }
+        function fermerModalSiDehors(event) {
+            // event.target === le modal lui-même (fond sombre), pas son contenu
+            if (event.target === document.getElementById("modal-formulaire")) {
+                document.getElementById("modal-formulaire").style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
