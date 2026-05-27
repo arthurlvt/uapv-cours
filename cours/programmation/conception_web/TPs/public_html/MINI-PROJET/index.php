@@ -5,10 +5,9 @@
 
     include('includes/header.php');
 
-    $page = $_GET['pge'] ?? 'main';
+    $page = $_GET['page'] ?? 'main';
 
     echo '<main class="content-area">';
-
 
     if ($page === 'main') {
         include('includes/features.php');

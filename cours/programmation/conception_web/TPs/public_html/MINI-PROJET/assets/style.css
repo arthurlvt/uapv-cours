@@ -24,7 +24,6 @@ body.page-loaded {
   -webkit-user-select: text;
 }
 
-/* rendre cliquable le logo */
 .logo, .title {
   cursor: pointer;
 }
