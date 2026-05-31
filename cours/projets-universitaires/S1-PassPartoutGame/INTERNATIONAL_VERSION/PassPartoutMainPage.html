@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>🔒Pass-Partout</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="PwdGame.js" defer></script>
+</head>
+
+<body>
+  <div class="container" id="start-screen">
+    <div class="header">
+      <img class="profile-photo"
+        src="https://media.discordapp.net/attachments/1441381261922013224/1441381623919542282/image.png?ex=6930bffe&is=692f6e7e&hm=479ee20f477fb87eec4d4b00c71e0812a43ec8f2e6891c883c366b889099ccad&=&format=webp&quality=lossless&width=1736&height=1736"
+        alt="Micheline" />
+      <h1>🔒Pass-Partout: <i>The Password Challenge</i></h1> 
+    </div>
+    <div class="profile-box">
+      <h2>👤 Micheline Delacroix Profile</h2>
+      <p><strong>Born on:</strong> March 1st, 1950 in Woippy (Moselle – 57140)</p>
+      <p><strong>Occupation:</strong> Cashier at Lidl in Norroy-le-Veneur</p>
+      <p><strong>Children:</strong> Nathalie (born 04/20/1975) and Guillaume (born 09/17/1979)</p>
+      <p><strong>Hobbies:</strong>
+        <br>‎ ‎ - Her favorite color is blue 
+        <br>‎ ‎ - She likes playing soccer/football with her son
+        <br>‎ ‎ - She likes doing gymnastics with her daughter
+      </p>
+      <p><strong>Pet:</strong> A cobra named Python</p>
+      <p style="margin-top: 10px; font-style: italic"><strong>ℹ️ Fun Fact:</strong> Her five-times
+        great-grandfather was supposedly born on February 30th, 1789.</p>
+    </div>
+    <div class="rules-box">
+      <h2>🎯 Game Rules</h2>
+      <p>• **Total time** limited to 8 minutes to find everything</p>
+      <p>• 4 passwords per level (with hints if needed), including 
+        <br>‎ ‎ ‎ - 2 points to be earned for Levels 1 and 2
+        <br>‎ ‎ ‎ - 1 point for Levels 3, 4, and 5, as they are harder and counted as bonus levels
+        <br>‎ ‎ ‎ - Total score out of 7 points (3 bits)
+      <p>• Teams try to guess the passwords based on the profile information</p>
+      <p>• Levels 4 and 5 introduce special characters and more complex combinations</p>
+      <p style="margin-top: 10px; font-size: 0.95em">✔️ You can enable the timer at the start of the game.</p>
+    </div>
+    <div class="warning-box">
+      <div style="font-size: 1.5em">⚠️</div>
+      <div><strong>Objective:</strong> Understand why passwords based on personal information are risky.</div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+      <input type="checkbox" id="disable-timer" />
+      <label for="disable-timer">Enable Timer</label>
+    </div>
+    <button id="start-button" class="btn">🚀 Start the Challenge</button>
+  </div>
+
+  <div class="container hidden game-screen" id="game-screen">
+    <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;">
+      <div>
+        <h2 id="level-title">Level</h2>
+        <p id="password-number">Password 0 / 0</p>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px">
+        <div class="stat-item score">🏆 <strong id="score">0</strong></div>
+        <div class="stat-item timer" id="timer-display">⏱️ <span id="timer">30</span></div>
+      </div>
+    </div>
+    <div style="margin-top: 14px">
+      <p><strong>🔍 Enter a password:</strong></p>
+      <div class="password-input-wrapper">
+        <input id="password-input" class="password-input" type="password" placeholder="Enter a password..." />
+        <button id="toggle-password-btn" class="toggle-password" title="Show/Hide">👁️</button>
+      </div>
+      <div id="hint" class="hidden" style="margin-top: 10px"></div>
+      <div style="margin-top: 12px; display: flex; gap: 8px">
+        <button id="validate-btn" class="btn" style="background-color: #047857">✓ Validate</button>
+        <button id="hint-btn" class="btn">💡 Hint</button>
+        <button id="skip-btn" class="btn" style="background-color: rgb(106, 2, 2); color: white">⏭️ Skip</button>
+      </div>
+      <div id="feedback" class="feedback hidden"></div>
+    </div>
+    <div style="margin-top: 18px; font-size: 0.95em; color: #374151">
+      <strong>Found Passwords:</strong>
+      <ul id="found-passwords-list" class="found-list" style="margin-top: 8px; list-style-type: none; padding-left: 0">
+      </ul>
+      <div id="skipped-passwords" class="skipped-block hidden">
+        <strong>Skipped Passwords:</strong>
+        <ul id="skipped-list" style="margin-top: 6px; list-style-type: none; padding-left: 0"></ul>
+      </div>
+    </div>
+    <div style="margin-top: 18px; display: flex; gap: 16px; flex-wrap: wrap">
+      <div style="flex: 1; min-width: 240px">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+          <span>Progress</span>
+          <span id="progress-text">0 / 0</span>
+        </div>
+        <div class="progress-bar-container">
+          <div id="progress-bar" class="progress-bar"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container hidden complete-screen" id="end-screen">
+    <div style="text-align: center">
+      <div style="font-size: 3rem">🏆</div>
+      <h1>Challenge Completed!</h1>
+    </div>
+    <div style="margin-top: 12px; text-align: center">
+      <div style="font-size: 2rem; font-weight: bold" id="final-score">0</div>
+      <p style="color: #6b7280" id="max-score-text">points out of ...</p>
+      <p id="percentage" style="margin-top: 6px"></p>
+      <p id="hints-used"></p>
+    </div>
+    <div style="text-align: center; margin-top: 12px">
+      <button id="replay-btn" class="btn">🔄 Replay</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</body>
+
+</html>
