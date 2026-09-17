@@ -1,58 +1,53 @@
 # EXERCICE 1
-a = int(input("Veuillez entrer un entier a: "))
-b = int(input("Veuillez entrer un entier b: "))
+
+a = int(input("Entrez le premier entier : "))
+b = int(input("Entrez le deuxième entier : "))
 
 if a > b:
-	print(f"{a} > {b}")
+    print("valeur la plus grande: ", a)
 elif a < b:
-	print(f"{a} < {b}")
+    print("valeur la plus petite: ", b)
 else:
-	print(f"{a} = {b}")
-
-----------------------------------------------------------------------
+    print("Les 2 valeurs sont strictement égales")
 
 # EXERCICE 2
-longueurL = int(input("Veuillez entrer une longueur L: "))
-largeurl = int(input("Veuillez entrer une largeur l: "))
 
-if longueurL >= largeurl:
-	print(f"Surface du rectangle : {longueurL * largeurl}m2")
+L = int(input("Entrez la longueur : "))
+l = int(input("Entrez la largeur : "))
+
+if L > 0 and l > 0:
+    if L >= l:
+        print("Surface :", L * l)
+    else:
+        print("Données incohérentes")
 else:
-	print("La longueur doit être supérieure ou égale à la largeur !")
+    print("Dimensions incorrectes")
 
-----------------------------------------------------------------------
 
-# EXERCICE 3
+# EXERCICE 3 (sans boucle)
 
-entier1 = int(input("Veuillez entrer le premier entier: "))
-entier2 = int(input("Veuillez entrer un deuxième entier: "))
-entier3 = int(input("Veuillez entrer le troisième entier: "))
-entier4 = int(input("Veuillez entrer un quatrième entier: "))
-entier5 = int(input("Veuillez entrer le cinquième entier: "))
-entier6 = int(input("Veuillez entrer un sixième entier: "))
-somme = 0 
+a = int(input("Entrez a : "))
+b = int(input("Entrez b : "))
+c = int(input("Entrez c : "))
+d = int(input("Entrez d : "))
+e = int(input("Entrez e : "))
+f = int(input("Entrez f : "))
+count = 0
 
-if entier1 <= 0:
-	somme=+ 1
-if entier2 <= 0:
-	somme =+ 1
-if entier3 <= 0:
-	somme =+ 1
-if entier4 <= 0:
-	somme =+ 1
-if entier5 <= 0:
-	somme =+ 1
-if entier6 <= 0:
-	somme =+ 1
+if a == 0: count += 1
+if b == 0: count += 1
+if c == 0: count += 1
+if d == 0: count += 1
+if e == 0: count += 1
+if f == 0: count += 1
 
-if sum <= 3:
-	print("La saisie est incorrecte !")
+if count >= 3:
+    print("La saisie est correcte!")
 else:
-	print("La saisie est correcte")
-
-----------------------------------------------------------------------
-
-# EXERCICE 4
+    print("La saisie est incorrecte!")
+    
+    
+# EXERCICE 4 (méthode raccourcie)
 
 a = int(input("Veuillez entrer le premier entier a: "))
 b = int(input("Veuillez entrer un deuxième entier b: "))
@@ -69,122 +64,238 @@ if a == b == c:
 else:
 	print(f"Ordre: {a}, {b}, {c}")
 
-----------------------------------------------------------------------
 
-# EXERCICE 5
+# EXERCICE 4 (deuxieme méthode)
 
-val = int(input("Entrez une valeur et -1 pour arreter: "))
-minimum = val
-maximum = val
-somme = val
-compteur = 0
+a = int(input("Entrez a : "))
+b = int(input("Entrez b : "))
+c = int(input("Entrez c : "))
+temp = 0
 
-while True:
-	val = int(input("Entrez une valeur et -1 pour arreter: "))
-	if val == -1:
-		break
-	if val < minimum:
-		minimum = val
-	if val > maximum:
-		maximum = val
+if a > b:
+    temp = b
+    b = a
+    a = temp
+if b > c:
+    temp = b
+    b = c
+    c = temp
+if a > c:
+    temp = a
+    a = c
+    c = temp
 
-somme = somme + val
-compteur = compteur + 1
-moyenne = somme / compteur
+print(a, "<=", b, "<=", c)
 
-print(f"min: {minimum}, max: {maximum}, moyenne: {moyenne}")
 
-----------------------------------------------------------------------
+# EXERCICE 5 (sans boucles ni fonctions natives)
+
+somme = 0
+max = -1000
+min = 1000
+mean = 0
+count = 0
+
+val = int(input("entrez une valeur: "))
+mean += val
+somme += val
+if val < min: min = val
+if val > max: max = val
+count += 1
+val = int(input("entrez une valeur: "))
+mean += val
+somme += val
+if val < min: min = val
+if val > max: max = val
+count += 1
+val = int(input("entrez une valeur: "))
+mean += val
+somme += val
+if val < min: min = val
+if val > max: max = val
+count += 1
+val = int(input("entrez une valeur: "))
+mean += val
+somme += val
+if val < min: min = val
+if val > max: max = val
+count += 1
+val = int(input("entrez une valeur: "))
+mean += val
+somme += val
+if val < min: min = val
+if val > max: max = val
+count += 1
+val = int(input("entrez une valeur: "))
+mean += val
+somme += val
+if val < min: min = val
+if val > max: max = val
+count += 1
+val = int(input("entrez une valeur: "))
+mean += val
+somme += val
+if val < min: min = val
+if val > max: max = val
+count += 1
+val = int(input("entrez une valeur: "))
+mean += val
+somme += val
+if val < min: min = val
+if val > max: max = val
+count += 1
+val = int(input("entrez une valeur: "))
+mean += val
+somme += val
+if val < min: min = val
+if val > max: max = val
+count += 1
+val = int(input("entrez une valeur: "))
+mean += val
+somme += val
+if val < min: min = val
+if val > max: max = val
+count += 1
+print(f"nombre de valeurs: {count} \n valeur maximum: {max} \n valeur minimum: {min}")
+
+
+# EXERCICE 5 (méthode classique)
+
+valeurs = []
+for i in range(10):
+    n = int(input(f"Entrez la valeur {i+1} : "))
+    valeurs.append(n)
+
+print("Plus petite valeur =", min(valeurs))
+print("Plus grande valeur =", max(valeurs))
+print("Moyenne =", sum(valeurs) / len(valeurs))
+
 
 # EXERCICE 6
 
-x1 = int(input("Entrez x1: "))
-y1 = int(input("Entrez y1 :"))
-x2 = int(input("Entrez x2: "))
-y2 = int(input("Entrez y2 :"))
+import math
 
-dist_x = (x1 - x2)
-dist_y = (y1 - y2)
+ax = int(input("ax = "))
+ay = int(input("ay = "))
+bx = int(input("bx = "))
+by = int(input("by = "))
+
+d = math.sqrt((ax - bx)**2 + (ay - by)**2)
+print("Distance: ", d, "u.a")
 
 
-distance = ((dist_x**2 + dist_y**2)**0,5)*2
+# EXERCICE 7 : méthode classique
 
-print(distance)
+import math
 
-----------------------------------------------------------------------
+ax, ay = int(input("ax: ")), int(input("ay: "))
+bx, by = int(input("bx: ")), int(input("by: "))
+cx, cy = int(input("cx: ")), int(input("cy: "))
 
-# EXERCICE 7
+d1 = (bx - ax)**2 + (by - ay)**2
+d2 = (cx - bx)**2 + (cy - by)**2
+d3 = (ax - cx)**2 + (ay - cy)**2
 
-x1 = int(input("Entrez x1: "))
-y1 = int(input("Entrez y1: "))
-x2 = int(input("Entrez x2: "))
-y2 = int(input("Entrez y2: "))
-x3 = int(input("Entrez x3: "))
-y3 = int(input("Entrez y3: "))
+a = d1
+b = d2
+c = d3
 
-cote1 = ((x1 - x2)**2 + (y1 - y2)**2)**0.5
-cote2 = ((x2 - x3)**2 + (y2 - y3)**2)**0.5
-cote3 = ((x1 - x3)**2 + (y1 - y3)**2)**0.5
-
-if cote1**2 + cote2**2 == cote3**2:
-	print("Le triangle est rectangle")
+if a > b:
+    a, b = b, a
+if a > c:
+    a, c = c, a
+if b > c:
+    b, c = c, a
+if a == b == c:
+    print("les 3 côtés sont égaux")
 else:
-	print("Le triangle n'est pas rectangle")
+    if a == b + c:
+        print("ce triangle est rectangle")
+    else:
+        print("ce triangle n'est pas rectangle")  
 
-----------------------------------------------------------------------
+
+# EXERCICE 7: méthode avec fonctions natives
+
+import math
+
+ax, ay = int(input("ax: ")), int(input("ay: "))
+bx, by = int(input("bx: ")), int(input("by: "))
+cx, cy = int(input("cx: ")), int(input("cy: "))
+
+d1 = (bx - ax)**2 + (by - ay)**2
+d2 = (cx - bx)**2 + (cy - by)**2
+d3 = (ax - cx)**2 + (ay - cy)**2
+
+cotes = sorted([d1, d2, d3])
+
+if cotes[0] + cotes[1] == cotes[2]:
+    print("Triangle rectangle")
+else:
+    print("Pas un triangle rectangle")
+    
 
 # EXERCICE 8
 
-operande_choice = input("Entrez un mode d'opération: ")
-operateur1 = int(input("Entrez l'opérateur 1: "))
-operateur2 = int(input("Entrez l'opérateur 2: "))
+op = input("Entrez une opération (+, -, *, /) : ")
+a = int(input("Entrez la première opérande : "))
+b = int(input("Entrez la deuxième opérande : "))
 
-if operande_choice == "/":
-	print(f"Opération: {operateur1 / operateur2}")
-elif operande_choice == "*":
-	print(f"Opération: {operateur1 * operateur2}")
-elif operande_choice == "+":
-	print(f"Opération: {operateur1 - operateur2}")
-elif operande_choice == "-":
-	print(f"Opération: {operateur1 - operateur2}")
+if op == "+":
+    print("Résultat =", a + b)
+elif op == "-":
+    print("Résultat =", a - b)
+elif op == "*":
+    print("Résultat =", a * b)
+elif op == "/":
+    if b != 0:
+        print("Résultat =", a // b)  # division entière
+    else:
+        print("Erreur : division par zéro")
 else:
-	print("erreur")
-
-----------------------------------------------------------------------
-
+    print("Opération invalide")
+    
+    
 # EXERCICE 9
 
-a = int(input("Entrez a: "))
-b = int(input("Entrez b: "))
-c = int(input("Entrez c: "))
-delta = 0
-delta_nul = -b /(2 * a)
-delta_positif_1 = (-b - delta**0.5)/(2 * a)
-delta_positif_2 = (-b + delta**0.5)/(2 * a)
+import math
+
+a = float(input("a = "))
+b = float(input("b = "))
+c = float(input("c = "))
 
 if a != 0:
-	delta = (b**2) - (4 * a * c)
-	if delta == 0:
-		print(f"Une solution: {delta_nul}")
-	if delta > 0:
-		print(f"Deux solutions: {delta_positif_1} et {delta_positif_2}")
-	else:
-		print("Aucune solutions pour cette équation car delta < 0")
+    delta = b**2 - 4*a*c
+    if delta > 0:
+        x1 = (-b - math.sqrt(delta)) / (2*a)
+        x2 = (-b + math.sqrt(delta)) / (2*a)
+        print("Deux solutions réelles :", x1, x2)
+    elif delta == 0:
+        x = -b / (2*a)
+        print("Solution unique :", x)
+    else:
+        print("Pas de solution réelle")
+else:
+    print("a doit être différent de 0")
 
-----------------------------------------------------------------------
 
-# EXERCICE 10
+# EXERCICE 10 : méthode classique
 
-ombre = int(input("Entrez un nombre à 4 chiffres: "))
+n = input("Entrez un nombre à 4 chiffres: ")
+if n > 999 and n < 1000:
+    print("premier chiffre: ", n // 1000)
+    print("deuxième chiffre: ", (n // 100) % 10)
+    print("troisième chiffre: ", (n // 10) % 10)
+    print("quatrième chiffre: ", n % 10)
+else: 
+    print("Erreur: le nombre n'est pas à 4 chiffres")
 
-while nombre < 1000 or nombre > 9999:
-	print("Le nombre ne contient pas 4 chiffres")
-	
-print("Ok!")
 
-nb1 = nombre // 1000
-nb2 = nombre % 1000
-nb3 = nombre % 100
-nb4 = nombre % 10
+# EXERCICE 10 : méthode native
 
-print(nb1, nb2, nb3, nb4)
+n = input("Entrez un nombre à 4 chiffres : ")
+
+if len(n) == 4 and n.isdigit():
+    print(" - ".join(n))
+else:
+    print("Erreur : le nombre ne contient pas 4 chiffres")

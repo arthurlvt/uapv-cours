@@ -1,0 +1,19 @@
+[ OUTIL DE COPIE-COLLE DES SYMBOLES LOGIQUES : ∅, ℕ, ℤ, ℚ, ℝ, ℂ, ∈, ∉, ⊆, ⊈, ⊇, ⊉, ∪, ∩, \, |->, infini ]
+[ OUTIL DE COPIE-COLLE DES SYMBOLES LOGIQUES : ∀ ¬ ∧ ∨ ∃ => <=> ]
+
+
+<-------------- ANALYSE1 -------------- >
+premier chapitre: nombres reéls - points clés:
+-> relation d'ordre / propriétés associés
+-> propriété d'Archimède (important)
+-> propriété de la partie entière E(x) ou |x|
+-> propriétés sur la fonction valeur absolue (définition + inégalité trianglulaire => a =< a + a) (quasiment acquis)
+-> Théorème de la Densité (voir vidéo) + propriété associé
+\> Densité de ℚ dans ℝ et de ℝ\ℚ dans ℝ (quasiment acquis)
+-> Propriété de la borne supérieure (cf majorant, minorants)
+
+
+<-------------- BASE DE MATHÉMATIQUES -------------- >
+premier chapitre: language mathématique
+-> propriétés sur les quantificateurs (acquis)
+-> rappels importants sur les démonstrations à revoir!!

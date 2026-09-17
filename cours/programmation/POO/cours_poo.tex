@@ -1,0 +1,2051 @@
+\documentclass[12pt,a4paper]{article}
+
+% ===== Encodage et langue =====
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+
+% ===== Mise en page =====
+\usepackage[margin=2.5cm, headheight=15pt]{geometry}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+% ===== Couleurs =====
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.5,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.97,0.97,0.97}
+\definecolor{ruleblue}{RGB}{0,102,204}
+\definecolor{importantred}{RGB}{204,0,0}
+\definecolor{tipgreen}{RGB}{0,153,51}
+\definecolor{exampleorange}{RGB}{255,140,0}
+
+% ===== Code source =====
+\usepackage{listings}
+\lstset{
+    language=C,
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\small,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    frame=single,
+    framerule=0.5pt,
+    xleftmargin=15pt,
+    framexleftmargin=15pt,
+    literate={é}{{\'e}}1 {è}{{\`e}}1 {ê}{{\^e}}1 {ë}{{\"e}}1
+             {à}{{\`a}}1 {â}{{\^a}}1
+             {ù}{{\`u}}1 {û}{{\^u}}1
+             {î}{{\^i}}1 {ï}{{\"i}}1
+             {ô}{{\^o}}1
+             {ç}{{\c{c}}}1
+}
+
+% Style C++
+\lstdefinestyle{cpp}{
+    language=C++,
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\small,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    frame=single,
+    framerule=0.5pt,
+    xleftmargin=15pt,
+    framexleftmargin=15pt,
+    literate={é}{{\'e}}1 {è}{{\`e}}1 {ê}{{\^e}}1 {ë}{{\"e}}1
+             {à}{{\`a}}1 {â}{{\^a}}1
+             {ù}{{\`u}}1 {û}{{\^u}}1
+             {î}{{\^i}}1 {ï}{{\"i}}1
+             {ô}{{\^o}}1
+             {ç}{{\c{c}}}1
+}
+
+% Style pour bash
+\lstdefinestyle{bash}{
+    language=bash,
+    backgroundcolor=\color{backcolour},
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{codegray},
+    xleftmargin=15pt,
+    framexleftmargin=15pt,
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{blue},
+    morekeywords={gcc,g++,valgrind},
+}
+
+% ===== Boites colorées =====
+\usepackage[most]{tcolorbox}
+
+\newtcolorbox{regle}{
+    colback=ruleblue!5,
+    colframe=ruleblue,
+    fonttitle=\bfseries,
+    title=R\`egle,
+    sharp corners,
+    boxrule=1pt,
+    left=5pt, right=5pt, top=5pt, bottom=5pt,
+}
+
+\newtcolorbox{important}{
+    colback=importantred!5,
+    colframe=importantred,
+    fonttitle=\bfseries,
+    title=Important,
+    sharp corners,
+    boxrule=1pt,
+    left=5pt, right=5pt, top=5pt, bottom=5pt,
+}
+
+\newtcolorbox{astuce}{
+    colback=tipgreen!5,
+    colframe=tipgreen,
+    fonttitle=\bfseries,
+    title=Astuce,
+    sharp corners,
+    boxrule=1pt,
+    left=5pt, right=5pt, top=5pt, bottom=5pt,
+}
+
+\newtcolorbox{exemple}{
+    colback=exampleorange!5,
+    colframe=exampleorange,
+    fonttitle=\bfseries,
+    title=Exemple,
+    sharp corners,
+    boxrule=1pt,
+    left=5pt, right=5pt, top=5pt, bottom=5pt,
+}
+
+% ===== Mathématiques =====
+\usepackage{amsmath}
+
+% ===== Tableaux =====
+\usepackage{array}
+\usepackage{booktabs}
+
+% ===== Liens =====
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=ruleblue,
+    urlcolor=ruleblue,
+    citecolor=ruleblue,
+    bookmarks=true,
+    bookmarksopen=true,
+    bookmarksnumbered=true,
+    linktoc=all,
+    pdftitle={Cours complet C et C++},
+    pdfauthor={Arthur},
+    pdfsubject={L1 Informatique -- UAPV},
+}
+
+% ===== En-tête et pied de page =====
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Arthur -- L1 Informatique -- Cours C / C++}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% ===== Titre =====
+\title{\Huge\textbf{Cours complet C \& C++}\\[0.5cm]
+\Large De l'algorithmique aux objets\\[0.3cm]
+\large S1--S2 -- Licence Informatique -- UAPV}
+\author{Arthur}
+\date{2025 / 2026}
+
+% ============================================================
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\newpage
+\tableofcontents
+\newpage
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                        PARTIE I : C
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\part{Bases de la programmation en C}
+
+% ============================================================
+\section{Algorithmes, variables, conditions et boucles}
+
+\subsection{C'est quoi un algorithme ?}
+
+Un algorithme est une \textbf{suite finie d'instructions}, exécutées dans l'ordre, qui prend des entrées et produit un résultat.
+Un bon algorithme est \textbf{peu complexe}, \textbf{rapide} et \textbf{économe en ressources}.
+
+\begin{exemple}
+Deux façons de représenter un algorithme :
+\begin{itemize}
+    \item \textbf{Pseudo-code} : description textuelle proche du langage humain
+    \item \textbf{Algorigramme} : représentation graphique avec des boîtes et des flèches
+\end{itemize}
+\end{exemple}
+
+\subsection{C vs Python — bas niveau vs haut niveau}
+
+\begin{table}[h!]
+\centering
+\caption{Comparaison C / Python}
+\begin{tabular}{lll}
+\toprule
+ & \textbf{C / C++} & \textbf{Python} \\
+\midrule
+Niveau & Bas (proche machine) & Haut (proche humain) \\
+Gestion mémoire & Manuelle & Automatique \\
+Compilation & Obligatoire (gcc / g++) & Interprété \\
+Performance & Très rapide & Plus lent \\
+Portabilité & Bonne & Excellente \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Le compilateur (\texttt{gcc} pour le C, \texttt{g++} pour le C++) transforme le code source en langage machine, effectue des analyses lexicale, syntaxique et sémantique, signale les erreurs et émet des avertissements.
+
+\begin{lstlisting}[style=bash, caption={Compilation et exécution d'un programme C}]
+# Compilation
+gcc programme.c -o programme
+
+# Exécution
+./programme
+\end{lstlisting}
+
+\subsection{Structure minimale d'un programme C}
+
+\begin{lstlisting}[caption={Hello World en C}]
+#include <stdio.h>
+
+int main() {
+    printf("Hello World\n");
+    return 0;
+}
+\end{lstlisting}
+
+\begin{itemize}
+    \item \texttt{\#include <stdio.h>} : inclut la bibliothèque d'entrées/sorties standard
+    \item \texttt{int main()} : point d'entrée, retourne 0 en cas de succès
+    \item \texttt{printf} : affiche du texte dans le terminal
+    \item Chaque instruction se termine par \texttt{;}
+\end{itemize}
+
+\subsection{Les variables}
+
+Une variable possède : un \textbf{nom}, un \textbf{type}, une \textbf{valeur} et une \textbf{adresse} en mémoire.
+
+\subsubsection{Déclaration et initialisation}
+
+\begin{lstlisting}[caption={Déclaration et initialisation de variables}]
+// Déclaration
+int age;
+double taille;
+bool vivant;
+
+// Initialisation (affectation)
+age = 20;
+taille = 1.78;
+vivant = true; // nécessite #include <stdbool.h> en C
+
+// Déclaration + initialisation en une ligne
+int score = 100;
+double prix_ht = 9.99;
+\end{lstlisting}
+
+\subsubsection{Types principaux}
+
+\begin{table}[h!]
+\centering
+\caption{Types de base en C}
+\begin{tabular}{llll}
+\toprule
+\textbf{Type} & \textbf{Taille} & \textbf{Description} & \textbf{Exemple} \\
+\midrule
+\texttt{int}    & 32 bits & Entier           & \texttt{int x = 42;} \\
+\texttt{double} & 64 bits & Réel double prec. & \texttt{double pi = 3.14;} \\
+\texttt{float}  & 32 bits & Réel simple prec. & \texttt{float f = 2.5f;} \\
+\texttt{char}   & 8 bits  & Caractère        & \texttt{char c = 'A';} \\
+\texttt{bool}   & 8 bits  & Booléen (C99)    & \texttt{bool ok = true;} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Convention de nommage (snake\_case)}
+
+\begin{itemize}
+    \item En anglais, en minuscules
+    \item Commence par une lettre de l'alphabet
+    \item Séparateur : \texttt{\_} (ex : \texttt{prix\_final}, \texttt{length\_array})
+    \item Pas de mots-clés réservés (\texttt{int}, \texttt{return}, etc.)
+\end{itemize}
+
+\subsubsection{Entrée / sortie : printf et scanf}
+
+\begin{lstlisting}[caption={Entrées et sorties en C}]
+#include <stdio.h>
+
+int main() {
+    int age;
+    double taille;
+
+    // Affichage
+    printf("Bonjour !\n");
+    printf("Score : %d\n", 42);         // %d = int
+    printf("Pi = %f\n", 3.14159);       // %f = double
+    printf("Lettre : %c\n", 'A');       // %c = char
+
+    // Saisie utilisateur
+    printf("Entrez votre age : ");
+    scanf("%d", &age);                  // & obligatoire !
+
+    printf("Entrez votre taille : ");
+    scanf("%lf", &taille);              // %lf pour double
+
+    printf("Vous avez %d ans et mesurez %f m\n", age, taille);
+    return 0;
+}
+\end{lstlisting}
+
+\begin{regle}
+Correspondance format / type pour \texttt{printf} et \texttt{scanf} :
+\begin{itemize}
+    \item \texttt{\%d} -- \texttt{int}
+    \item \texttt{\%f} -- \texttt{double} (printf) / \texttt{\%lf} -- \texttt{double} (scanf)
+    \item \texttt{\%c} -- \texttt{char}
+    \item \texttt{\%p} -- adresse mémoire (pointeur)
+    \item Toujours mettre \texttt{\&} devant la variable dans \texttt{scanf} !
+\end{itemize}
+\end{regle}
+
+\subsubsection{Portée des variables}
+
+Une variable n'existe que dans le \textbf{bloc} (\texttt{\{\}}) où elle est déclarée, et dans les blocs imbriqués. Dès que l'on sort du bloc, la variable est détruite.
+
+\begin{lstlisting}[caption={Portée locale}]
+int main() {
+    int a = 3;
+
+    if (a < 5) {
+        int c = 5;   // c existe seulement ici
+    }
+
+    // printf("%d\n", c); // ERREUR : c n'existe plus
+    return 0;
+}
+\end{lstlisting}
+
+\subsection{Les conditions}
+
+\begin{lstlisting}[caption={Conditions if / else if / else}]
+int doigt = 2;
+
+if (doigt == 1) {
+    printf("THUMB UP !\n");
+} else if (doigt == 2) {
+    printf("ON MONTRE PAS DU DOIGT !\n");
+} else if (doigt == 3) {
+    printf("SOIS POLI !\n");
+} else if (doigt == 4 || doigt == 5) {
+    printf("ILS SERVENT A RIEN\n");
+} else {
+    printf("C'est quoi cette tentacule ?!\n");
+}
+\end{lstlisting}
+
+\subsubsection{Opérateurs relationnels}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{Opérateur} & \textbf{Signification} \\
+\midrule
+\texttt{==} & Égal \\
+\texttt{!=} & Différent \\
+\texttt{<}  & Inférieur \\
+\texttt{<=} & Inférieur ou égal \\
+\texttt{>}  & Supérieur \\
+\texttt{>=} & Supérieur ou égal \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Opérateurs logiques}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{Opérateur} & \textbf{Signification} \\
+\midrule
+\texttt{\&\&} & ET logique \\
+\texttt{||} & OU logique \\
+\texttt{!} & NON (inverse la valeur booléenne) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{lstlisting}[caption={Exemples d'opérateurs logiques}]
+if (a > 0 && b > 0)              // a ET b positifs
+if (a < 0 || b > 0)              // a négatif OU b positif
+if (a > 0 && (b > 0 || c > 0))  // a positif ET (b OU c positifs)
+if (a > 0 && !(b > 0 || c > 0)) // a positif ET NI b NI c positifs
+\end{lstlisting}
+
+\subsection{Les boucles}
+
+\subsubsection{Boucle for — nombre d'itérations connu}
+
+\begin{lstlisting}[caption={Boucle for}]
+// for (initialisation ; condition de continuation ; pas)
+for (int i = 0; i < 10; i = i + 1) {
+    printf("%d\n", i);
+}
+\end{lstlisting}
+
+\subsubsection{Boucle while — nombre d'itérations inconnu}
+
+\begin{lstlisting}[caption={Boucle while}]
+int i = 0;
+while (i < 10) {
+    i = chiffreAuHasard();
+}
+\end{lstlisting}
+
+\begin{regle}
+\begin{itemize}
+    \item \textbf{for} : quand on connaît à l'avance le nombre d'itérations.
+    \item \textbf{while} : quand on répète jusqu'à ce qu'une condition soit satisfaite.
+\end{itemize}
+\end{regle}
+
+% ============================================================
+\section{Les fonctions}
+
+\subsection{Qu'est-ce qu'une fonction ?}
+
+Une fonction est une \textbf{boîte qui encapsule un algorithme} : elle prend des entrées (paramètres), effectue un traitement et retourne un résultat. Elle permet de ne pas répéter du code, de le rendre lisible et de le réutiliser.
+
+\subsection{Déclaration et définition}
+
+\begin{lstlisting}[caption={Anatomie d'une fonction}]
+// prototype : type_retour nom(type param1, type param2)
+int additionner(int nombre1, int nombre2)
+{
+    int result = nombre1 + nombre2;
+    return result;
+}
+
+int main() {
+    int a = 12, b = 18;
+    int somme = additionner(a, b); // appel
+    printf("Somme : %d\n", somme);
+    return 0;
+}
+\end{lstlisting}
+
+\begin{regle}
+Convention de nommage des fonctions (camelCase) :
+\begin{itemize}
+    \item Commence par un verbe, en minuscule : \texttt{calculerMoyenne}, \texttt{afficherScore}
+    \item Chaque nouveau mot commence par une majuscule
+    \item Pas de symboles spéciaux
+\end{itemize}
+\end{regle}
+
+\subsection{Fonctions sans retour : void}
+
+\begin{lstlisting}[caption={Fonction void}]
+void afficherSalutation(int age) {
+    if (age >= 18) {
+        printf("Bienvenue !\n");
+    } else {
+        printf("Interdit aux mineurs.\n");
+    }
+    // pas de return nécessaire
+}
+\end{lstlisting}
+
+\subsection{Passage par valeur (copie)}
+
+En C, les paramètres sont \textbf{toujours passés par valeur} : la fonction reçoit une \textbf{copie} de la variable. Modifier le paramètre dans la fonction ne modifie pas la variable originale.
+
+\begin{lstlisting}[caption={Passage par valeur — la variable originale n'est pas modifiée}]
+void addOne(int a) {
+    a = a + 1; // modifie la COPIE
+}
+
+int main() {
+    int a = 15;
+    addOne(a);
+    printf("%d\n", a); // affiche 15, pas 16 !
+    return 0;
+}
+\end{lstlisting}
+
+\begin{important}
+En Python, le passage par défaut est le \textbf{passage par référence} pour les objets mutables. C'est l'inverse du C !
+\end{important}
+
+\subsection{Retourner un résultat}
+
+\texttt{return} renvoie une valeur \textbf{et quitte immédiatement} la fonction.
+
+\begin{lstlisting}[caption={Retour de valeur et return early}]
+int addOne(int number) {
+    number = number + 1;
+    return number; // retourne la valeur modifiée
+}
+
+// return quitte la fonction immédiatement :
+bool isAboveTen(int number) {
+    if (number > 10) {
+        return true;  // on sort ici si vrai
+    }
+    return false;     // équivalent à l'else
+}
+\end{lstlisting}
+
+\subsection{La pile (stack) et les fonctions}
+
+À chaque appel de fonction, une nouvelle \textbf{frame} est empilée sur la pile. Les variables locales de cette fonction y vivent. À la sortie de la fonction, la frame est dépilée automatiquement et les variables sont détruites.
+
+\begin{lstlisting}[caption={Pile d'exécution}]
+void c() { int z = 3; }
+void b() { int y = 2; }
+void a() { int x = 1; b(); }
+
+int main() {
+    int w = 3;
+    if (w == 3) {
+        int v = 5; // portée locale au if
+        a();
+    }
+    c();
+    return 0;
+}
+// Pile au moment de b() :
+//   b()  : y
+//   a()  : x
+//   if   : v
+//   main : w
+\end{lstlisting}
+
+\subsection{Fichiers .h et .c}
+
+Pour organiser un projet, on sépare les \textbf{déclarations} (fichier \texttt{.h}) des \textbf{définitions} (fichier \texttt{.c}).
+
+\begin{lstlisting}[caption={mathematicOperations.h}]
+#ifndef MATHOPERATION_H
+#define MATHOPERATION_H
+
+int addOne(int a);
+double sum(double a, double b);
+int power(int a, int pow);
+
+#endif
+\end{lstlisting}
+
+\begin{lstlisting}[caption={mathematicOperations.c}]
+#include "mathematicOperations.h"
+
+int addOne(int a) {
+    a = a + 1;
+    return a;
+}
+
+double sum(double a, double b) {
+    double result = a + b;
+    return result;
+}
+\end{lstlisting}
+
+\begin{lstlisting}[caption={main.c}]
+#include <stdio.h>
+#include "mathematicOperations.h"
+
+int main() {
+    int result = addOne(12);
+    printf("Résultat : %d\n", result);
+    return 0;
+}
+\end{lstlisting}
+
+% ============================================================
+\section{Les pointeurs}
+
+\subsection{Rappel : la mémoire}
+
+Toute variable possède une \textbf{adresse} (numéro de case mémoire) et un \textbf{type} (qui dit combien de bits lire). Un pointeur stocke justement cette adresse.
+
+\begin{table}[h!]
+\centering
+\caption{Exemple de représentation mémoire}
+\begin{tabular}{lll}
+\toprule
+\textbf{Variable} & \textbf{Adresse} & \textbf{Valeur} \\
+\midrule
+\texttt{a}    & \texttt{0x7ffcc0bee04c} & \texttt{3} \\
+\texttt{pAge} & \texttt{0x9ffdce1f45ee} & \texttt{0x7ffcc0bee04c} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Déclarer et utiliser un pointeur}
+
+\begin{lstlisting}[caption={Déclaration, & et *}]
+int a = 3;
+
+// Déclaration d'un pointeur (convention : nom commence par p)
+int *pAge;
+
+// Récupérer l'adresse de a et la stocker dans pAge
+pAge = &a;
+
+// Afficher l'adresse et la valeur pointée
+printf("%d\n", a);      // 3
+printf("%p\n", pAge);   // 0x7ffcc...
+printf("%d\n", *pAge);  // 3  (déréférencement)
+
+// Modifier la valeur via le pointeur
+*pAge = 6;
+printf("%d\n", a);      // 6  (a est modifié !)
+printf("%d\n", *pAge);  // 6
+\end{lstlisting}
+
+\begin{regle}
+\begin{itemize}
+    \item \texttt{\&} devant une variable : donne son \textbf{adresse}
+    \item \texttt{*} à la \textbf{déclaration} : indique que la variable est un pointeur
+    \item \texttt{*} à \textbf{l'utilisation} : accède à la valeur pointée (déréférencement)
+\end{itemize}
+\end{regle}
+
+\subsection{Erreurs courantes}
+
+\begin{table}[h!]
+\centering
+\caption{Erreurs fréquentes avec les pointeurs}
+\begin{tabular}{lp{8cm}}
+\toprule
+\textbf{Erreur} & \textbf{Cause} \\
+\midrule
+Null Pointer Exception & Pointeur non initialisé, mis à \texttt{NULL} ou désalloué \\
+Invalid Pointer Error  & Adresse modifiée par erreur, ou espace mémoire désalloué \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{important}
+Toujours initialiser un pointeur ! Si vous ne pointez sur rien encore, mettez-le à \texttt{NULL} :
+\begin{lstlisting}
+int *pAge = NULL;
+\end{lstlisting}
+\end{important}
+
+\subsection{Pointeurs comme paramètres (in-out)}
+
+Le passage par pointeur permet de \textbf{modifier la variable originale} depuis une fonction — ce que le passage par valeur ne permet pas.
+
+\begin{lstlisting}[caption={Passage par pointeur — modifie l'original}]
+void addOne(int *pBase) {
+    *pBase = *pBase + 1;
+}
+
+int main() {
+    int a = 3;
+    addOne(&a);         // on passe l'ADRESSE de a
+    printf("%d\n", a);  // affiche 4 !
+    return 0;
+}
+\end{lstlisting}
+
+\begin{astuce}
+En C, si une fonction doit retourner \textbf{plusieurs résultats}, on passe des pointeurs en paramètres (paramètres in-out). En C++, on utilisera les références pour simplifier cette syntaxe.
+\end{astuce}
+
+\subsection{Pointeur de pointeur}
+
+\begin{lstlisting}[caption={Double pointeur}]
+int a = 42;
+int *pB = &a;
+int **pPC = &pB;  // pointeur vers un pointeur
+
+printf("%p\n",  pPC);  // adresse de pB
+printf("%p\n", *pPC);  // adresse de a
+printf("%d\n", **pPC); // valeur de a : 42
+\end{lstlisting}
+
+% ============================================================
+\section{Les tableaux}
+
+\subsection{Motivation}
+
+Plutôt que 300 variables séparées pour stocker les notes de 300 étudiants, un tableau permet de tout regrouper en une seule variable et de tout traiter avec une boucle.
+
+\subsection{Déclaration et initialisation}
+
+\begin{lstlisting}[caption={Déclaration et initialisation de tableaux}]
+// Déclaration (taille fixe à la compilation)
+int tab[300];
+
+// Initialisation totale
+int tab5[5] = {3, 5, 8, 12, 8};
+double tabD[3] = {3.5, 8.2, 7.3};
+bool tabB[4] = {0, 1, 1, 1};
+
+// Initialisation partielle (le reste vaut 0)
+int tab2[5] = {3, 5, 8};  // -> {3, 5, 8, 0, 0}
+
+// Initialisation après déclaration (case par case)
+int tab3[5];
+tab3[0] = 0;
+tab3[1] = 2;
+// ou avec une boucle :
+for (int i = 0; i < 5; i++) {
+    tab3[i] = i * 2;
+}
+\end{lstlisting}
+
+\subsection{Accès aux données}
+
+La numérotation commence à \textbf{0}. \texttt{tab[i]} accède à la case d'indice \texttt{i} (décalage de \texttt{i} depuis le début du tableau).
+
+\begin{lstlisting}[caption={Accès et modification}]
+int tab[4] = {3, 8, 56, 158};
+
+printf("%d\n", tab[0]);  // 3   (1ère case)
+printf("%d\n", tab[1]);  // 8   (2ème case)
+printf("%d\n", tab[3]);  // 158 (4ème case)
+
+tab[3] = 14;             // modifie la 4ème case
+\end{lstlisting}
+
+\subsection{Tableau et pointeur}
+
+Un tableau se comporte comme un \textbf{pointeur constant} vers sa première case. La variable \texttt{tab} contient l'adresse du premier élément.
+
+\begin{lstlisting}[caption={Équivalence tableau / pointeur}]
+int tab[4] = {3, 8, 56, 158};
+
+printf("%p\n",  tab);          // adresse de tab[0]
+printf("%d\n", *tab);          // 3  (équivalent à tab[0])
+printf("%d\n", *(tab + 1));    // 8  (équivalent à tab[1])
+\end{lstlisting}
+
+\subsection{Taille statique vs taille réelle}
+
+\begin{lstlisting}[caption={Gérer taille max et taille réelle}]
+#define MAX_ETUDIANTS 2000
+
+int etudiants[MAX_ETUDIANTS];
+int tailleMax = MAX_ETUDIANTS;
+int tailleReelle;
+
+printf("Nombre d'étudiants cette année : ");
+scanf("%d", &tailleReelle);
+
+for (int i = 0; i < tailleReelle; i++) {
+    scanf("%d", &etudiants[i]);
+}
+\end{lstlisting}
+
+\begin{important}
+La taille d'un tableau statique est fixée à la compilation. On ne peut pas écrire \texttt{int tab[n];} si \texttt{n} est saisi par l'utilisateur (avant C99). La solution propre : réserver un max et stocker la taille réelle séparément.
+\end{important}
+
+\subsection{Tableaux et fonctions}
+
+Un tableau passé à une fonction l'est comme un pointeur : les modifications dans la fonction impactent le tableau original.
+
+\begin{lstlisting}[caption={Passage de tableau en paramètre}]
+// Toujours passer la taille avec le tableau !
+void affiche(int tab[], int taille) {
+    for (int i = 0; i < taille; i++) {
+        printf("%d\n", tab[i]);
+    }
+}
+
+void saisieTableau(int tableau[], int taille) {
+    for (int i = 0; i < taille; i++) {
+        scanf("%d", &tableau[i]);
+    }
+}
+
+int main() {
+    int tab[4] = {2, 5, 8, 9};
+    affiche(tab, 4);
+    return 0;
+}
+\end{lstlisting}
+
+\subsection{Tableaux multidimensionnels}
+
+\begin{lstlisting}[caption={Tableau 2D}]
+// Déclaration : int tab[lignes][colonnes]
+int tab[3][4];
+
+// Initialisation
+int mat[3][4] = { {0, 1, 2, 3},
+                  {4, 5, 6, 7},
+                  {8, 9, 10, 11} };
+
+// Parcours avec boucles imbriquées
+for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 4; j++) {
+        printf("%d ", mat[i][j]);
+    }
+    printf("\n");
+}
+
+// Passage en fonction
+void saisieTab2D(int tableau[][4], int tailleX, int tailleY);
+\end{lstlisting}
+
+% ============================================================
+\section{Les structures}
+
+\subsection{Motivation}
+
+Quand plusieurs variables décrivent la même entité (nom, date de naissance, numéro de sécu d'une personne), il devient difficile de les gérer séparément. Les structures permettent de les \textbf{regrouper en un seul type}.
+
+\subsection{Définir une structure}
+
+Les structures se définissent dans un fichier \texttt{.h} portant leur nom.
+
+\begin{lstlisting}[caption={Tamagotchi.h}]
+#ifndef TAMAGOTCHI_H
+#define TAMAGOTCHI_H
+
+typedef struct {
+    int   sante;
+    int   energie;
+    double faim;
+    double moral;
+} Tamagotchi;
+
+#endif
+\end{lstlisting}
+
+\begin{regle}
+Règles de nommage d'une structure :
+\begin{itemize}
+    \item Commence par une majuscule, c'est un \textbf{nom} (pas un verbe)
+    \item Pas de \texttt{\_} ni de caractères spéciaux
+    \item N'oubliez pas le \texttt{;} après la fermeture \texttt{\}}
+\end{itemize}
+\end{regle}
+
+\subsection{Utiliser une structure}
+
+\begin{lstlisting}[caption={Déclaration, initialisation et accès}]
+#include "Tamagotchi.h"
+#include <stdio.h>
+
+int main() {
+    // Déclaration
+    Tamagotchi poupi;
+
+    // Accès et modification : NomInstance.NomChamp
+    poupi.sante  = 12;
+    poupi.energie = 80;
+
+    printf("Santé : %d\n", poupi.sante);
+
+    // Initialisation séquentielle à la déclaration
+    Tamagotchi riri = {100, 100, 0.0, 100.0};
+
+    // Initialisation sélective (le reste vaut 0)
+    Tamagotchi loulou = {.energie = 100, .moral = 100.0};
+
+    // Tableau de structures
+    Tamagotchi tamadex[151];
+    tamadex[0].sante = 24;
+
+    return 0;
+}
+\end{lstlisting}
+
+\subsection{Fonctions et structures}
+
+\begin{lstlisting}[caption={Tamagotchi.c — associer des fonctions à une structure}]
+#include "Tamagotchi.h"
+#include <stdio.h>
+
+// Passage par copie : les modifications n'impactent pas l'original
+void afficherSante(Tamagotchi tama) {
+    printf("Santé : %d\n", tama.sante);
+}
+
+// Retourner une structure modifiée
+Tamagotchi setSante(Tamagotchi tama, int sante) {
+    if      (sante < 0)   tama.sante = 0;
+    else if (sante > 100) tama.sante = 100;
+    else                  tama.sante = sante;
+    return tama;
+}
+
+// Passage par pointeur : modifie l'original directement
+void setSantePtr(Tamagotchi *pTama, int sante) {
+    if      (sante < 0)   (*pTama).sante = 0;
+    else if (sante > 100) (*pTama).sante = 100;
+    else                  (*pTama).sante = sante;
+}
+\end{lstlisting}
+
+\begin{astuce}
+\texttt{(*pTama).sante} et \texttt{pTama->sante} sont équivalents. L'opérateur \texttt{->} est une notation raccourcie très utilisée en C pour accéder à un champ via un pointeur.
+\end{astuce}
+
+\begin{lstlisting}[caption={Utilisation dans main.c}]
+int main() {
+    Tamagotchi poupi = {100, 100, 0.0, 100.0};
+
+    // Passage par copie + récupération du résultat
+    poupi = setSante(poupi, 150);   // sera clampé à 100
+    afficherSante(poupi);
+
+    // Passage par pointeur
+    setSantePtr(&poupi, -5);        // sera clampé à 0
+    printf("Santé : %d\n", poupi.sante);
+
+    return 0;
+}
+\end{lstlisting}
+
+% ============================================================
+\section{Allocation dynamique}
+
+\subsection{Pourquoi allouer dynamiquement ?}
+
+Les variables locales vivent sur la \textbf{pile} et sont détruites en sortant de leur bloc. L'\textbf{allocation dynamique} permet de créer de la mémoire sur le \textbf{tas} (heap), dont la durée de vie n'est pas liée à la portée des variables.
+
+\begin{table}[h!]
+\centering
+\caption{Pile (Stack) vs Tas (Heap)}
+\begin{tabular}{lll}
+\toprule
+ & \textbf{Pile (Stack)} & \textbf{Tas (Heap)} \\
+\midrule
+Gestion & Automatique & Manuelle \\
+Durée de vie & Liée au bloc & Jusqu'à \texttt{free()} \\
+Taille & Limitée ($\sim$8 Mo) & Quasi-illimitée \\
+Vitesse & Rapide & Plus lent \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{malloc — allouer de la mémoire}
+
+\begin{lstlisting}[caption={Allocation avec malloc}]
+#include <stdlib.h>
+
+// Allouer un entier sur le tas
+int *pVar = malloc(sizeof(int));
+*pVar = 3;
+printf("%d\n", *pVar);  // 3
+
+// sizeof retourne la taille en octets d'un type
+// sizeof(int) -> 4, sizeof(double) -> 8, etc.
+\end{lstlisting}
+
+\begin{important}
+Toujours stocker l'adresse renvoyée par \texttt{malloc} dans un pointeur ! Sinon l'espace est alloué mais introuvable.
+\end{important}
+
+\subsection{free — libérer la mémoire}
+
+\begin{lstlisting}[caption={Libération avec free}]
+int *pAge = malloc(sizeof(int));
+*pAge = 3;
+
+// Libération
+free(pAge);
+pAge = NULL;  // Bonne pratique : mettre à NULL après free
+\end{lstlisting}
+
+\begin{important}
+\textbf{Fuite mémoire} : si on perd l'adresse avant d'avoir fait \texttt{free}, la mémoire reste allouée jusqu'à la fin du programme. Chaque \texttt{malloc} doit avoir son \texttt{free}.
+\end{important}
+
+\subsection{Tableau alloué dynamiquement}
+
+\begin{lstlisting}[caption={Tableau de taille choisie à l'exécution}]
+int n;
+printf("Taille du tableau : ");
+scanf("%d", &n);
+
+// Allouer n entiers contigus
+int *arr = malloc(n * sizeof(int));
+
+// Utilisation identique à un tableau classique
+arr[5] = 3;
+arr[0] = 10;
+
+// Libération
+free(arr);
+arr = NULL;
+\end{lstlisting}
+
+\subsection{malloc et structures}
+
+\begin{lstlisting}[caption={Allocation dynamique d'une structure}]
+// Structure avec un tableau interne
+typedef struct {
+    int    sante;
+    double *stats;
+} Tamagotchi;
+
+int main() {
+    // Allocation de la structure
+    Tamagotchi *t = malloc(sizeof(Tamagotchi));
+    (*t).sante = 100;
+
+    // Allocation du tableau interne
+    int n = 5;
+    (*t).stats = malloc(n * sizeof(double));
+    (*t).stats[0] = 9.5;
+
+    // Libération (ordre inverse de l'allocation)
+    free((*t).stats);
+    free(t);
+    t = NULL;
+
+    return 0;
+}
+\end{lstlisting}
+
+\begin{regle}
+Ordre de libération : toujours libérer les allocations \textbf{imbriquées en premier}, puis la structure principale. L'ordre inverse de l'allocation.
+\end{regle}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                       PARTIE II : C++
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\part{Programmation en C++}
+
+% ============================================================
+\section{Introduction au C++}
+
+\subsection{C++ par rapport au C}
+
+Le C++ est une \textbf{extension du C} qui ajoute la programmation orientée objet, les références, la surcharge de fonctions, les templates, et une bibliothèque standard riche. Tout code C valide est (presque) valide en C++.
+
+\begin{table}[h!]
+\centering
+\caption{Principales différences C / C++}
+\begin{tabular}{lll}
+\toprule
+\textbf{Fonctionnalité} & \textbf{C} & \textbf{C++} \\
+\midrule
+Entrées/sorties & \texttt{printf / scanf} & \texttt{cout / cin} \\
+Allocation dynamique & \texttt{malloc / free} & \texttt{new / delete} \\
+Références & Non & Oui (\texttt{\&}) \\
+Classes et objets & Non (struct seulement) & Oui \\
+Surcharge de fonctions & Non & Oui \\
+Passage par référence & Par pointeur & Par référence (\texttt{\&}) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Caractéristiques du langage}
+
+Le C++ est un langage \textbf{compilé}, c'est-à-dire qu'avant d'être exécuté, le code source doit être traduit en langage machine par un compilateur.
+
+\begin{exemple}
+Processus de compilation et exécution :
+\begin{enumerate}
+    \item Écriture du code dans \texttt{programme.cpp}
+    \item Compilation : \texttt{g++ programme.cpp -o programme}
+    \item Exécution : \texttt{./programme}
+\end{enumerate}
+\end{exemple}
+
+\subsection{Structure minimale d'un programme}
+
+\begin{lstlisting}[style=cpp, caption={Programme minimal en C++}]
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Hello World!" << endl;
+    return 0;
+}
+\end{lstlisting}
+
+\begin{itemize}
+    \item \texttt{\#include <iostream>} : inclut la bibliothèque d'entrées/sorties
+    \item \texttt{using namespace std;} : permet d'utiliser \texttt{cout} et \texttt{cin} sans préfixe
+    \item \texttt{int main()} : fonction principale, point d'entrée du programme
+\end{itemize}
+
+\subsection{Entrées et sorties}
+
+En C++, on utilise \texttt{cout} et \texttt{cin} à la place de \texttt{printf} et \texttt{scanf}.
+
+\begin{lstlisting}[style=cpp, caption={Utilisation de cout et cin}]
+int age;
+string nom;
+
+// Affichage
+cout << "Entrez votre nom : ";
+cin >> nom;
+
+cout << "Entrez votre age : ";
+cin >> age;
+
+cout << "Bonjour " << nom << ", vous avez " << age << " ans." << endl;
+\end{lstlisting}
+
+\begin{regle}
+Opérateurs de flux :
+\begin{itemize}
+    \item \texttt{<<} : pour envoyer vers la sortie (\texttt{cout})
+    \item \texttt{>>} : pour récupérer depuis l'entrée (\texttt{cin})
+    \item \texttt{endl} : retour à la ligne
+\end{itemize}
+\end{regle}
+
+% ============================================================
+\section{Les types de base et les tableaux}
+
+\subsection{Types de données}
+
+\begin{table}[h!]
+\centering
+\caption{Types de données en C++}
+\begin{tabular}{lll}
+\toprule
+\textbf{Type} & \textbf{Description} & \textbf{Exemple} \\
+\midrule
+\texttt{int} & Entier & \texttt{int x = 42;} \\
+\texttt{double} & Réel double précision & \texttt{double pi = 3.14;} \\
+\texttt{float} & Réel simple précision & \texttt{float f = 2.5f;} \\
+\texttt{char} & Caractère & \texttt{char c = 'A';} \\
+\texttt{bool} & Booléen & \texttt{bool ok = true;} \\
+\texttt{string} & Chaîne de caractères & \texttt{string s = "hello";} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Déclaration de tableaux}
+
+\begin{lstlisting}[style=cpp, caption={Tableaux statiques}]
+// Tableau a une dimension
+int tab[10];       // Tableau de 10 entiers
+tab[0] = 5;        // Premier element (indice 0)
+tab[9] = 12;       // Dernier element (indice 9)
+
+// Tableau a deux dimensions
+double matrice[3][4]; // 3 lignes, 4 colonnes
+matrice[0][0] = 1.5;
+
+// Initialisation lors de la declaration
+int nombres[] = {10, 20, 30, 40, 50};
+\end{lstlisting}
+
+\begin{important}
+Les tableaux statiques ont une taille fixe définie à la compilation. Cette taille ne peut pas être modifiée pendant l'exécution du programme.
+\end{important}
+
+% ============================================================
+\section{Pointeurs et références}
+
+\subsection{Les pointeurs}
+
+Un pointeur est une variable qui contient l'\textbf{adresse mémoire} d'une autre variable.
+
+\begin{lstlisting}[style=cpp, caption={Déclaration et utilisation de pointeurs}]
+int x = 42;
+int* p;          // p est un pointeur sur int
+
+p = &x;          // p contient l'adresse de x
+
+cout << x;       // Affiche : 42
+cout << &x;      // Affiche : 0x7fff5a3b524 (adresse de x)
+cout << p;       // Affiche : 0x7fff5a3b524 (meme adresse)
+cout << *p;      // Affiche : 42 (valeur pointee)
+\end{lstlisting}
+
+\begin{regle}
+Les deux opérateurs clés :
+\begin{itemize}
+    \item \texttt{\&} : opérateur d'adresse, donne l'adresse d'une variable
+    \item \texttt{*} : opérateur de déréférencement, accède à la valeur pointée
+\end{itemize}
+\end{regle}
+
+\subsection{Schéma mémoire}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Variable} & \textbf{Adresse} & \textbf{Valeur} \\
+\midrule
+\texttt{x} & \texttt{0x1000} & \texttt{42} \\
+\texttt{p} & \texttt{0x2000} & \texttt{0x1000} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Le pointeur \texttt{p} (stocké à l'adresse \texttt{0x2000}) contient l'adresse de \texttt{x} (\texttt{0x1000}).
+
+\subsection{Les références}
+
+Une référence est un \textbf{alias} pour une variable existante. C'est la grande nouveauté du C++ par rapport au C.
+
+\begin{lstlisting}[style=cpp, caption={Utilisation des références}]
+int x = 10;
+int& ref = x;    // ref est une reference sur x
+
+ref = 20;        // Modifie x
+cout << x;       // Affiche : 20
+\end{lstlisting}
+
+\begin{astuce}
+Une référence doit être initialisée lors de sa déclaration et ne peut plus changer de cible par la suite.
+\end{astuce}
+
+% ============================================================
+\section{Allocation dynamique}
+
+\subsection{La pile (Stack) et le tas (Heap)}
+
+\begin{table}[h!]
+\centering
+\caption{Comparaison Pile vs Tas}
+\begin{tabular}{lll}
+\toprule
+ & \textbf{Pile (Stack)} & \textbf{Tas (Heap)} \\
+\midrule
+\textbf{Taille} & Limitée ($\sim$8 Mo) & Quasi-illimitée \\
+\textbf{Libération} & Automatique & Manuelle (\texttt{delete}) \\
+\textbf{Utilisation} & Variables locales & Allocation dynamique \\
+\textbf{Rapidité} & Rapide & Plus lent \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Allocation dans la pile}
+
+\begin{lstlisting}[style=cpp, caption={Variables locales dans la pile}]
+void fonction() {
+    int x = 5;          // Cree dans la pile
+    double tab[10];      // Cree dans la pile
+    // ...
+} // x et tab sont automatiquement detruits ici
+\end{lstlisting}
+
+\subsection{Allocation dans le tas avec new/delete}
+
+En C++, on remplace \texttt{malloc/free} par \texttt{new/delete} qui sont plus sûrs et gèrent les constructeurs.
+
+\begin{lstlisting}[style=cpp, caption={Allocation dynamique avec new}]
+// Allocation d'un seul element
+int* p = new int;
+*p = 42;
+delete p;            // Libere la memoire
+
+// Allocation d'un tableau
+int n = 100;
+int* tableau = new int[n];
+tableau[0] = 10;
+tableau[99] = 20;
+delete[] tableau;    // ATTENTION aux crochets !
+\end{lstlisting}
+
+\begin{important}
+Règle d'or :
+\begin{itemize}
+    \item Chaque \texttt{new} doit avoir son \texttt{delete}
+    \item Chaque \texttt{new[]} doit avoir son \texttt{delete[]}
+    \item Sinon : \textbf{fuite mémoire !}
+\end{itemize}
+\end{important}
+
+\subsection{Exemple complet}
+
+\begin{lstlisting}[style=cpp, caption={Gestion dynamique d'un tableau}]
+#include <iostream>
+using namespace std;
+
+int main() {
+    int taille;
+    cout << "Entrez la taille du tableau : ";
+    cin >> taille;
+
+    // Allocation dynamique
+    int* tab = new int[taille];
+
+    // Remplissage
+    for (int i = 0; i < taille; i++) {
+        tab[i] = i * 10;
+    }
+
+    // Affichage
+    for (int i = 0; i < taille; i++) {
+        cout << tab[i] << " ";
+    }
+    cout << endl;
+
+    // Liberation
+    delete[] tab;
+
+    return 0;
+}
+\end{lstlisting}
+
+% ============================================================
+\section{Passage de paramètres}
+
+\subsection{Passage par valeur}
+
+Le paramètre reçoit une \textbf{copie} de la variable.
+
+\begin{lstlisting}[style=cpp, caption={Passage par valeur}]
+void modifier(int x) {
+    x = 10;          // Modifie la COPIE
+}
+
+int main() {
+    int a = 5;
+    modifier(a);
+    cout << a;       // Affiche : 5 (non modifie)
+}
+\end{lstlisting}
+
+\subsection{Passage par référence}
+
+Le paramètre est un \textbf{alias} de la variable originale.
+
+\begin{lstlisting}[style=cpp, caption={Passage par référence}]
+void modifier(int& x) {   // Le & est crucial
+    x = 10;          // Modifie l'ORIGINAL
+}
+
+int main() {
+    int a = 5;
+    modifier(a);
+    cout << a;       // Affiche : 10 (modifie !)
+}
+\end{lstlisting}
+
+\subsection{Passage par référence constante}
+
+Permet d'éviter la copie tout en protégeant la variable.
+
+\begin{lstlisting}[style=cpp, caption={Passage par référence constante}]
+void afficher(const int& x) {
+    cout << x;
+    // x = 10;      // ERREUR de compilation
+}
+\end{lstlisting}
+
+\begin{regle}
+Quand utiliser quoi ?
+\begin{itemize}
+    \item \textbf{Par valeur} : types simples (\texttt{int}, \texttt{char}, \texttt{bool}, \texttt{double})
+    \item \textbf{Par référence constante} (\texttt{const \&}) : objets en lecture seule
+    \item \textbf{Par référence} (\texttt{\&}) : objets à modifier
+\end{itemize}
+\end{regle}
+
+\subsection{Tableau comparatif}
+
+\begin{table}[h!]
+\centering
+\caption{Modes de passage de paramètres}
+\begin{tabular}{llll}
+\toprule
+\textbf{Mode} & \textbf{Copie ?} & \textbf{Modifiable ?} & \textbf{Syntaxe} \\
+\midrule
+Par valeur & Oui & Non (copie) & \texttt{void f(int x)} \\
+Par référence & Non & Oui & \texttt{void f(int\& x)} \\
+Par réf. const. & Non & Non & \texttt{void f(const int\& x)} \\
+Par pointeur (C) & Non & Oui & \texttt{void f(int* x)} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+\section{Programmation orientée objet}
+
+\subsection{Concepts fondamentaux}
+
+La \textbf{Programmation Orientée Objet} (POO) permet de :
+\begin{itemize}
+    \item Regrouper données et fonctions dans une même structure (classe)
+    \item Protéger les données (encapsulation)
+    \item Créer des types personnalisés
+    \item Améliorer la maintenabilité et la réutilisabilité du code
+\end{itemize}
+
+\begin{astuce}
+Le lien avec les structures C est direct : une \textbf{classe} en C++ est comme une \texttt{struct} en C, mais avec des \textbf{méthodes intégrées} et un contrôle d'accès (\texttt{private} / \texttt{public}).
+\end{astuce}
+
+\subsection{Structure d'une classe}
+
+\begin{lstlisting}[style=cpp, caption={Déclaration d'une classe - fichier Point.h}]
+#ifndef POINT_H
+#define POINT_H
+
+class Point {
+private:     // Donnees membres privees
+    double x;
+    double y;
+
+public:      // Fonctions membres publiques
+    // Constructeur
+    Point(double abs, double ord);
+
+    // Methodes
+    void afficher() const;
+    void deplacer(double dx, double dy);
+
+    // Accesseurs (getters)
+    double getX() const;
+    double getY() const;
+
+    // Mutateurs (setters)
+    void setX(double valeur);
+    void setY(double valeur);
+};
+
+#endif
+\end{lstlisting}
+
+\subsection{Implémentation}
+
+\begin{lstlisting}[style=cpp, caption={Implémentation de la classe - fichier Point.cpp}]
+#include "Point.h"
+#include <iostream>
+using namespace std;
+
+// Constructeur
+Point::Point(double abs, double ord) {
+    x = abs;
+    y = ord;
+}
+
+void Point::afficher() const {
+    cout << "(" << x << ", " << y << ")" << endl;
+}
+
+void Point::deplacer(double dx, double dy) {
+    x += dx;
+    y += dy;
+}
+
+double Point::getX() const { return x; }
+double Point::getY() const { return y; }
+void Point::setX(double valeur) { x = valeur; }
+void Point::setY(double valeur) { y = valeur; }
+\end{lstlisting}
+
+\subsection{Utilisation}
+
+\begin{lstlisting}[style=cpp, caption={Programme principal - fichier main.cpp}]
+#include "Point.h"
+#include <iostream>
+using namespace std;
+
+int main() {
+    Point p1(3.0, 5.0);
+    Point p2(1.0, 2.0);
+
+    p1.afficher();           // (3, 5)
+    p1.deplacer(2.0, 1.0);
+    p1.afficher();           // (5, 6)
+
+    cout << "x = " << p1.getX() << endl;
+
+    p1.setX(10.0);
+    p1.afficher();           // (10, 6)
+
+    // p1.x = 20;            // ERREUR : donnee privee
+
+    return 0;
+}
+\end{lstlisting}
+
+\begin{regle}
+Principe d'encapsulation :
+\begin{itemize}
+    \item Les données membres sont \texttt{private}
+    \item Les méthodes d'interface sont \texttt{public}
+    \item On accède aux données via des accesseurs (getters) et mutateurs (setters)
+\end{itemize}
+\end{regle}
+
+% ============================================================
+\section{Constructeurs et destructeurs}
+
+\subsection{Le constructeur}
+
+Le constructeur est une fonction appelée \textbf{automatiquement} lors de la création d'un objet.
+
+\begin{regle}
+Caractéristiques :
+\begin{itemize}
+    \item Porte le même nom que la classe
+    \item N'a pas de type de retour
+    \item Sert à initialiser l'objet
+    \item Peut effectuer des allocations dynamiques
+\end{itemize}
+\end{regle}
+
+\subsection{Types de constructeurs}
+
+\begin{lstlisting}[style=cpp, caption={Différents types de constructeurs}]
+class Tableau {
+private:
+    int* tab;
+    int taille;
+
+public:
+    // 1) Constructeur par defaut
+    Tableau() {
+        taille = 10;
+        tab = new int[10];
+    }
+
+    // 2) Constructeur avec parametres
+    Tableau(int n) {
+        taille = n;
+        tab = new int[n];
+    }
+
+    // 3) Constructeur avec valeur par defaut
+    // Tableau(int n = 10) { taille = n; tab = new int[n]; }
+};
+\end{lstlisting}
+
+\subsection{Utilisation}
+
+\begin{lstlisting}[style=cpp, caption={Appel des constructeurs}]
+int main() {
+    Tableau t1;          // Appelle le constructeur par defaut
+    Tableau t2(20);      // Appelle le constructeur avec n=20
+    Tableau t3(50);      // Appelle le constructeur avec n=50
+
+    // ATTENTION : ceci ne cree PAS un objet !
+    // Tableau t4();     // Declare une fonction !
+}
+\end{lstlisting}
+
+\subsection{Le destructeur}
+
+Le destructeur est une fonction appelée \textbf{automatiquement} lors de la destruction d'un objet.
+
+\begin{regle}
+Caractéristiques :
+\begin{itemize}
+    \item Porte le nom de la classe précédé de \texttt{\~{}}
+    \item N'a pas de paramètres ni de type de retour
+    \item Sert à libérer les ressources (mémoire, fichiers, etc.)
+\end{itemize}
+\end{regle}
+
+\begin{lstlisting}[style=cpp, caption={Destructeur}]
+class Tableau {
+private:
+    int* tab;
+    int taille;
+
+public:
+    Tableau(int n) {
+        taille = n;
+        tab = new int[n];
+        cout << "Construction d'un tableau de " << n << endl;
+    }
+
+    ~Tableau() {
+        delete[] tab;
+        cout << "Destruction du tableau" << endl;
+    }
+};
+\end{lstlisting}
+
+% ============================================================
+\section{Constructeur par recopie et opérateur d'affectation}
+
+\subsection{Problème de la copie superficielle}
+
+Quand une classe contient un pointeur, la copie par défaut ne copie que l'adresse — les deux objets pointent alors sur la même zone mémoire. Cela provoque des erreurs lors de la destruction.
+
+\begin{lstlisting}[style=cpp, caption={Problème de copie superficielle}]
+class Tableau {
+    int* tab;
+    int taille;
+public:
+    Tableau(int n) { taille = n; tab = new int[n]; }
+    ~Tableau() { delete[] tab; }
+};
+
+int main() {
+    Tableau t1(5);
+    Tableau t2 = t1;    // Copie superficielle !
+    // t1 et t2 partagent le MEME tableau
+    // A la destruction : double delete -> crash !
+}
+\end{lstlisting}
+
+\subsection{Constructeur par recopie}
+
+\begin{lstlisting}[style=cpp, caption={Constructeur par recopie (copie profonde)}]
+// Dans la classe :
+Tableau(const Tableau& autre) {
+    taille = autre.taille;
+    tab = new int[taille];           // Nouvelle allocation
+    for (int i = 0; i < taille; i++) {
+        tab[i] = autre.tab[i];       // Copie des valeurs
+    }
+}
+\end{lstlisting}
+
+\subsection{Opérateur d'affectation}
+
+\begin{lstlisting}[style=cpp, caption={Opérateur d'affectation}]
+Tableau& operator=(const Tableau& autre) {
+    if (this == &autre)              // Auto-affectation
+        return *this;
+
+    delete[] tab;                    // Libere l'ancienne memoire
+
+    taille = autre.taille;
+    tab = new int[taille];
+    for (int i = 0; i < taille; i++) {
+        tab[i] = autre.tab[i];
+    }
+
+    return *this;
+}
+\end{lstlisting}
+
+\begin{regle}
+\textbf{Règle des trois} : si vous définissez l'un des trois suivants, définissez les trois :
+\begin{enumerate}
+    \item Destructeur
+    \item Constructeur par recopie
+    \item Opérateur d'affectation
+\end{enumerate}
+\end{regle}
+
+% ============================================================
+\section{Listes chaînées}
+
+\subsection{Principe}
+
+Une liste chaînée est une structure de données où chaque élément (\textbf{maillon} ou \textbf{nœud}) contient une valeur et un \textbf{pointeur vers le maillon suivant}.
+
+\begin{lstlisting}[style=cpp, caption={Structure d'un maillon}]
+class Maillon {
+public:
+    int valeur;
+    Maillon* suivant;
+
+    Maillon(int v) : valeur(v), suivant(nullptr) {}
+};
+\end{lstlisting}
+
+\subsection{Classe ListeChainee}
+
+\begin{lstlisting}[style=cpp, caption={Liste chaînée complète}]
+class ListeChainee {
+private:
+    Maillon* tete;
+
+public:
+    ListeChainee() : tete(nullptr) {}
+
+    ~ListeChainee() {
+        Maillon* courant = tete;
+        while (courant != nullptr) {
+            Maillon* suivant = courant->suivant;
+            delete courant;
+            courant = suivant;
+        }
+    }
+
+    // Ajouter en tete
+    void ajouterEnTete(int valeur) {
+        Maillon* nouveau = new Maillon(valeur);
+        nouveau->suivant = tete;
+        tete = nouveau;
+    }
+
+    // Parcourir et afficher
+    void afficher() const {
+        Maillon* courant = tete;
+        while (courant != nullptr) {
+            cout << courant->valeur << " -> ";
+            courant = courant->suivant;
+        }
+        cout << "NULL" << endl;
+    }
+
+    bool estVide() const { return tete == nullptr; }
+};
+\end{lstlisting}
+
+\subsection{Comparaison tableau / liste chaînée}
+
+\begin{table}[h!]
+\centering
+\caption{Tableau vs Liste chaînée}
+\begin{tabular}{lll}
+\toprule
+ & \textbf{Tableau} & \textbf{Liste chaînée} \\
+\midrule
+Taille & Fixe & Dynamique \\
+Accès à l'élément i & O(1) (direct) & O(n) (parcours) \\
+Insertion en tête & O(n) & O(1) \\
+Mémoire & Continue & Fragmentée \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+\section{Exercices récapitulatifs}
+
+\subsection{Exercice 1 : Classe Rectangle}
+
+\textbf{Énoncé :} Créer une classe \texttt{Rectangle} avec longueur et largeur, un constructeur, et les méthodes \texttt{aire()}, \texttt{perimetre()} et \texttt{afficher()}.
+
+\textbf{Solution :}
+
+\begin{lstlisting}[style=cpp, caption={Rectangle.h}]
+#ifndef RECTANGLE_H
+#define RECTANGLE_H
+
+class Rectangle {
+private:
+    double longueur;
+    double largeur;
+
+public:
+    Rectangle(double l, double L);
+    double aire() const;
+    double perimetre() const;
+    void afficher() const;
+};
+
+#endif
+\end{lstlisting}
+
+\begin{lstlisting}[style=cpp, caption={Rectangle.cpp}]
+#include "Rectangle.h"
+#include <iostream>
+using namespace std;
+
+Rectangle::Rectangle(double l, double L) {
+    longueur = l;
+    largeur = L;
+}
+
+double Rectangle::aire() const {
+    return longueur * largeur;
+}
+
+double Rectangle::perimetre() const {
+    return 2 * (longueur + largeur);
+}
+
+void Rectangle::afficher() const {
+    cout << "Rectangle " << longueur << "x" << largeur << endl;
+    cout << "Aire : " << aire() << endl;
+    cout << "Perimetre : " << perimetre() << endl;
+}
+\end{lstlisting}
+
+\subsection{Exercice 2 : Classe Vecteur dynamique}
+
+\textbf{Énoncé :} Créer une classe \texttt{Vecteur} qui gère un tableau dynamique d'entiers avec :
+\begin{itemize}
+    \item Constructeur avec taille
+    \item Destructeur
+    \item Constructeur par recopie
+    \item Opérateur d'affectation
+    \item Méthode \texttt{get(int i)} et \texttt{set(int i, int valeur)}
+\end{itemize}
+
+\textbf{Solution :}
+
+\begin{lstlisting}[style=cpp, caption={Vecteur.h}]
+#ifndef VECTEUR_H
+#define VECTEUR_H
+
+class Vecteur {
+private:
+    int* tab;
+    int taille;
+
+public:
+    Vecteur(int n);
+    ~Vecteur();
+    Vecteur(const Vecteur& autre);
+    Vecteur& operator=(const Vecteur& autre);
+
+    int get(int i) const;
+    void set(int i, int valeur);
+    int getTaille() const;
+    void afficher() const;
+};
+
+#endif
+\end{lstlisting}
+
+\begin{lstlisting}[style=cpp, caption={Vecteur.cpp}]
+#include "Vecteur.h"
+#include <iostream>
+using namespace std;
+
+Vecteur::Vecteur(int n) {
+    taille = n;
+    tab = new int[n];
+    for (int i = 0; i < n; i++) tab[i] = 0;
+}
+
+Vecteur::~Vecteur() { delete[] tab; }
+
+Vecteur::Vecteur(const Vecteur& autre) {
+    taille = autre.taille;
+    tab = new int[taille];
+    for (int i = 0; i < taille; i++) tab[i] = autre.tab[i];
+}
+
+Vecteur& Vecteur::operator=(const Vecteur& autre) {
+    if (this == &autre) return *this;
+    delete[] tab;
+    taille = autre.taille;
+    tab = new int[taille];
+    for (int i = 0; i < taille; i++) tab[i] = autre.tab[i];
+    return *this;
+}
+
+int Vecteur::get(int i) const {
+    if (i < 0 || i >= taille) {
+        cout << "Erreur : indice hors limites" << endl;
+        return 0;
+    }
+    return tab[i];
+}
+
+void Vecteur::set(int i, int valeur) {
+    if (i < 0 || i >= taille) {
+        cout << "Erreur : indice hors limites" << endl;
+        return;
+    }
+    tab[i] = valeur;
+}
+
+int Vecteur::getTaille() const { return taille; }
+
+void Vecteur::afficher() const {
+    cout << "[";
+    for (int i = 0; i < taille; i++) {
+        cout << tab[i];
+        if (i < taille - 1) cout << ", ";
+    }
+    cout << "]" << endl;
+}
+\end{lstlisting}
+
+\subsection{Exercice 3 : Pile (Stack) avec liste chaînée}
+
+\textbf{Énoncé :} Implémenter une pile (LIFO) avec :
+\begin{itemize}
+    \item \texttt{empiler(int x)} : ajoute x au sommet
+    \item \texttt{depiler()} : retire et retourne l'élément du sommet
+    \item \texttt{estVide()} : teste si la pile est vide
+    \item \texttt{sommet()} : retourne l'élément du sommet sans le retirer
+\end{itemize}
+
+\textbf{Solution :}
+
+\begin{lstlisting}[style=cpp, caption={Pile.h et Pile.cpp}]
+class Maillon {
+    int valeur;
+    Maillon* suivant;
+    friend class Pile;
+public:
+    Maillon(int v, Maillon* s = nullptr) : valeur(v), suivant(s) {}
+};
+
+class Pile {
+private:
+    Maillon* sommetPile;
+
+public:
+    Pile() : sommetPile(nullptr) {}
+
+    ~Pile() {
+        while (!estVide()) depiler();
+    }
+
+    void empiler(int x) {
+        sommetPile = new Maillon(x, sommetPile);
+    }
+
+    int depiler() {
+        if (estVide()) { cout << "Erreur : pile vide" << endl; return 0; }
+        int valeur = sommetPile->valeur;
+        Maillon* temp = sommetPile;
+        sommetPile = sommetPile->suivant;
+        delete temp;
+        return valeur;
+    }
+
+    bool estVide() const { return sommetPile == nullptr; }
+
+    int sommet() const {
+        if (estVide()) { cout << "Erreur : pile vide" << endl; return 0; }
+        return sommetPile->valeur;
+    }
+};
+\end{lstlisting}
+
+% ============================================================
+\section{Aide-mémoire}
+
+\subsection{Tableau récapitulatif des opérateurs}
+
+\begin{table}[h!]
+\centering
+\caption{Opérateurs importants en C / C++}
+\begin{tabular}{llll}
+\toprule
+\textbf{Opérateur} & \textbf{Nom} & \textbf{C} & \textbf{C++} \\
+\midrule
+\texttt{\&} & Adresse & \checkmark & \checkmark \\
+\texttt{*} & Déréférencement / pointeur & \checkmark & \checkmark \\
+\texttt{->} & Accès membre via pointeur & \checkmark & \checkmark \\
+\texttt{.} & Accès membre d'un objet & \checkmark & \checkmark \\
+\texttt{::} & Résolution de portée & \textemdash & \checkmark \\
+\texttt{new} & Allocation dynamique & \textemdash & \checkmark \\
+\texttt{delete} & Libération dynamique & \textemdash & \checkmark \\
+\texttt{malloc} & Allocation dynamique & \checkmark & (\checkmark) \\
+\texttt{free} & Libération dynamique & \checkmark & (\checkmark) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Commandes de compilation}
+
+\begin{lstlisting}[style=bash, caption={Compilation C et C++}]
+# Compilation C
+gcc programme.c -o programme
+
+# Compilation C++
+g++ programme.cpp -o programme
+
+# Avec debug
+g++ -g programme.cpp -o programme
+
+# Avec warnings
+g++ -Wall -Wextra programme.cpp -o programme
+
+# Plusieurs fichiers
+g++ main.cpp Point.cpp Rectangle.cpp -o programme
+
+# Execution
+./programme
+
+# Detection de fuites memoire (Linux)
+valgrind ./programme
+\end{lstlisting}
+
+\subsection{Modèle de fichiers .h et .cpp (C++)}
+
+\begin{lstlisting}[style=cpp, caption={Modèle de fichier .h}]
+#ifndef NOMCLASSE_H
+#define NOMCLASSE_H
+
+class NomClasse {
+private:
+    // Attributs prives
+
+public:
+    NomClasse();                              // Constructeur
+    NomClasse(/* parametres */);              // Constructeur parametré
+    ~NomClasse();                             // Destructeur
+    NomClasse(const NomClasse& autre);        // Recopie
+    NomClasse& operator=(const NomClasse& autre); // Affectation
+
+    // Methodes publiques
+};
+
+#endif
+\end{lstlisting}
+
+% ============================================================
+\section{Conclusion}
+
+Ce document couvre l'ensemble du parcours C/C++ du semestre 1 et 2 de licence informatique. En résumé :
+
+\textbf{Partie C :}
+\begin{itemize}
+    \item Algorithmes, variables, conditions, boucles
+    \item Fonctions : portée, passage par valeur, retour, fichiers .h/.c
+    \item Pointeurs : \texttt{\&}, \texttt{*}, passage in-out
+    \item Tableaux statiques et lien avec les pointeurs
+    \item Structures : regrouper des données cohérentes
+    \item Allocation dynamique : \texttt{malloc / free}, tas vs pile
+\end{itemize}
+
+\textbf{Partie C++ :}
+\begin{itemize}
+    \item Syntaxe C++ : \texttt{cout/cin}, \texttt{string}, références
+    \item Allocation dynamique : \texttt{new / delete}
+    \item Programmation orientée objet : classes, encapsulation
+    \item Constructeurs et destructeurs
+    \item Règle des trois : destructeur, recopie, affectation
+    \item Listes chaînées
+\end{itemize}
+
+\begin{regle}
+Les trois règles d'or du C++ :
+\begin{enumerate}
+    \item \textbf{Règle des trois} : Destructeur + constructeur par recopie + opérateur d'affectation
+    \item \textbf{RAII} : Acquérir les ressources dans le constructeur, les libérer dans le destructeur
+    \item \textbf{const-correctness} : Utiliser \texttt{const} partout où c'est pertinent
+\end{enumerate}
+\end{regle}
+
+\begin{center}
+\textbf{Bon courage pour les révisions !}
+\end{center}
+
+\end{document}
