@@ -201,13 +201,13 @@ a = d1
 b = d2
 c = d3
 
-if a > b:
+if a > b: 
     a, b = b, a
-if a > c:
+if a > c: 
     a, c = c, a
-if b > c:
-    b, c = c, a
-if a == b == c:
+if b > c: 
+    b, c = c, b
+if a == b == c: 
     print("les 3 côtés sont égaux")
 else:
     if a == b + c:
