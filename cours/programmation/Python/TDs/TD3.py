@@ -1,18 +1,18 @@
 # FUNCTION TO CALCULATE DISCRIMINANT AND ROOTS OF A POLYNOMIAL OF DEGREE 2
 def calculate_discriminant(a, b, c):
     """
-    Calculates the discriminant (delta) and the real roots of a quadratic equation (ax^2 + bx + c = 0).
+    Calculer le discriminant (delta) et les racines réelles d'une équation quadratique (ax^2 + bx + c = 0).
     """
     delta = b**2 - 4*a*c
     if delta > 0:
         root1 = (-b + delta**0.5) / (2*a)
         root2 = (-b - delta**0.5) / (2*a)
-        return "The discriminant is positive and there are two distinct real roots: " + str(delta), (root1, root2)
+        return "Le discriminant est positif et il y a deux racines réelles distinctes: " + str(delta), (root1, root2)
     elif delta == 0:
         root = -b / (2*a)
-        return "The discriminant is zero and there is only one real root: " + str(delta), (root,)
+        return "Le discriminant est nul et il y a une seule racine réelle: " + str(delta), (root,)
     else:
-        return "The discriminant is negative and there are no real roots"
+        return "Le discriminant est négatif et il n'y a pas de racines réelles: " + str(delta), ()
         
 def solve_quadratic():
     """

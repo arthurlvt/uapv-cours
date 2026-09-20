@@ -4,4 +4,5 @@ cours/.vscode/
 **/.DS_Store
 .github/
 ./.github/workflows/
+cours/maths/analyse1/TDs/
 **/__pycache__/

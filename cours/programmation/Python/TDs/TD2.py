@@ -20,14 +20,14 @@ for i in range(1, 11):
 # EXERCICE 3
 n = int(input("Entrez un entier non nul (0 pour arrêter) : "))
 
-somme = 0
-compte = 0
+sum = 0
+count = 0
 val_max = n
 val_min = n
 
 while n != 0:
-    somme += n
-    compte += 1
+    sum += n
+    count += 1
 
     if n > val_max:
         val_max = n
@@ -36,8 +36,8 @@ while n != 0:
 
     n = int(input("Entrez un entier non nul (0 pour arrêter) : "))
 
-if compte > 0:
-    moyenne = somme / compte
+if count > 0:
+    moyenne = sum / count
     print("Moyenne :", moyenne)
     print("Max :", val_max)
     print("Min :", val_min)
@@ -47,30 +47,30 @@ else:
 
 # EXERCICE 4
 
-somme_pairs = 0
-nb_pairs = 0
-somme_impairs = 0
-nb_impairs = 0
+sum_even = 0
+count_even = 0
+sum_odd = 0
+count_odd = 0
 
 n = int(input("Entrez un entier (0 pour arrêter) : "))
 
 while n != 0:
     if n % 2 == 0:
-        somme_pairs += n
-        nb_pairs += 1
+        sum_even += n
+        count_even += 1
     else:
-        somme_impairs += n
-        nb_impairs += 1
+        sum_odd += n
+        count_odd += 1
 
     n = int(input("Entrez un entier (0 pour arrêter) : "))
 
-if nb_pairs > 0:
-    print("Moyenne des pairs :", somme_pairs / nb_pairs)
+if count_even > 0:
+    print("Moyenne des pairs :", sum_even / count_even)
 else:
     print("Aucun nombre pair saisi.")
 
-if nb_impairs > 0:
-    print("Moyenne des impairs :", somme_impairs / nb_impairs)
+if count_odd > 0:
+    print("Moyenne des impairs :", sum_odd / count_odd)
 else:
     print("Aucun nombre impair saisi.")
 
@@ -140,44 +140,42 @@ for i in range(taille):
 n = int(input("Entrez un entier n >= 0 : "))
 
 fact = 1
-for i in range(1, n + 1):
-    fact *= i
+for i in range(1, n + 1): fact *= i
 
 print(f"{n}! = {fact}")
 
 
-# Exercice 9 : Vérifier si deux entiers sont premiers et afficher les nombres premiers entre eux
+# Exercice 9 : Vérifier si deux entiers sont premiers et afficher les nombres premiers entre eux SANS FONCTIONS
 
-def nb_premier(x):
-    if x < 2:
-        return False
-    for i in range(2, int(x**0.5) + 1):
-        if x % i == 0:
-            return False
-    return True
+a = int(input("Entrez le premier entier : "))
+b = int(input("Entrez le deuxième entier : "))
 
-# Saisie des deux entiers
-a = int(input("Entrez un premier entier positif : "))
-b = int(input("Entrez un deuxième entier positif : "))
-
-# Vérification premier/pas premier pour chaque nombre
-if nb_premier(a):
-    print(f"{a} est PREMIER")
+nb_diviseurs = 0
+for d in range(1, a+1):
+    if a % d == 0:
+        nb_diviseurs += 1
+if nb_diviseurs == 2:
+    print(f"{a} est premier")
 else:
-    print(f"{a} n'est PAS PREMIER")
+    print(f"{a} n'est pas premier")
 
-if nb_premier(b):
-    print(f"{b} est PREMIER")
+nb_diviseurs = 0
+for d in range(1, b+1):
+    if b % d == 0:
+        nb_diviseurs += 1
+if nb_diviseurs == 2:
+    print(f"{b} est premier")
 else:
-    print(f"{b} n'est PAS PREMIER")
-
-# Inversion si nécessaire
+    print(f"{b} n'est pas premier")
+    
 if a > b:
-    a, b = b, a
-
-# Affichage des nombres premiers dans l'intervalle
-print(f"Nombres premiers entre {a} et {b} :")
-for i in range(a, b + 1):
-    if est_premier(i):
-        print(i, end=" ")
-print()
+    temp = a
+    a = b
+    b = temp
+for n in range(a, b + 1):
+    nb_diviseurs = 0
+    for i in range(1, n + 1): 
+        if n % i == 0: 
+            nb_diviseurs += 1
+    if nb_diviseurs == 2: 
+        print(n, end=" ")
