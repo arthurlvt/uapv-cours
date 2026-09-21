@@ -3,14 +3,33 @@
 
 
 <-------------- ANALYSE1 -------------- >
-premier chapitre: nombres reéls - points clés:
+premier chapitre: nombres reéls - points clés IMPORTANTS:
 -> relation d'ordre / propriétés associés
+/> x ⩽ y ⇒ x + z ⩽ y + z et (x ⩽ y et z ⩾ 0) ⇒ xz ⩽ yz
 -> propriété d'Archimède (important)
+/> ∀x ∈ R, ∃n ∈ N, n > x
 -> propriété de la partie entière E(x) ou |x|
+/> |x| = max(x, −x)
+/> |x| = | x  si x ⩾ 0 |
+         | −x si x < 0 |
 -> propriétés sur la fonction valeur absolue (définition + inégalité trianglulaire => a =< a + a) (quasiment acquis)
+/> |x + y| ⩽ |x| + |y| (inégalité triangulaire)
 -> Théorème de la Densité (voir vidéo) + propriété associé
+
 \> Densité de ℚ dans ℝ et de ℝ\ℚ dans ℝ (quasiment acquis)
 -> Propriété de la borne supérieure (cf majorant, minorants)
+/> majorants : Soit A une partie non-vide de ℝ, { ∀a ∈ A, a ⩽ M }
+/> M = max A <=>  | ∀a ∈ A, a ⩽ M |
+                  | M ∈ A         |
+/> minorants : Soit A une partie non-vide de ℝ, { ∀a ∈ A, a ⩾ m }
+/> m = min A <=>  | ∀a ∈ A, a ⩾ m |
+                  | m ∈ A         |
+/> borne sup :    | ∀a ∈ A
+
+résumé des propriétés
+
+deuxieme chapitre: les fonctions numériques - points clés IMPORTANTS:
+-> 
 
 
 <-------------- BASE DE MATHÉMATIQUES -------------- >
