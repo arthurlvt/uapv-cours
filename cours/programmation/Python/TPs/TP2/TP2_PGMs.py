@@ -1,130 +1,125 @@
-""" EXERCICE 1: LA FONCTION CARRÉ """
-
-def delta(a, b, c):
-	return b**2 - (4*a*c)
-
-def resoudre(a, b, c):
-	x1 = 0
-	x2 = 0
-	x3 = 0
-	d = delta(a, b, c)
-	if d > 0:
-		x1 = (-b - (d**0.5))/(2*a)
-		x2 = (-b + (d**0.5))/(2*a)
-		return f"Deux solutions: {x1}, {x2}"
-	elif d == 0:
-		x3 = -b/(2*a)
-		return f"Une solution: {x3}"
-	else:
-		return "aucune solutions"
-
-a = float(input("Entrez a"))
-b = float(input("Entrez b"))
-c = float(input("Entrez c"))
-
-print(resoudre(a, b ,c))
+import math
+saut = "\n"
 
 
+# EXERCICE 1 : calcul et résolution d'un polynome du second ordre de la forme ax^2 + bx + c = 0
 
-""" EXERCICE 2: LES NOMBRES PREMIERS """
+def discriminant(a, b, c):
+    return b**2 - 4*a*c
+    
+def resoudre():
+    a = float(input("Entrez le coefficient a: "))
+    b = float(input("Entrez le coefficient b: "))
+    c = float(input("Entrez le coefficient c: "))
+    delta = discriminant(a, b, c)
+    if a == 0:
+        if b == 0:
+            if c == 0:
+                return "L'équation est indéterminée (tous les réels sont solutions)."
+            else:
+                return "L'équation est impossible (aucune solution)."
+        else:
+            x = -c / b
+            return f"L'équation est linéaire. La solution est x = {x:.2f}"
+    else:
+        if delta > 0:
+            root1 = (-b + delta**0.5) / (2*a)
+            root2 = (-b - delta**0.5) / (2*a)
+            return f"Le discriminant est positif : {delta} \n /> Il y a deux racines réelles distinctes: {root1:.2f}, {root2:.2f}"
+        elif delta == 0:
+            root = -b / (2*a)
+            return f"Le discriminant est nul : {delta} \n /> Il y a une seule racine réelle: {root:.2f}"
+        else:
+            return f"Le discriminant est négatif : {delta} \n /> Il n'y a donc pas de racines réelles.", ()
+        
+def affichage_resultat():
+    resultat = resoudre()
+    print("Résultat:", resultat)
+    
+def main():
+    affichage_resultat()
+
+"""
+if __name__ == "__main__":
+    main()
+"""
+
+
+# EXERCICE 2: Vérifier si un nombre est premier et afficher les nombres premiers entre eux SANS FONCTIONS
 
 def est_premier(n):
-	if n < 2:
-		return False
-	i = 2
-	while i * i <= n:
-		if n % i == 0:
-			return False
-		i += 1
-	return True	
-
-def plus_petit_diviseur(n):
-	if n < 2:
-		return False
-		
-	for i in range(2, n + 1):
-		if n % i == 0:
-			return i
-
-def decomp_facteurs_premiers(n):
-	resultat = ""
-	d = plus_petit_diviseur(n)
-	
-	while n > 1:
-		resultat += str(d)
-		n //= d
-		if n > 1:
-			resultat += "x"
-	return resultat
-
-		
-n = int(input("Entrez n: "))
-print(f"PLus petit diviseur premier de n : {plus_petit_diviseur(n)}")
-print(f"n est-il premier ? {est_premier(n)}")
-print(decomp_facteurs_premiers(n))
+    if n <= 1: return False
+    for i in range(2, int(n**0.5) + 1): 
+        if n % i == 0: return False
+    return True
 
 
-""" EXERCICE 3: GÉNÉRER UN NOMBRE SECRET ET DEVINER """
-
-import math
-import random
-import sys
-	
-def generer_nombre(minimum, maximum):
-	return random.randint(minimum, maximum)
-
-def verifier_nombre(secret, proposition):
-	if (proposition < secret):
-		print("Bravo")
-	elif (proposition > secret):
-		print("Trop petit")
-	else:
-		print("Trop grand")
-	return False	
-
-def jouer(secret, tentatives):
-	while tentatives > 0:
-		proposition = int(input("Entrez une proposition: "))
-		if verifier_nombre(secret, proposition):
-			print("Bien joué!")
-			return
-		tentatives -= 1
-		print(f"Il te reste {tentatives} tentatives")
-		print(f"Perdu! Le nombre était {secret}")
-def main():
-	minimum = int(input("Entrez un minimum: "))
-	maximum = int(input("Entrez un maximum: "))
-	tentatives = int(input("Entrez un nombre de tentatives: "))
-	secret = generer_nombre(minimum, maximum)
-	jouer(secret, tentatives)
-	if proposition == secret:
-		sys.exit()
-		
-if __name__ == "__main__":
-	main()
-			
-	
+def plus_petit_diviseur_premier(n):
+    if n <= 1: return None
+    for i in range(2, n + 1):
+        if n % i == 0 and est_premier(i): return i
+    return None
 
 
+def decomposition_en_facteurs_premiers(n):
+    if n <= 1: return str(n)    
+    temp_n = n  
+    chaine = ""
+    while temp_n > 1:
+        d = plus_petit_diviseur_premier(temp_n) # trouver le plus petit diviseur premier de temp_n
+        if chaine != "": chaine += " x " # ajouter un séparateur si ce n'est pas le premier facteur
+        chaine += str(d) # ajouter le diviseur premier à la chaîne
+        temp_n //= d # mettre à jour temp_n en le divisant par le diviseur premier trouvé
+        
+    return chaine
 
-""" EXERCICE 4: LES FACTORIELLES """
+
+# EXERCICE 3 : Jeu avec nombre mystère
+
+def generate_random_number():
+    import random
+    max = int(input("Entrez la valeur maximale pour le nombre mystère : "))
+    min = int(input("Entrez la valeur minimale pour le nombre mystère : "))
+    return random.randint(min, max)
+
+def guess_number():
+    number_to_guess = generate_random_number()
+    guess = None
+    attempts = 0
+    max_attempts = int(input("Entrez la limite de tentatives : "))  # Limite de tentatives
+
+    while guess != number_to_guess and attempts < max_attempts:
+        guess = int(input("Devinez le nombre mystère : "))
+        attempts += 1
+        if guess < number_to_guess:
+            print("Trop petit !")
+        elif guess > number_to_guess:
+            print("Trop grand !")
+        else:
+            print(f"Félicitations ! Vous avez trouvé le nombre mystère {number_to_guess} en {attempts} tentatives.")
+    if attempts >= max_attempts:
+        print(f"Vous avez atteint la limite de tentatives. Le nombre mystère était {number_to_guess}.")
+        
+        
+# EXERCICE 4 : factorielle, coefficient binomial et triangle de pascal
 
 def factorielle(n):
-	resultat = 1
-	for i in range(1, n + 1):
-		resultat *= i
-	return resultat
+    if n < 0: raise ValueError("La factorielle n'est pas définie pour les nombres négatifs.")
+    elif n == 0 or n == 1: return 1
+    else:
+        result = 1
+        for i in range(2, n + 1):
+            result *= i
+        return result
+    
+def coef_binomial(n, k):
+    if k < 0 or k > n: raise ValueError("k doit être compris entre 0 et n.")
+    return factorielle(n) // (factorielle(k) * factorielle(n - k))
 
-n = int(input("Entrez la valeur dont vous souhaitez obtenir la factorielle: "))
-print(f"{n}! = {factorielle(n)}")
-
-def coeff_binomial(n, k):
-	fn = factorielle(n)
-	fk = factorielle(k)
-	n - k = i
-	fi = factorielle(i)
-	
-	q = fn/((fi * fk)
-	return fk
-	
-
+def triangle_pascal(n): # afficher le triangle de pascal sous sa forme originelle que du côté droit (demi triangle)
+    for i in range(n):
+        for j in range(i + 1):
+            print(coef_binomial(i, j), end=" ")
+        print()
+        
+# application de la formule: (a+b)^4 = a^4 + 4a^3b + 6a^2b^2 + 4ab^3 + b^4:
