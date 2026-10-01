@@ -24,6 +24,7 @@ void Point::saisir() {
     cin >> y;
 }
 
+
 // Getters
 double Point::getX() const {
     return x;

@@ -2,14 +2,13 @@ import random
 
 def Zeros(n, m):
     matrice = []
-    # Création des n lignes
     for i in range(n):
         ligne = []
-        # Remplissage des m colonnes avec 0
         for j in range(m):
             ligne.append(0)
         matrice.append(ligne)
     return matrice
+    # return [[0 for j in range(m)] for i in range(n)] version plus compacte
 
 
 def aleatoire(n, m, min_val, max_val):
@@ -22,16 +21,11 @@ def aleatoire(n, m, min_val, max_val):
         matrice.append(ligne)
     return matrice
 
+M = aleatoire(5, 4, 0, 10)
 
 def afficher_matrice(matrice, n, m):
-
-    # On n'utilise pas n et m directement dans le parcours mais ils sont requis par l'énoncé.
-    print("-" * (m * 4))
     for ligne in matrice:
-        # Affichage des éléments de la ligne séparés par une tabulation
-        print(*ligne, sep='\t')
-    print("-" * (m * 4))
-
+        print(*ligne)
 
 def compter_occurrences(matrice, n, m, valeur):
     count = 0
