@@ -1,190 +1,164 @@
-""" PROGRAMME TP3 - Mastermind Simplifié """
-
 import random
+import time
 
-valeur1 = 0  # bien placés
-valeur2 = 0  # mal placés
-
-
-def Init(n, k):
-    tab = []
+def init(n, k):
+    computer_list = []
     for i in range(n):
-        tab.append(random.randint(0, k))
-    return tab
+        rand = random.randint(1, k)
+        j = 0
+        while j < len(computer_list):
+            if rand == computer_list[j]:
+                rand = random.randint(1, k)
+                j = 0
+            else:
+                j += 1
+        computer_list.append(rand)
+    return computer_list
 
 
-def saisir_proposition(n):
-    tab = []
+def user_choice(n, k):
+    user_entry_list = input(f"Entrez une liste de {n} valeurs entre 1 et {k}: ").split()
+    while len(user_entry_list) != n:
+        print(f"Erreur de saisie ! Vous devez entrer {n} valeurs et non {len(user_entry_list)} valeurs !")
+        user_entry_list = input(f"Entrez une liste de {n} valeurs entre 1 et {k}: ").split()
+    user_list = []
     for i in range(n):
-        valeur = int(input(f"Entrez la valeur {i} : "))
-        tab.append(valeur)
-    return tab
+        user_list.append(int(user_entry_list[i]))
+    return user_list
 
 
-def Score(n, H, R):
-    global valeur1, valeur2
-    valeur1 = 0  # bien placés
-    valeur2 = 0  # mal placés
-
+def evaluer(n, secret, essai):
+    well_placed = 0
     for i in range(n):
-        if H[i] == R[i]:
-            valeur1 += 1
-        else:
-            valeur2 += 1
+        if essai[i] == secret[i]:
+            well_placed += 1
+
+    common = 0
+    for i in range(n):
+        found = False
+        for j in range(n):
+            if secret[i] == essai[j]:
+                found = True
+        if found:
+            common += 1
+
+    return (well_placed, common - well_placed)
 
 
-def play():
-    k = 9 
-    n = int(input("Entrez la taille de la liste : "))
-
-    while True:
-        H = Init(n, k) 
-        print("Liste H (aléatoire) :", H)
-
-        R = saisir_proposition(n)
-        Score(n, H, R)
-
-        print(f"Nombre de valeurs bien placées : {valeur1}")
-        print(f"Nombre de valeurs mal placées : {valeur2}")
-
-        replay = input("Voulez-vous rejouer ? (o/n) : ")
-        if replay.lower() != "o":
-            print("Merci d'avoir joué, à bientôt !")
-            break
-
-play()
-
-""" PROGRAMME TP3 - Mastermind Amélioré """
-
-import random
-
-# ---------- FONCTIONS COMMUNES ----------
-
-def score(H, R):
-    """Renvoie (bien placés, mal placés)"""
-    bien_places = 0
-    mal_places = 0
-    H_copy = list(H)
-    R_copy = list(R)
-
-    # Compter bien placés
-    for i in range(len(H)):
-        if H[i] == R[i]:
-            bien_places += 1
-            H_copy[i] = R_copy[i] = None
-
-    # Compter mal placés
-    for i in range(len(H)):
-        if R_copy[i] is not None and R_copy[i] in H_copy:
-            mal_places += 1
-            H_copy[H_copy.index(R_copy[i])] = None
-
-    return bien_places, mal_places
+def score(n, computer_list, user_list):
+    well_placed, mal = evaluer(n, computer_list, user_list)
+    print(f"> {well_placed} valeur(s) bonne(s) et bien placée(s)\n> {mal} valeur(s) bonne(s) mais mal placée(s)\n")
+    return well_placed
 
 
-def toutes_possibilites(n, longueur):
-    possibilites = [[]]
-    for _ in range(longueur):
-        nouvelles = []
-        for comb in possibilites:
-            for val in range(1, n+1):
-                L = list(comb)
-                L.append(val)
-                nouvelles.append(L)
-        possibilites = nouvelles
-    return possibilites
+def toutes_possibilites(max_val, nbr_val):
+    print("Calcul de toutes les possibilités en cours...")
+    start_time = time.perf_counter()
+    possibilities = [[]]
+    nbr_possibilities = max_val ** nbr_val
+    for _ in range(nbr_val):
+        new_possibilities = []
+        for comb in possibilities:
+            for val in range(1, max_val + 1):
+                deja = False
+                for j in range(len(comb)):
+                    if comb[j] == val:
+                        deja = True
+                if not deja:
+                    L = list(comb)
+                    L.append(val)
+                    new_possibilities.append(L)
+        possibilities = new_possibilities
+    end_time = time.perf_counter()
+    print(f"Calcul terminé en {end_time - start_time:.2f} secondes pour {nbr_possibilities} combinaisons possibles.")
+    return possibilities
 
 
-# ---------- MODE 1 : UTILISATEUR DEVINE ----------
+def player_guess_mod():
+    nbr_val = int(input("Combien de valeurs souhaitez-vous dans votre jeu ? "))
+    while nbr_val > 10:
+        print("Impossible : trop de valeurs demandées.")
+        nbr_val = int(input("Combien de valeurs souhaitez-vous dans votre jeu ? "))
+    max_val = random.randint(10, 20)
+    computer_list = init(nbr_val, max_val)
 
-def mode_utilisateur_devine():
-    k = int(input("Valeur maximale autorisée (par ex. 9): "))
-    longueur = int(input("Longueur de la combinaison: "))
+    lose_counter = 0
+    max_try = 10
+    while lose_counter < max_try:
+        user_list = user_choice(nbr_val, max_val)
+        if score(nbr_val, computer_list, user_list) == nbr_val:
+            print(f"Bravo, vous avez gagné en {lose_counter + 1} essai(s) !")
+            return
+        lose_counter += 1
+        print(f"Il vous reste {max_try - lose_counter} essai(s).")
 
-    # Génération combinaison secrète
-    secret = [random.randint(1, k) for _ in range(longueur)]
-
-    print("\nJ'ai choisi une combinaison secrète. A toi de la deviner !\n")
-
-    while True:
-        # Proposition joueur
-        prop = []
-        for i in range(longueur):
-            val = int(input(f"Entrez la valeur {i+1} : "))
-            prop.append(val)
-
-        bien, mal = score(secret, prop)
-        print(f"Bien placés : {bien}, Mal placés : {mal}")
-
-        if bien == longueur:
-            print("🎉 Bravo, tu as trouvé !")
-            break
+    print(f"Perdu ! La combinaison était {computer_list}")
 
 
-# ---------- MODE 2 : ORDINATEUR DEVINE ----------
+def computer_guess_mod():
+    nbr_val = int(input("Combien de valeurs souhaitez-vous dans votre jeu ? "))
+    while nbr_val > 10:
+        print("Impossible : trop de valeurs demandées (10 maximum).")
+        nbr_val = int(input("Combien de valeurs souhaitez-vous dans votre jeu ? "))
 
-def mode_ordinateur_devine(): # 
-    longueur = 0
-    while longueur <= 0 or longueur > 6:
-        longueur = int(input("Merci d'entrer une longueur (1 à 6): "))
+    max_val = int(input("Borne maximum des valeurs (ex: 9 → chiffres de 1 à 9): "))
+    while max_val < nbr_val:
+        print(f"La borne doit être au moins {nbr_val} (valeurs toutes différentes).")
+        max_val = int(input("Borne maximum des valeurs : "))
 
-    n = int(input("Borne maximum des valeurs (ex: 9 → chiffres de 1 à 9): "))
-
-    candidats = toutes_possibilites(n, longueur)
+    candidats = toutes_possibilites(max_val, nbr_val)
     Ens_H = []
     Scores_H = []
 
-    print("\nPensez à une combinaison secrète (ne la tapez pas).")
+    print("\nPensez à une combinaison secrète de valeurs toutes différentes (ne la tapez pas).")
     print("Je vais essayer de la deviner. À chaque fois que je propose,")
     print("vous devez indiquer le nombre de bien placés et de mal placés.\n")
 
     while True:
-        if not candidats:
+        if len(candidats) == 0:
             print("Oups, plus de candidats possibles. Vérifiez vos réponses !")
             break
-        
+
         H = candidats[0]
         print(f"Je propose : {H}")
 
         bien = int(input("Nombre de bien placés : "))
         mal = int(input("Nombre de mal placés : "))
 
-        if bien == longueur:
-            print("🎉 J'ai trouvé votre combinaison !")
+        if bien == nbr_val:
+            print("J'ai trouvé votre combinaison !")
             break
 
         Ens_H.append(H)
         Scores_H.append((bien, mal))
 
         nouveaux_candidats = []
-        for cand in candidats:
+        for c in range(len(candidats)):
+            cand = candidats[c]
             valide = True
             for i in range(len(Ens_H)):
-                if score(cand, Ens_H[i]) != Scores_H[i]:
+                if evaluer(nbr_val, cand, Ens_H[i]) != Scores_H[i]:
                     valide = False
-                    break
             if valide:
                 nouveaux_candidats.append(cand)
 
         candidats = nouveaux_candidats
 
 
-# ---------- PROGRAMME PRINCIPAL ----------
-
 def main():
-    print("Bienvenue dans le Mastermind !")
-    print("1. Tu devines la combinaison de l’ordinateur")
-    print("2. L’ordinateur devine ta combinaison")
+    menu = "MASTERMINDDDD \n > (1): jouer \n > (2): faire deviner une combinaison \n > (0): quitter \nVotre choix: "
+    while True:
+        choice = int(input(menu))
+        if choice == 1:
+            player_guess_mod()
+        elif choice == 2:
+            computer_guess_mod()
+        elif choice == 0:
+            print("Au revoir !")
+            break
+        else:
+            print("Choix invalide : entrez 0, 1 ou 2.")
 
-    choix = 0
-    while choix not in (1, 2):
-        choix = int(input("Choisis 1 ou 2 : "))
 
-    if choix == 1:
-        mode_utilisateur_devine()
-    else:
-        mode_ordinateur_devine()
-
-
-# Lancement
-main()
+if __name__ == "__main__":
+    main()
