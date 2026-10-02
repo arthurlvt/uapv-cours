@@ -1,6 +1,12 @@
 import random
 import time
 
+def contented(L, val):
+    for i in range(len(L)):
+        if L[i] == val:
+            return True
+    return False
+
 def init(n, k):
     computer_list = []
     for i in range(n):
@@ -17,7 +23,7 @@ def init(n, k):
 
 
 def user_choice(n, k):
-    user_entry_list = input(f"Entrez une liste de {n} valeurs entre 1 et {k}: ").split()
+    user_entry_list = input(f"Entrez {n} valeurs à la suite entre 1 et {k}: ").split()
     while len(user_entry_list) != n:
         print(f"Erreur de saisie ! Vous devez entrer {n} valeurs et non {len(user_entry_list)} valeurs !")
         user_entry_list = input(f"Entrez une liste de {n} valeurs entre 1 et {k}: ").split()
@@ -57,21 +63,53 @@ def toutes_possibilites(max_val, nbr_val):
     possibilities = [[]]
     nbr_possibilities = max_val ** nbr_val
     for _ in range(nbr_val):
-        new_possibilities = []
+        new_possibility = []
         for comb in possibilities:
             for val in range(1, max_val + 1):
-                deja = False
+                already = False
                 for j in range(len(comb)):
                     if comb[j] == val:
-                        deja = True
-                if not deja:
+                        already = True
+                if not already:
                     L = list(comb)
                     L.append(val)
-                    new_possibilities.append(L)
-        possibilities = new_possibilities
+                    new_possibility.append(L)
+        possibilities = new_possibility
     end_time = time.perf_counter()
     print(f"Calcul terminé en {end_time - start_time:.2f} secondes pour {nbr_possibilities} combinaisons possibles.")
     return possibilities
+
+
+def chiffres_differents(L):
+    for i in range(len(L)):
+        for j in range(i + 1, len(L)):
+            if L[i] == L[j]:
+                return False
+    return True
+
+
+def guess(longueur, n):
+    candidats = toutes_possibilites(n, longueur)
+    tries = 0
+
+    while len(candidats) > 0:
+        H = candidats[0]
+        tries += 1
+        print(f"Essai {tries} : je propose {H}")
+        good_well_placed = int(input("Nombre de bien placés : "))
+        good_wrong_placed    = int(input("Nombre de mal placés : "))
+
+        if good_well_placed == longueur:
+            return H, tries
+
+        new_candidats = []
+        for c in range(len(candidats)):
+            if evaluer(longueur, candidats[c], H) == (good_well_placed, good_wrong_placed):
+                new_candidats.append(candidats[c])
+        candidats = new_candidats
+
+    print("Plus aucun candidat possible : il y a une erreur dans les réponses.")
+    return None, tries
 
 
 def player_guess_mod():
