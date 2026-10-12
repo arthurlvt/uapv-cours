@@ -1,0 +1,40 @@
+[ OUTIL DE COPIE-COLLE DES SYMBOLES LOGIQUES : ∅, ℕ, ℤ, ℚ, ℝ, ℂ, ∈, ∉, ⊆, ⊈, ⊇, ⊉, ∪, ∩, \, |->, infini ]
+[ OUTIL DE COPIE-COLLE DES SYMBOLES LOGIQUES : ∀ ¬ ∧ ∨ ∃ => <=> ]
+
+-------------------------------------| ANALYSE1 |-------------------------------------
+
+
+CHAPITRES 1 ET 2 (fini)
+-> Définition Exacte de la propriété d’Archimède dans ℝ ;
+-> Définition Exacte de la relation d'ordre (avec des propriétés associés) ;
+-> Définition Exacte de la densité d'un ensemble dans un autre ;
+-> Définition Exacte de la borne supérieure, maximum, majorant ;
+-> Définition Exacte de la partie Entière (propriétés associés) ;
+-> Définition Exacte de l'inégalité triangulaire ;
+-> Définition Exacte de la parité d'une fonction ;
+-> Définition Exacte de la périodicité ;
+-> Que signifie de dire que x est à valeur dans R en étant défini dans D ?
+-> Définition de la factorisation d'une fonction polynomiale quelconque ;
+-> Définition des propriétés sur les fonctions trigonométriques cos(x), sin(x) et tan(x) ;
+
+
+CHAPITRES 3, 4 ET 5
+-> Définition de limite
+-> Définition de limite finie en un point (+ propriété voisinnage)
+-> Définition de limite infinie en un point
+-> Définition de limite finie en l'infinie
+-> Définition de l'infinie en l'infinie
+-> Définition Exacte du Théorème des Gendarmes
+-> Définition Exacte du Théorème des Bornes Atteintes (TBA)
+-> Définition Exacte du Théorème des Valeurs Intermédiaires (TVI)
+
+
+--------------------------------------------------------------------------------------
+-------------------------------------| BASE DE MATHÉMATIQUES |-------------------------------------
+
+
+CHAPITRES 1 ET 2
+ 
+
+
+---------------------------------------------------------------------------------------------------
