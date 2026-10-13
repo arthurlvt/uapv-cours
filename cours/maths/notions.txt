@@ -34,7 +34,14 @@ CHAPITRES 3, 4 ET 5
 
 
 CHAPITRES 1 ET 2
- 
-
+-> Rappeler l'expression d'une assertion, sa négation, sa contraposée et sa réciproque
+-> Rappeler les étapes du raisonnement par récurrence 
+-> Rappeler les étapes du raisonnement par analyse-synthèse
+-> Rappeler ce qu'est le raisonnement par double-inclusion
+-> Rappeler la définition d'une Relation puis la différence avec une Relation Binaire
+-> Rappeler la définition Relation d’Equivalence puis d'une Relation d’ordre
+-> Rappeler l'expression de la Composition d’applications
+-> Rappeler la définition d'une image directe, puis d'une image réciproque pour déterminer ce qu'est une application réciproque
+-> Rappeler ce qu'est une application injective, surjective puis bijective
 
 ---------------------------------------------------------------------------------------------------
