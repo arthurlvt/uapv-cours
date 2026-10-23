@@ -48,7 +48,6 @@ def exo3():
         tab.append(temp)
         val = val * 10
     if nbr != 0: print("Erreur, votre nombre contenait + de 3 chiffres")
-    for i in tab:
-        if i == i+2: palindrome = True
+    if tab == tab[: -1]: palindrome = True
     print(palindrome)
         
