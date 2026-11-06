@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void display(num)
+void display(int num)
 {
     printf("%d\n", num);
 }

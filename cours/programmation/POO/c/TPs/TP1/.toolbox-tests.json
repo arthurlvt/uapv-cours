@@ -1,0 +1,27 @@
+{
+  "excluded" : [
+
+  ],
+  "flags" : " ",
+  "language" : "c",
+  "tests" : [
+    {
+      "args" : "",
+      "expected" : "",
+      "id" : "D8003566-D353-4C51-BC62-F363DA8E93ED",
+      "input" : "",
+      "mode" : "trim",
+      "name" : "Essai",
+      "timeout" : 3
+    },
+    {
+      "args" : "",
+      "expected" : "",
+      "id" : "A47C3DF3-6D2A-42D2-B9DF-64A79DE9EEF7",
+      "input" : "",
+      "mode" : "trim",
+      "name" : "Test 2",
+      "timeout" : 3
+    }
+  ]
+}
